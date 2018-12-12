@@ -12,6 +12,7 @@ import org.apache.ibatis.annotations.*;
  */
 @Mapper
 public interface PermissionMapper {
+
     int deleteByPrimaryKey(Integer id);
 
     int insert(Permission record);
