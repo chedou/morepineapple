@@ -83,7 +83,11 @@ public class User implements UserDetails, Serializable {
 	 */
 	private List<Permission> authorities;
 
-
+	/**
+	 * @Description 根据用户信息构造用户model 
+	 * @param id name password salt phoneNum headImage gmtCreate gmtUpdate createBy updateBy status 
+	 *  
+	 */ 
 	public User(Long id, String name, String password, String salt, String phoneNum, String headImage,
 				Long gmtCreate, Long gmtUpdate, String createBy, String updateBy, Integer status
 	) {
@@ -105,6 +109,14 @@ public class User implements UserDetails, Serializable {
 		super();
 	}
 
+	/**
+	 * @Description 获取用户所拥有的全部权限
+	 * @param
+	 * @return 返回权限信息的集合（其中需要继承 GrantedAuthority ）
+	 * @author Mr.HUANG
+	 * @date 2018/12/12
+	 * @throws
+	 */
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 
@@ -116,6 +128,14 @@ public class User implements UserDetails, Serializable {
 		return authorities;
 	}
 
+	/**
+	 * @Description 获取用户密码
+	 * @param
+	 * @return
+	 * @author Mr.HUANG
+	 * @date 2018/12/12
+	 * @throws
+	 */
 	@Override
 	public String getPassword() {
 		return password;
@@ -125,26 +145,66 @@ public class User implements UserDetails, Serializable {
 		this.password = password == null ? null : password.trim();
 	}
 
+	/**
+	 * @Description 获取用户名
+	 * @param
+	 * @return
+	 * @author Mr.HUANG
+	 * @date 2018/12/12
+	 * @throws
+	 */
 	@Override
 	public String getUsername() {
 		return name;
 	}
 
+	/**
+	 * @Description 判断权限数量是否为空
+	 * @param
+	 * @return
+	 * @author Mr.HUANG
+	 * @date 2018/12/12
+	 * @throws
+	 */
 	@Override
 	public boolean isAccountNonExpired() {
 		return true;
 	}
 
+	/**
+	 * @Description 判断用户是否被锁定 （多线程）
+	 * @param
+	 * @return
+	 * @author Mr.HUANG
+	 * @date 2018/12/12
+	 * @throws
+	 */
 	@Override
 	public boolean isAccountNonLocked() {
 		return true;
 	}
 
+	/**
+	 * @Description 判断凭证是否过期
+	 * @param
+	 * @return
+	 * @author Mr.HUANG
+	 * @date 2018/12/12
+	 * @throws
+	 */
 	@Override
 	public boolean isCredentialsNonExpired() {
 		return true;
 	}
 
+	/**
+	 * @Description 是否开启
+	 * @param
+	 * @return
+	 * @author Mr.HUANG
+	 * @date 2018/12/12
+	 * @throws
+	 */
 	@Override
 	public boolean isEnabled() {
 		return true;
