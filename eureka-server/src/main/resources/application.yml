@@ -1,0 +1,14 @@
+#服务端点
+server:
+  port: 6666
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+  #  客户端相互注册
+    registerWithEureka: false
+  #  获取注册表
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
