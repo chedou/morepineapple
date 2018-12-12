@@ -2,19 +2,6 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.jnshu.uaaservice.dao.UserMapper">
     <resultMap id="BaseResultMap" type="com.jnshu.uaaservice.pojo.User">
-        <!--<constructor>-->
-        <!--<idArg column="id" javaType="java.lang.Long" jdbcType="BIGINT" />-->
-        <!--<arg column="name" javaType="java.lang.String" jdbcType="VARCHAR" />-->
-        <!--<arg column="password" javaType="java.lang.String" jdbcType="VARCHAR" />-->
-        <!--<arg column="salt" javaType="java.lang.String" jdbcType="VARCHAR" />-->
-        <!--<arg column="phone_num" javaType="java.lang.String" jdbcType="VARCHAR" />-->
-        <!--<arg column="head_image" javaType="java.lang.String" jdbcType="VARCHAR" />-->
-        <!--<arg column="gmt_create" javaType="java.lang.Long" jdbcType="BIGINT" />-->
-        <!--<arg column="gmt_update" javaType="java.lang.Long" jdbcType="BIGINT" />-->
-        <!--<arg column="create_by" javaType="java.lang.String" jdbcType="VARCHAR" />-->
-        <!--<arg column="update_by" javaType="java.lang.String" jdbcType="VARCHAR" />-->
-        <!--<arg column="status" javaType="java.lang.Integer" jdbcType="INTEGER" />-->
-        <!--</constructor>-->
         <id column="id" property="id"/>
         <result column="name" property="name"/>
         <result column="password" property="password"/>
@@ -27,6 +14,7 @@
         <result column="create_by" property="createBy"/>
         <result column="update_by" property="updateBy"/>
         <result column="status" property="status"/>
+        <!--嵌套用户角色列表-->
         <collection property="roleList" ofType="com.jnshu.uaaservice.pojo.Role" javaType="list" >
             <result column="id" property="id"/>
             <result column="role_name" property="roleName"/>
@@ -34,6 +22,7 @@
             <result column="gmt_update" property="gmtUpdate"/>
             <result column="create_by" property="createBy"/>
             <result column="update_by" property="updateBy"/>
+            <!--嵌套权限信息-->
             <collection property="permissionsList" ofType="com.jnshu.uaaservice.pojo.Permission" javaType="list">
                 <result column="id" property="id"/>
                 <result column="permission_name"  property="permissionName"/>
@@ -45,20 +34,24 @@
         </collection>
     </resultMap>
 
+    <!--基础参数-->
     <sql id="Base_Column_List">
     id, name, password, salt, phone_num, head_image, gmt_create, gmt_update, create_by, 
     update_by, status
   </sql>
+
     <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
         select
         <include refid="Base_Column_List"/>
         from user
         where id = #{id,jdbcType=BIGINT}
     </select>
+
     <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
     delete from user
     where id = #{id,jdbcType=BIGINT}
   </delete>
+
     <insert id="insert" parameterType="com.jnshu.uaaservice.pojo.User">
     insert into user (id, name, password, 
       salt, phone_num, head_image, 
@@ -69,6 +62,7 @@
       #{gmtCreate,jdbcType=BIGINT}, #{gmtUpdate,jdbcType=BIGINT}, #{createBy,jdbcType=VARCHAR}, 
       #{updateBy,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER})
   </insert>
+
     <insert id="insertSelective" parameterType="com.jnshu.uaaservice.pojo.User">
         insert into user
         <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -142,6 +136,7 @@
             </if>
         </trim>
     </insert>
+
     <update id="updateByPrimaryKeySelective" parameterType="com.jnshu.uaaservice.pojo.User">
         update user
         <set>
@@ -178,6 +173,7 @@
         </set>
         where id = #{id,jdbcType=BIGINT}
     </update>
+
     <update id="updateByPrimaryKey" parameterType="com.jnshu.uaaservice.pojo.User">
     update user
     set name = #{name,jdbcType=VARCHAR},
@@ -193,6 +189,7 @@
     where id = #{id,jdbcType=BIGINT}
   </update>
 
+    <!--根据用户ID查找用户信息-->
     <select id="selectUserDetailById" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     SELECT
         u.id,
@@ -219,6 +216,7 @@
         u.id=#{id}
   </select>
 
+    <!--根据用户姓名查找用户信息-->
     <select id="findByUsername" parameterType="String" resultMap="BaseResultMap">
      SELECT
         u.id,
@@ -231,7 +229,6 @@
         u.gmt_update,
         u.create_by,
         u.update_by,
-        r.id,
         r.role_name,
         r.`status`,
         p.permission_name
@@ -244,4 +241,5 @@
     WHERE
          u.`name`=#{username}
   </select>
+
 </mapper>

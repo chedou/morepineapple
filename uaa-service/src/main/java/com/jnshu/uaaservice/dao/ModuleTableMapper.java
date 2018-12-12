@@ -5,6 +5,7 @@ import org.apache.ibatis.annotations.*;
 
 @Mapper
 public interface ModuleTableMapper {
+
     int deleteByPrimaryKey(Integer id);
 
     int insert(ModuleTable record);

@@ -6,17 +6,25 @@ import org.springframework.security.core.userdetails.*;
 import org.springframework.stereotype.*;
 
 /**
- * @program: purview
- * @description: 用户详情服务
- * @author: Mr.huang
- * @create: 2018-12-06 09:17
- **/
+ * @Description 用户详细信息服务
+ * @author Mr.HUANG
+ * @date 2018/12/12
+ *
+ */
 @Service
 public class UserServiceDetail implements UserDetailsService {
 
 	@Autowired
 	private UserMapper userMapper;
 
+	/**
+	 * @Description 获取用户信息(根据用户姓名)
+	 * @param username		用户名
+	 * @return  User		用户model
+	 * @author Mr.HUANG
+	 * @date 2018/12/12
+	 * @throws UsernameNotFoundException
+	 */
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		return userMapper.findByUsername(username);
