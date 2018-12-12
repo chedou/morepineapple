@@ -5,6 +5,7 @@ import org.apache.ibatis.annotations.*;
 
 @Mapper
 public interface RoleMapper {
+
     int deleteByPrimaryKey(Integer id);
 
     int insert(Role record);
