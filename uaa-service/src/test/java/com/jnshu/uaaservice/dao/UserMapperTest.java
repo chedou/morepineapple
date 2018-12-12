@@ -66,7 +66,7 @@ public class UserMapperTest {
 		logger.info("-------------------------");
 		logger.info("根据用户名测试获取单个角色权限关联信息");
 
-		User user = userMapper.findByUsername("changjiang");
+		User user = userMapper.findByUsername("chedou");
 		System.out.println(user);
 		// System.out.println(user.toString());
 
