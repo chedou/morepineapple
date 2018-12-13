@@ -6,7 +6,6 @@ import org.junit.runner.*;
 import org.slf4j.*;
 import org.springframework.beans.factory.annotation.*;
 import org.springframework.boot.test.context.*;
-import org.springframework.security.core.parameters.*;
 import org.springframework.test.context.junit4.*;
 
 

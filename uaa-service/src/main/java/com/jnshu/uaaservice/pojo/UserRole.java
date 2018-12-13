@@ -3,27 +3,59 @@ package com.jnshu.uaaservice.pojo;
 import org.codehaus.jackson.map.annotate.*;
 
 import java.io.*;
-
+/**
+ * @Description 用户角色关联model
+ * @author Mr.HUANG
+ * @date 2018/12/13
+ *
+ */
 @JsonSerialize
 public class UserRole implements Serializable {
 
 	private static final long serialVersionUID = -1428285660796168326L;
 
+	/**
+	 * @Fields 用户角色关联表id
+	 */
 	private Integer id;
 
+	/**
+	 * @Fields 用户id
+	 */
 	private Long userId;
 
+	/**
+	 * @Fields 角色id
+	 */
 	private Long roleId;
 
+	/**
+	 * @Fields 创建时间
+	 */
 	private Long gmtCreate;
 
+	/**
+	 * @Fields 更新时间
+	 */
 	private Long gmtUpdate;
 
+	/**
+	 * @Fields 创建人
+	 */
 	private String createBy;
 
+	/**
+	 * @Fields 更新人
+	 */
 	private String updateBy;
 
-	public UserRole(Integer id, Long userId, Long roleId, Long gmtCreate, Long gmtUpdate, String createBy, String updateBy) {
+	/**
+	 * @Description 更具用户角色信息创建用户角色model
+	 * @param id userId roleId gmtCreate gmtUpdate createBy updateBy
+	 *
+	 */
+	public UserRole(Integer id, Long userId, Long roleId, Long gmtCreate, Long gmtUpdate,
+					String createBy, String updateBy) {
 		this.id = id;
 		this.userId = userId;
 		this.roleId = roleId;

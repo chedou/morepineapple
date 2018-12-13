@@ -22,7 +22,7 @@
     <collection property="permissionsList" ofType="com.jnshu.uaaservice.pojo.Permission" autoMapping="true"/>
   </resultMap>
 
-    <!--<resultMap id="PermissionResultMap" type="com.jnshu.uaaservice.pojo.Permission">-->
+    <!--<resultMap id="PermissionResultMap" type="com.jnshu.uaaservice.entityty.Permission">-->
         <!--<id column="id" property="id"/>-->
         <!--<result column="permission_name" property="permissionName"/>-->
         <!--<result column="gmt_create" property="gmtCreate"/>-->
