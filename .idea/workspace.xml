@@ -1,21 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="459c7217-bae0-492e-8e67-fd6eac85e2ae" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/core/ret/RetCode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/core/ret/RetResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/core/ret/RetResult.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/exception/ServiceException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/web/user/userController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resource-service/src/main/resources/mappers/PermissionMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resource-service/src/main/resources/mappers/RoleMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resource-service/src/main/resources/mappers/RolePermissionMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resource-service/src/main/resources/mappers/UserMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resource-service/src/main/resources/mappers/UserRoleMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/exception/ExceptionHandle.java" beforeDir="false" afterPath="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/exception/ExceptionHandle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/web/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/web/UserController.java" afterDir="false" />
-    </list>
+    <list default="true" id="459c7217-bae0-492e-8e67-fd6eac85e2ae" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/eureka-server/target/" />
     <ignored path="$PROJECT_DIR$/uaa-service/target/" />
@@ -256,7 +242,7 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-10" />
     <option name="y" value="-10" />
     <option name="width" value="1939" />
@@ -794,7 +780,7 @@
       <workItem from="1544623292470" duration="5500000" />
       <workItem from="1544666130261" duration="4132000" />
       <workItem from="1544688762138" duration="6151000" />
-      <workItem from="1544696155686" duration="8582000" />
+      <workItem from="1544696155686" duration="8730000" />
     </task>
     <task id="LOCAL-00001" summary="授权服务中心">
       <created>1544446554911</created>
@@ -894,7 +880,14 @@
       <option name="project" value="LOCAL" />
       <updated>1544694896576</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="update code">
+      <created>1544762199422</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1544762199422</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -921,7 +914,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55487000" />
+    <option name="totallyTimeSpent" value="55635000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -933,7 +926,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="7" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3288889" />
       <window_info anchor="bottom" id="FindBugs-IDEA" order="7" weight="0.32840237" />
