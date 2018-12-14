@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 @ControllerAdvice
 @ResponseBody
 public class ExceptionHandle {
+
     @ExceptionHandler(UserLoginException.class)
     public ResponseEntity<String> handleException(Exception e) {
 

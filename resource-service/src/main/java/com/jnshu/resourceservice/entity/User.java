@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.annotation.*;
 import org.springframework.security.core.*;
 import org.springframework.security.core.userdetails.*;
 
+import javax.validation.constraints.*;
 import java.io.*;
 import java.util.*;
 
@@ -20,6 +21,7 @@ public class User implements UserDetails, Serializable {
 	/**
 	 * @Fields 用户id
 	 */
+	@NotNull
 	private Long id;
 
 	/**

@@ -12,6 +12,7 @@ public class UserController {
     @Autowired
 	UserServiceDetail userServiceDetail;
 
+
     @PostMapping("/register")
     public User postUser(@RequestParam("username") String username , @RequestParam("password") String password){
         //参数判断，省略
@@ -29,4 +30,7 @@ public class UserController {
         System.out.println("password：" + password);
         return userServiceDetail.login(username,password);
     }
+
+
+
 }
