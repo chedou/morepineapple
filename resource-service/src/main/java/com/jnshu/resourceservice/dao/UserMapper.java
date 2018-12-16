@@ -3,6 +3,8 @@ package com.jnshu.resourceservice.dao;
 import com.jnshu.resourceservice.entity.*;
 import org.apache.ibatis.annotations.*;
 
+import java.sql.*;
+
 /**
  * @description  用户信息持久层
  * @author Mr.HUANG
@@ -10,9 +12,9 @@ import org.apache.ibatis.annotations.*;
  */
 @Mapper
 public interface UserMapper {
-    int deleteByPrimaryKey(Long id);
+    int deleteByPrimaryKey(Long id) throws SQLException;
 
-    int insert(User record);
+    int insert(User record) throws SQLException;
 
     int insertSelective(User record);
 

@@ -13,7 +13,7 @@ public enum RetCode {
 	// SUCCESS(200),
 
 	// 失败
-	FAIL(400),
+			FAIL(400),
 
 	// 未认证（签名错误）
 	UNAUTHORIZED(401,"未认证（签名错误）"),

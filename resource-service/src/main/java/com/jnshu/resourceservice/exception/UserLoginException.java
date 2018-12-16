@@ -1,7 +1,7 @@
 package com.jnshu.resourceservice.exception;
 
 /**
- * @description 异常处理类
+ * @description 自定义用户登录异常处理类
  * @author Mr.HUANG
  * @date 2018/12/13
  */

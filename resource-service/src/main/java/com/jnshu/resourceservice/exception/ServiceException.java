@@ -4,7 +4,7 @@ import java.io.*;
 
 /**
  * @program: morepineapple
- * @description: 业务类异常
+ * @description: 业务类统一处理异常
  * @author: Mr.huang
  * @create: 2018-10-14 21:50
  **/

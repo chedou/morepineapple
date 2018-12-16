@@ -1,20 +1,20 @@
 package com.jnshu.resourceservice.exception;
-
-import org.springframework.http.*;
-import org.springframework.web.bind.annotation.*;
-
-/**
- * @description 异常处理类
- * @author Mr.HUANG
- * @date 2018/12/13
- */
-@ControllerAdvice
-@ResponseBody
-public class ExceptionHandle {
-
-    @ExceptionHandler(UserLoginException.class)
-    public ResponseEntity<String> handleException(Exception e) {
-
-        return new ResponseEntity(e.getMessage(), HttpStatus.OK);
-    }
-}
+//
+// import org.springframework.http.*;
+// import org.springframework.web.bind.annotation.*;
+//
+// /**
+//  * @description controller层异常统一处理类
+//  * @author Mr.HUANG
+//  * @date 2018/12/13
+//  */
+// @ControllerAdvice
+// @ResponseBody
+// public class ExceptionHandle {
+//
+//     @ExceptionHandler(UserLoginException.class)
+//     public ResponseEntity<String> handleException(Exception e) {
+//
+//         return new ResponseEntity(e.getMessage(), HttpStatus.OK);
+//     }
+// }
