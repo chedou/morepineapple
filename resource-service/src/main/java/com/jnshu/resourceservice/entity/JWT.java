@@ -21,6 +21,9 @@ public class JWT implements Serializable {
 	private String scope;
 	private String jti;
 
+	private Long userID;
+
+
 	public String getAccess_token() {
 		return access_token;
 	}
@@ -69,6 +72,15 @@ public class JWT implements Serializable {
 		this.jti = jti;
 	}
 
+	public Long getUserID() {
+		return userID;
+	}
+
+	public void setUserID(Long userID) {
+		this.userID = userID;
+	}
+
+
 	@Override
 	public String toString() {
 		return "JWT{" +
@@ -78,6 +90,7 @@ public class JWT implements Serializable {
 				", expires_in=" + expires_in +
 				", scope='" + scope + '\'' +
 				", jti='" + jti + '\'' +
+				", userID=" + userID +
 				'}';
 	}
 }

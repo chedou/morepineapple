@@ -1,10 +1,17 @@
 package com.jnshu.resourceservice.web.user;
 
 import com.jnshu.resourceservice.core.ret.*;
+import com.jnshu.resourceservice.dao.*;
 import com.jnshu.resourceservice.entity.*;
+import com.jnshu.resourceservice.entity.userValidateGroup.*;
+import com.jnshu.resourceservice.service.*;
 import org.slf4j.*;
+import org.springframework.beans.factory.annotation.*;
+import org.springframework.security.access.prepost.*;
+import org.springframework.validation.annotation.*;
 import org.springframework.web.bind.annotation.*;
 
+import javax.annotation.*;
 import javax.validation.constraints.*;
 
 /**
@@ -18,24 +25,31 @@ public class UserModuleController {
 
 	private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
+	@Autowired
+	private UserModuleService userModuleService;
+
 	//TODO：用户管理-新增用户
 	/**
 	 * @Description
-	 * @param [user]
+	 * @param [user jwt ]
 	 * @return com.jnshu.resourceservice.core.ret.RetResult<?>
 	 * @author Mr.HUANG
 	 * @date 2018/12/13
 	 * @throws
 	 */
 	@PostMapping(value = "/user", produces = "application/json;charset=UTF-8")
-	public RetResult<?> addUser(@RequestBody(required = true )  @NotNull  User user) throws Exception{
+	@RequestMapping(method = RequestMethod.GET)
+	@PreAuthorize("hasAuthority('RoleManageAll') AND hasAuthority('RoleManageAdd') ")
+	public RetResult<?> addUser(@RequestBody(required = true )@Validated(value = AddUserGroup.class) User user,
+								JWT jwt) throws Exception{
 
-		if (null == user ){
-			// throw new
-			System.out.println();
-			}
-		RetResult<Object> result = new RetResult<>();
-		return result;
+
+		userModuleService.insertSelective(user);
+
+
+
+
+		return RetResponse.makeOKRsp();
 		}
 
 	}

@@ -1052,7 +1052,7 @@
     </column>
     <column id="257" parent="235" name="update_by">
       <Position>12</Position>
-      <Comment>更新人 </Comment>
+      <Comment>更新人</Comment>
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
@@ -1327,7 +1327,7 @@
     </column>
     <column id="297" parent="238" name="update_by">
       <Position>10</Position>
-      <Comment>更新人 </Comment>
+      <Comment>更新人</Comment>
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
@@ -1375,7 +1375,7 @@
     </column>
     <column id="304" parent="239" name="update_by">
       <Position>6</Position>
-      <Comment>更新人 </Comment>
+      <Comment>更新人</Comment>
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
@@ -1519,7 +1519,7 @@
     </column>
     <column id="325" parent="240" name="update_by">
       <Position>20</Position>
-      <Comment>更新人 </Comment>
+      <Comment>更新人</Comment>
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
@@ -1641,7 +1641,7 @@
     </column>
     <column id="343" parent="242" name="update_by">
       <Position>6</Position>
-      <Comment>更新人 </Comment>
+      <Comment>更新人</Comment>
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
@@ -1708,7 +1708,7 @@
     </column>
     <column id="353" parent="243" name="update_by">
       <Position>8</Position>
-      <Comment>更新人 </Comment>
+      <Comment>更新人</Comment>
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
@@ -1837,7 +1837,7 @@
     </column>
     <column id="373" parent="245" name="update_by">
       <Position>7</Position>
-      <Comment>更新人 </Comment>
+      <Comment>更新人</Comment>
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>

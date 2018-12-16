@@ -54,6 +54,9 @@ public class UserServiceDetail implements UserDetailsService {
 		if(jwt==null){
 			throw new UserLoginException("error internal");
 		}
+		// 用户id写入jwt
+		jwt.setUserID(user.getId());
+
 		UserLoginDTO userLoginDTO=new UserLoginDTO();
 		userLoginDTO.setJwt(jwt);
 		userLoginDTO.setUser(user);

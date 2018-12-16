@@ -1,10 +1,13 @@
 package com.jnshu.resourceservice.entity;
 
 import com.fasterxml.jackson.databind.annotation.*;
+import com.jnshu.resourceservice.entity.userValidateGroup.*;
+import org.hibernate.validator.constraints.*;
 import org.springframework.security.core.*;
 import org.springframework.security.core.userdetails.*;
 
 import javax.validation.constraints.*;
+import javax.validation.constraints.NotBlank;
 import java.io.*;
 import java.util.*;
 
@@ -21,17 +24,19 @@ public class User implements UserDetails, Serializable {
 	/**
 	 * @Fields 用户id
 	 */
-	@NotNull
 	private Long id;
 
 	/**
 	 * @Fields 用户名
 	 */
+	@NotBlank(message = "name 不允许为空", groups = {AddUserGroup.class} )
+	@Length(min = 2, max = 10, message = "name长度必须在 {min} - {max} 之间", groups = {AddUserGroup.class})
 	private String name;
 
 	/**
 	 * @Fields 用户密码
 	 */
+	@NotNull(message = "密码不能为空", groups = {AddUserGroup.class})
 	private String password;
 
 	/**
@@ -42,6 +47,7 @@ public class User implements UserDetails, Serializable {
 	/**
 	 * @Fields 手机号码
 	 */
+	@NotNull(message = "手机号码不能为空", groups = {AddUserGroup.class})
 	private String phoneNum;
 
 	/**
