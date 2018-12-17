@@ -6,7 +6,7 @@ spring:
 #    driverClassName: com.mysql.jdbc.Driver
 #    driver-class-name: com.mysql.cj.jdbc.Driver
     platform: mysql
-    url: jdbc:mysql://localhost:3306/more_pineapple_purview_uaa?serverTimezone=GMT&useUnicode=true&characterEncoding=utf8&characterSetResults=utf8&useSSL=true&autoReconnect=true&failOverReadOnly=false
+    url: jdbc:mysql://localhost:3306/duoboluo?serverTimezone=GMT&useUnicode=true&characterEncoding=utf8&characterSetResults=utf8&useSSL=true&autoReconnect=true&failOverReadOnly=false
     username: root
     password: 123456
     initialSize: 5

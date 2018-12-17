@@ -58,7 +58,15 @@
       #{gmtCreate,jdbcType=BIGINT}, #{gmtUpdate,jdbcType=BIGINT}, #{createBy,jdbcType=VARCHAR}, 
       #{updateBy,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER})
   </insert>
-    <insert id="insertSelective" parameterType="com.jnshu.resourceservice.entity.User">
+
+
+    <insert id="insertSelective" parameterType="com.jnshu.resourceservice.entity.User" >
+--         此种写法，keyProperty：将查询到主键值设置到parameterType指定的对象的哪个属性
+--         order：SELECT LAST_INSERT_ID()执行顺序，相对于insert语句来说它的执行顺序
+--         resultType：指定SELECT LAST_INSERT_ID()的结果类型
+        <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
         insert into user
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="id != null">
@@ -131,6 +139,8 @@
             </if>
         </trim>
     </insert>
+
+
     <update id="updateByPrimaryKeySelective" parameterType="com.jnshu.resourceservice.entity.User">
         update user
         <set>
@@ -182,7 +192,7 @@
     where id = #{id,jdbcType=BIGINT}
   </update>
 
-    <select id="selectUserDetailById" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <select id="selectUserDetailById" parameterType="java.lang.Long" resultMap="BaseResultMap">
     SELECT
         u.id,
         u.`name`,

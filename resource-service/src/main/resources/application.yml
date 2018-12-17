@@ -34,7 +34,7 @@ spring:
     testWhileIdle: true
     timeBetweenEvictionRunsMillis: 60000
     type: com.alibaba.druid.pool.DruidDataSource
-    url: "jdbc:mysql://localhost:3306/more_pineapple_purview_uaa?serverTimezone=GMT&useUnicode=true&characterEncoding=utf8&characterSetResults=utf8&useSSL=true"
+    url: "jdbc:mysql://localhost:3306/duoboluo?serverTimezone=GMT&useUnicode=true&characterEncoding=utf8&characterSetResults=utf8&useSSL=true"
     username: root
   jackson:
     date-format: "yyyy-MM-dd HH:mm:ss"

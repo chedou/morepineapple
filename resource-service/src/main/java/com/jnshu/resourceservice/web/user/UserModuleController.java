@@ -5,6 +5,7 @@ import com.jnshu.resourceservice.dao.*;
 import com.jnshu.resourceservice.entity.*;
 import com.jnshu.resourceservice.entity.userValidateGroup.*;
 import com.jnshu.resourceservice.service.*;
+import com.sun.xml.internal.bind.v2.*;
 import org.slf4j.*;
 import org.springframework.beans.factory.annotation.*;
 import org.springframework.security.access.prepost.*;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.*;
 import javax.validation.constraints.*;
+import javax.xml.crypto.*;
 
 /**
  * @description: 用户管理模块
@@ -28,7 +30,7 @@ public class UserModuleController {
 	@Autowired
 	private UserModuleService userModuleService;
 
-	//TODO：用户管理-新增用户
+	// TODO：用户管理-新增用户
 	/**
 	 * @Description
 	 * @param [user jwt ]
@@ -43,14 +45,13 @@ public class UserModuleController {
 	public RetResult<?> addUser(@RequestBody(required = true )@Validated(value = AddUserGroup.class) User user,
 								JWT jwt) throws Exception{
 
-
-		userModuleService.insertSelective(user);
-
-
-
-
-		return RetResponse.makeOKRsp();
+		if (logger.isDebugEnabled()){
+			logger.debug("----UserModuleController----");
+			logger.debug("插入的用户名:" + user.getName());
 		}
+
+		userModuleService.addUser(user, jwt);
+		return RetResponse.result(RetCode.SUCCESS_USER_ONE_ADD);
 
 	}
 
@@ -63,7 +64,13 @@ public class UserModuleController {
 
 	//TODO: 用户管理-账号列表
 
-	//TODO：用户管理-单个用户信息
+	//TODO：用户管理-单个用户信息`
+
+
+
+	}
+
+
 
 
 

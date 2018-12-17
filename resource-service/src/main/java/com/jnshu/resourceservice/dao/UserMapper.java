@@ -16,6 +16,14 @@ public interface UserMapper {
 
     int insert(User record) throws SQLException;
 
+    /**
+     * @Description 插入用户数据
+     * @param [record]
+     * @return int 成功操作的数量
+     * @author Mr.HUANG
+     * @date 2018/12/17
+     * @throws
+     */
     int insertSelective(User record);
 
     User selectByPrimaryKey(Long id);
@@ -24,7 +32,7 @@ public interface UserMapper {
 
     int updateByPrimaryKey(User record);
 
-    User selectUserDetailById(Integer id);
+    User selectUserDetailById(Long id);
 
     User findByUsername(String username);
 

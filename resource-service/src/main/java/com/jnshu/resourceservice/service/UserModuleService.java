@@ -1,10 +1,7 @@
 package com.jnshu.resourceservice.service;
 
-import com.jnshu.resourceservice.dao.*;
 import com.jnshu.resourceservice.entity.*;
-import org.slf4j.*;
-import org.springframework.beans.factory.annotation.*;
-import org.springframework.stereotype.*;
+
 
 /**
  * @program: morepineapple
@@ -12,14 +9,8 @@ import org.springframework.stereotype.*;
  * @author: Mr.huang
  * @create: 2018-12-17 00:07
  **/
-@Service
 public interface UserModuleService {
 
-	// private final Logger logger = LoggerFactory.getLogger(this.getClass());
-
-	// @Autowired
-	// private UserMapper userMapper;
-
-	Integer insertSelective(User user);
+	Integer addUser(User user, JWT jwt);
 
 }
