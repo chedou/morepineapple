@@ -37,9 +37,10 @@ public class UserModuleServiceImpl implements UserModuleService {
 	@Override
 	public void addUser(User newUser, JWT jwt){
 
+		// 打印核心参数，用户姓名，手机号，操作者ID
 		if (LOGGER.isDebugEnabled()){
 			LOGGER.debug("当前用户id是：{}，传入的参数是:{}，{}",
-					jwt.getUserID(),newUser.getUsername(),jwt.toString());
+					jwt.getUserID(),newUser.getUsername(),newUser.getPhoneNum());
 		}
 		// 判断新增用户是否为null
 		if (null == newUser || null != userMapper.findByUsername(newUser.getName()) ){
@@ -72,5 +73,26 @@ public class UserModuleServiceImpl implements UserModuleService {
 		if (null == userMapper.selectUserDetailById(newUser.getId())){
 			throw new ServiceException("数据插入失败，请查看日志");
 		}
+	}
+
+	/**
+	 * @Description 用户管理-修改个人信息
+	 * @param [user, jwt]
+	 * @return void
+	 * @author Mr.HUANG
+	 * @date 2018/12/19
+	 * @throws
+	 */
+	@Override
+	public void update(User targetUser, JWT jwt) {
+
+		// 打印核心参数，用户姓名，手机号，操作者ID
+		if (LOGGER.isDebugEnabled()){
+			LOGGER.debug("当前用户id是：{}，修改目标ID是:{}",
+					jwt.getUserID(), targetUser.getId());
+		}
+
+		// 对需要验证的信息进行验证，username 用户名 、password 密码、
+
 	}
 }

@@ -36,15 +36,14 @@ public class UserModuleController {
 	 * @date 2018/12/13
 	 * @throws
 	 */
-	@ApiOperation(value = "新增用户",  notes = "新增用户")
+	@ApiOperation(value = "addUser",  notes = "新增用户")
 	@PostMapping(value = "/user", produces = "application/json;charset=UTF-8")
 	@PreAuthorize("hasAuthority('RoleManageAll') AND hasAuthority('RoleManageAdd') ")
-	public RetResult<?> addUser(@Validated({AddUserGroup.class}) User user, JWT jwt) throws Exception{
-
-		System.out.println(user.toString());
+	public RetResult<?> addUser(@Validated({AddUserGroup.class}) User user,
+								JWT jwt) throws Exception{
 
 		if (logger.isDebugEnabled()){
-			logger.debug("----UserModuleController----");
+			logger.debug("----UserModuleController----addUser------");
 			logger.debug("插入的用户名:" + user.getName());
 		}
 
@@ -54,7 +53,29 @@ public class UserModuleController {
 	}
 
 	//TODO：用户管理-更改你用户
+	/**
+	 * @Description 用户管理-修改个人信息
+	 * @param [user, jwt] 
+	 * @return com.jnshu.resourceservice.core.ret.RetResult<?> 
+	 * @author Mr.HUANG
+	 * @date 2018/12/19 
+	 * @throws Exception
+	 */ 
+	@ApiOperation(value = "updateUser",  notes = "更改用户")
+	@PostMapping(value = "/user", produces = "application/json;charset=UTF-8")
+	@PreAuthorize("hasAuthority('RoleManageAll') AND hasAuthority('RoleManageAdd') ")
+	public RetResult<?> updateUser(@Validated({UpdateUserGroup.class, AddUserGroup.class}) User user,
+								   JWT jwt)throws Exception{
 
+		if (logger.isDebugEnabled()){
+			logger.debug("----UserModuleController----updateUser-----");
+			logger.debug("插入的用户名:" + user.getName());
+		}
+		
+
+		return RetResponse.result(RetCode.SUCCESS_USER_ONE_UPDATE);
+
+	}
 
 
 	//TODO：用户管理-删除用户

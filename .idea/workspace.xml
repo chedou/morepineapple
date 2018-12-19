@@ -2,8 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="459c7217-bae0-492e-8e67-fd6eac85e2ae" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/entity/userValidateGroup/UpdateUserGroup.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/entity/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/exception/GlobalExceptionResolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/exception/GlobalExceptionResolver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/service/UserModuleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/service/UserModuleService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/service/impl/UserModuleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/service/impl/UserModuleServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/web/UserModuleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/web/UserModuleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resource-service/src/main/resources/logging-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/resource-service/src/main/resources/logging-config.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/eureka-server/target/" />
@@ -51,29 +57,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="UserMapper.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resource-service/src/main/resources/mappers/UserMapper.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
-              <caret line="25" column="24" selection-start-line="25" selection-start-column="24" selection-end-line="25" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ResourcesServiceApplication.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/ResourcesServiceApplication.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="139">
-              <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="UserModuleController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/web/UserModuleController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="47" column="53" lean-forward="true" selection-start-line="47" selection-start-column="53" selection-end-line="47" selection-end-column="53" />
+            <state relative-caret-position="-120">
+              <caret line="66" column="41" lean-forward="true" selection-start-line="66" selection-start-column="41" selection-end-line="66" selection-end-column="41" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="logging-config.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resource-service/src/main/resources/logging-config.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="12" column="27" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserModuleService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/service/UserModuleService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="560">
+              <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -81,61 +87,41 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="UserModuleServiceImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/service/impl/UserModuleServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="425">
+              <caret line="94" column="50" lean-forward="true" selection-start-line="94" selection-start-column="50" selection-end-line="94" selection-end-column="50" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="User.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/entity/User.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="220">
+              <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UpdateUserGroup.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/entity/userValidateGroup/UpdateUserGroup.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="40">
+              <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="AddUserGroup.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/entity/userValidateGroup/AddUserGroup.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="9" column="1" lean-forward="true" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ExceptionHandle.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/exception/ExceptionHandle.java">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file leaf-file-name="GlobalExceptionResolver.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/exception/GlobalExceptionResolver.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1413">
-              <caret line="115" column="4" selection-start-line="115" selection-start-column="4" selection-end-line="115" selection-end-column="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RetResult.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/core/ret/RetResult.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="55" column="24" selection-start-line="55" selection-start-column="24" selection-end-line="55" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RetCode.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/core/ret/RetCode.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="24" column="4" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ServiceException.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/exception/ServiceException.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="158">
-              <caret line="18" column="36" lean-forward="true" selection-start-line="18" selection-start-column="36" selection-end-line="18" selection-end-column="36" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserLoginException.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/exception/UserLoginException.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="134">
-              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+            <state relative-caret-position="60">
+              <caret line="3" column="26" lean-forward="true" selection-start-line="3" selection-end-line="4" />
             </state>
           </provider>
         </entry>
@@ -147,6 +133,7 @@
       <list>
         <option value="JUnit4 Test Class" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -175,7 +162,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/client/AuthServiceClient.java" />
         <option value="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/client/hystrix/AuthServiceHystrix.java" />
         <option value="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/dao/PermissionMapper.java" />
         <option value="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/dao/RoleMapper.java" />
@@ -199,7 +185,6 @@
         <option value="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/exception/ExceptionHandle.java" />
         <option value="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/web/user/userController.java" />
         <option value="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/entity/userValidateGroup/AddUserGroup.java" />
-        <option value="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/entity/User.java" />
         <option value="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/entity/JWT.java" />
         <option value="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/service/UserServiceDetail.java" />
         <option value="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/exception/ServiceException.java" />
@@ -209,9 +194,6 @@
         <option value="$PROJECT_DIR$/uaa-service/src/main/resources/application.yml" />
         <option value="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/dao/UserMapper.java" />
         <option value="$PROJECT_DIR$/resource-service/src/test/java/com/jnshu/resourcesservice/test/dao/UserMapperTest.java" />
-        <option value="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/service/UserModuleService.java" />
-        <option value="$PROJECT_DIR$/resource-service/src/main/resources/logging-config.xml" />
-        <option value="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/service/impl/UserModuleServiceImpl.java" />
         <option value="$PROJECT_DIR$/resource-service/src/test/java/com/jnshu/resourceservice/test/dao/UserMapperTest.java" />
         <option value="$PROJECT_DIR$/resource-service/src/test/java/com/jnshu/resourceservice/service/UserModuleServiceTest.java" />
         <option value="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/web/user/UserModuleController.java" />
@@ -224,8 +206,13 @@
         <option value="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/config/ResourceServerConfig.java" />
         <option value="$PROJECT_DIR$/uaa-service/src/main/resources/mappers/UserMapper.xml" />
         <option value="$PROJECT_DIR$/resource-service/src/main/resources/mappers/UserMapper.xml" />
-        <option value="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/web/UserModuleController.java" />
         <option value="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/exception/GlobalExceptionResolver.java" />
+        <option value="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/entity/userValidateGroup/UpdateUser.java" />
+        <option value="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/entity/User.java" />
+        <option value="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/service/UserModuleService.java" />
+        <option value="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/service/impl/UserModuleServiceImpl.java" />
+        <option value="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/web/UserModuleController.java" />
+        <option value="$PROJECT_DIR$/resource-service/src/main/resources/logging-config.xml" />
       </list>
     </option>
   </component>
@@ -268,10 +255,10 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-9" />
-    <option name="y" value="-9" />
-    <option name="width" value="1938" />
-    <option name="height" value="1048" />
+    <option name="x" value="-10" />
+    <option name="y" value="-10" />
+    <option name="width" value="1939" />
+    <option name="height" value="1049" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -282,6 +269,7 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -474,7 +462,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -665,7 +652,8 @@
       <workItem from="1544967907246" duration="27766000" />
       <workItem from="1545049769346" duration="1995000" />
       <workItem from="1545127805425" duration="6085000" />
-      <workItem from="1545185536160" duration="7551000" />
+      <workItem from="1545185536160" duration="8629000" />
+      <workItem from="1545208911267" duration="4873000" />
     </task>
     <task id="LOCAL-00001" summary="授权服务中心">
       <created>1544446554911</created>
@@ -807,7 +795,14 @@
       <option name="project" value="LOCAL" />
       <updated>1545195708646</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="update code(新增参数校验异常的处理)">
+      <created>1545196808975</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1545196808975</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -843,7 +838,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="115410000" />
+    <option name="totallyTimeSpent" value="121361000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -856,15 +851,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3288889" />
       <window_info anchor="bottom" id="FindBugs-IDEA" order="7" weight="0.32740742" />
-      <window_info anchor="bottom" id="Messages" order="8" weight="0.3288889" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info anchor="bottom" id="Java Enterprise" order="9" weight="0.3288889" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Run Dashboard" order="18" visible="true" weight="0.4325926" />
+      <window_info anchor="bottom" id="Run Dashboard" order="18" weight="0.4325926" />
       <window_info anchor="right" id="Maven Projects" order="3" weight="0.211126" />
       <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
       <window_info anchor="bottom" id="JRebel Executor" order="12" />
@@ -873,7 +866,7 @@
       <window_info anchor="bottom" id="Spring" order="14" weight="0.17481482" />
       <window_info anchor="bottom" id="Terminal" order="15" weight="0.3288889" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49925926" visible="true" weight="0.24597855" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49925926" visible="true" weight="0.24932976" />
       <window_info anchor="right" id="Bean Validation" order="3" weight="0.3297587" />
       <window_info id="JRebel" order="2" sideWeight="0.50074077" side_tool="true" weight="0.19839142" />
       <window_info anchor="bottom" id="Tail" order="16" />
@@ -881,6 +874,7 @@
       <window_info id="Structure" order="1" sideWeight="0.50074077" side_tool="true" weight="0.19839142" />
       <window_info id="Favorites" order="2" sideWeight="0.50074077" side_tool="true" weight="0.19839142" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3422222" />
+      <window_info anchor="bottom" id="Messages" order="8" weight="0.3288889" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Database Console" order="17" weight="0.35407406" />
@@ -892,8 +886,8 @@
     </layout>
     <layout-to-restore>
       <window_info anchor="bottom" id="FindBugs-IDEA" order="7" weight="0.32740742" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3422222" />
       <window_info id="Designer" order="2" />
-      <window_info anchor="bottom" id="Run Dashboard" order="18" weight="0.29185185" />
       <window_info anchor="bottom" id="Messages" order="8" weight="0.3288889" />
       <window_info id="JRebel" order="3" sideWeight="0.50074077" side_tool="true" weight="0.19839142" />
       <window_info anchor="bottom" id="Spring" order="14" weight="0.17481482" />
@@ -906,22 +900,22 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49925926" visible="true" weight="0.29088473" />
       <window_info anchor="bottom" id="Tail" order="16" />
       <window_info anchor="bottom" id="Java Enterprise" order="9" weight="0.3288889" />
       <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="13" weight="0.3748148" />
       <window_info anchor="right" id="Maven Projects" order="3" weight="0.211126" />
       <window_info anchor="bottom" id="JRebel Executor" order="12" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49925926" visible="true" weight="0.29088473" />
       <window_info anchor="right" id="Database" order="4" weight="0.20308311" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3288889" />
       <window_info anchor="right" id="Palette&#9;" order="5" />
       <window_info id="Structure" order="1" sideWeight="0.50074077" side_tool="true" weight="0.19839142" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3288889" />
       <window_info anchor="right" id="Bean Validation" order="6" weight="0.3297587" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3422222" />
+      <window_info anchor="bottom" id="Run Dashboard" order="18" weight="0.29185185" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -983,13 +977,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://D:/Program Files/Java/jdk1.8.0_181/src.zip!/java/lang/Throwable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="113" column="13" selection-start-line="113" selection-start-column="13" selection-end-line="113" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.m2/repository/org/springframework/spring-core/5.0.8.RELEASE/spring-core-5.0.8.RELEASE.jar!/org/springframework/util/Assert.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="86">
@@ -1047,13 +1034,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/service/UserModuleService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="13" column="9" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/dao/UserMapper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="218">
@@ -1068,27 +1048,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resource-service/src/main/resources/logging-config.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1340">
-          <caret line="67" column="13" lean-forward="true" selection-start-line="67" selection-start-column="13" selection-end-line="67" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resource-service/src/test/java/com/jnshu/resourceservice/test/dao/UserMapperTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
           <caret line="26" column="30" lean-forward="true" selection-start-line="26" selection-start-column="30" selection-end-line="26" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/service/impl/UserModuleServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="485">
-          <caret line="75" column="1" lean-forward="true" selection-start-line="75" selection-start-column="1" selection-end-line="75" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1146,13 +1109,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/entity/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="51" lean-forward="true" selection-start-line="51" selection-end-line="51" />
         </state>
       </provider>
     </entry>
@@ -1232,9 +1188,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-215">
           <caret line="48" column="61" lean-forward="true" selection-start-line="48" selection-start-column="61" selection-end-line="48" selection-end-column="61" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1259,6 +1212,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/exception/UserLoginException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/exception/ServiceException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="18" column="36" lean-forward="true" selection-start-line="18" selection-start-column="36" selection-end-line="18" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/ResourcesServiceApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resource-service/src/main/resources/mappers/UserMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="253">
@@ -1266,51 +1240,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/ResourcesServiceApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="139">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/web/UserModuleController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="47" column="53" lean-forward="true" selection-start-line="47" selection-start-column="53" selection-end-line="47" selection-end-column="53" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/entity/userValidateGroup/AddUserGroup.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="9" column="1" lean-forward="true" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/exception/ExceptionHandle.java">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/exception/UserLoginException.java">
+    <entry file="file://$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/exception/GlobalExceptionResolver.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="134">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/exception/ServiceException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="18" column="36" lean-forward="true" selection-start-line="18" selection-start-column="36" selection-end-line="18" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/core/ret/RetCode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="24" column="4" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="4" />
+        <state relative-caret-position="1740">
+          <caret line="98" column="4" selection-start-line="98" selection-start-column="4" selection-end-line="98" selection-end-column="4" />
         </state>
       </provider>
     </entry>
@@ -1321,10 +1257,65 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/exception/GlobalExceptionResolver.java">
+    <entry file="file://$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/core/ret/RetCode.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1413">
-          <caret line="115" column="4" selection-start-line="115" selection-start-column="4" selection-end-line="115" selection-end-column="4" />
+        <state relative-caret-position="147">
+          <caret line="24" column="4" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/entity/userValidateGroup/AddUserGroup.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="3" column="26" lean-forward="true" selection-start-line="3" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/entity/userValidateGroup/UpdateUserGroup.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="40">
+          <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/entity/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/service/impl/UserModuleServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="94" column="50" lean-forward="true" selection-start-line="94" selection-start-column="50" selection-end-line="94" selection-end-column="50" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/service/UserModuleService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="560">
+          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/web/UserModuleController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-120">
+          <caret line="66" column="41" lean-forward="true" selection-start-line="66" selection-start-column="41" selection-end-line="66" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resource-service/src/main/resources/logging-config.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="12" column="27" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
         </state>
       </provider>
     </entry>

@@ -24,6 +24,8 @@ public class User implements UserDetails, Serializable {
 	/**
 	 * @Fields 用户id
 	 */
+	@NotBlank
+	@Range(min = 1, message = "用户ID不在范围内", groups = UpdateUserGroup.class)
 	private Long id;
 
 	/**

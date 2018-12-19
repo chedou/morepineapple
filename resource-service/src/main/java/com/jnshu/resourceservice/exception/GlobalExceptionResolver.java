@@ -70,7 +70,7 @@ public class GlobalExceptionResolver {
 
 
 	/**
-	 * @Description 校验 除了 requestbody 注解方式的参数校验 对应的 bindingresult 为 BeanPropertyBindingResult
+	 * @Description 参数校验 除了 Requestbody 注解方式的参数校验 对应的 bindingresult 为 BeanPropertyBindingResult
 	 * @param [response, ex]
 	 * @return void
 	 * @author Mr.HUANG
@@ -96,6 +96,7 @@ public class GlobalExceptionResolver {
 		logger.error(e.getMessage(), e);
 		responseResult(response, result);
 	}
+
 	/**
 	 * @param response
 	 * @param result

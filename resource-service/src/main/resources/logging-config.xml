@@ -63,7 +63,7 @@
     <logger name="com.jnshu.resourceservice" additivity="false" level="info">
         <appender-ref ref="STDOUT"/>
     </logger>
-    <logger name="com.jnshu.backendSystem.web.fakeData" additivity="false" level="info">
+    <logger name="com.jnshu.resourceservice" additivity="false" level="info">
         <appender-ref ref="ASYNC"/>
     </logger>
 
