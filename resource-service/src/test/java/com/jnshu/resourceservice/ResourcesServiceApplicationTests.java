@@ -1,4 +1,4 @@
-package com.jnshu.resourcesservice;
+package com.jnshu.resourceservice;
 
 import com.jnshu.resourceservice.*;
 import org.junit.Test;

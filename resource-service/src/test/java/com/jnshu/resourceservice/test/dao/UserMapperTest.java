@@ -1,4 +1,4 @@
-package com.jnshu.resourcesservice.test.dao;
+package com.jnshu.resourceservice.test.dao;
 
 import com.jnshu.resourceservice.*;
 import com.jnshu.resourceservice.dao.*;
@@ -24,7 +24,7 @@ public class UserMapperTest {
 		logger.info("-------------------------");
 		logger.info("根据用户名测试获取单个角色权限关联信息");
 
-		User user = userMapper.findByUsername("cheodu");
+		User user = userMapper.findByUsername("海澜之家2");
 		System.out.println(user);
 		// System.out.println(user.toString());
 
@@ -44,7 +44,7 @@ public class UserMapperTest {
 		logger.info("-------------------------");
 		logger.info("根据用户名测试获取单个角色权限关联信息");
 
-		User user = userMapper.selectUserDetailById(1L);
+		User user = userMapper.selectUserDetailById(20L);
 		System.out.println(user);
 		// System.out.println(user.toString());
 
@@ -67,7 +67,7 @@ public class UserMapperTest {
 		user.setPassword("12awsdfewcfasdawd");
 		System.out.println(user.toString());
 		System.out.println(userMapper.insertSelective(user));
-		System.out.println(user.getId());
+		System.out.println("新增数据之后返回的id:" + user.getId());
 		logger.info("-------------------------");
 		System.out.println(userMapper);
 

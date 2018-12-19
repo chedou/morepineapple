@@ -11,6 +11,6 @@ import com.jnshu.resourceservice.entity.*;
  **/
 public interface UserModuleService {
 
-	Integer addUser(User user, JWT jwt);
+	void addUser(User user, JWT jwt);
 
 }

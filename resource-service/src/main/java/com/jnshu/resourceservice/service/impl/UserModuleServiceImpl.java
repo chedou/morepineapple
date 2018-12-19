@@ -8,7 +8,7 @@ import com.jnshu.resourceservice.utils.*;
 import org.slf4j.*;
 import org.springframework.beans.factory.annotation.*;
 import org.springframework.stereotype.*;
-
+import sun.security.ssl.*;
 
 
 /**
@@ -35,7 +35,7 @@ public class UserModuleServiceImpl implements UserModuleService {
 	 * @throws
 	 */
 	@Override
-	public Integer addUser(User newUser, JWT jwt){
+	public void addUser(User newUser, JWT jwt){
 
 		if (LOGGER.isDebugEnabled()){
 			LOGGER.debug("当前用户id是：{}，传入的参数是:{}，{}",
@@ -62,11 +62,15 @@ public class UserModuleServiceImpl implements UserModuleService {
 		// 将新增数据插入数据库
 		userMapper.insertSelective(newUser);
 		// 对插入数据库的数据的返回ID进行查询，判断是否成功
+
+		if (LOGGER.isDebugEnabled()){
+			LOGGER.debug("新增用户的ID为：{}",newUser.getId());
+		}
+
+		LOGGER.info("新增用户的ID为：{}",newUser.getId());
+		LOGGER.info( "新增用户是否存在" +  userMapper.selectUserDetailById(newUser.getId()));
 		if (null == userMapper.selectUserDetailById(newUser.getId())){
 			throw new ServiceException("数据插入失败，请查看日志");
 		}
-
-		return null;
-
 	}
 }

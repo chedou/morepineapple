@@ -4,6 +4,7 @@ import org.slf4j.*;
 import org.springframework.beans.factory.annotation.*;
 import org.springframework.context.annotation.*;
 import org.springframework.security.config.annotation.web.builders.*;
+import org.springframework.security.config.http.*;
 import org.springframework.security.oauth2.config.annotation.web.configuration.*;
 import org.springframework.security.oauth2.config.annotation.web.configurers.*;
 import org.springframework.security.oauth2.provider.token.*;
@@ -35,12 +36,23 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
     public void configure(HttpSecurity http) throws Exception {
         http
                 // 是否开启防止 csrf攻击策略，默认关闭
-                .csrf().disable()
-                // 请求认证侧裂
-                .authorizeRequests()
+                .csrf().disable().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+                // 请求认证策略
+                .and().authorizeRequests()
                 // 允许无需安全验证的URL
-                .antMatchers("/user/login","/user/register").permitAll()
-                .antMatchers("/**").authenticated();
+                .antMatchers("/user/login","/user/register","/swagger-ui.html").permitAll()
+                // swagger设置
+                .antMatchers("/swagger-resources/**").permitAll()
+                .antMatchers("/images/**").permitAll()
+                .antMatchers("/webjars/**").permitAll()
+                .antMatchers("/v2/api-docs").permitAll()
+                .antMatchers("/configuration/ui").permitAll()
+                .antMatchers("/configuration/security").permitAll()
+                // 结束swagger设置
+                // .antMatchers("/**").authenticated();
+                .anyRequest().authenticated();
+        http.headers().cacheControl();
+        http.csrf().disable();
     }
 
 
