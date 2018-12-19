@@ -2,11 +2,13 @@ package com.jnshu.resourceservice.web;
 
 import com.jnshu.resourceservice.core.ret.*;
 import com.jnshu.resourceservice.entity.*;
+import com.jnshu.resourceservice.entity.userValidateGroup.*;
 import com.jnshu.resourceservice.service.*;
 import io.swagger.annotations.*;
 import org.slf4j.*;
 import org.springframework.beans.factory.annotation.*;
 import org.springframework.security.access.prepost.*;
+import org.springframework.validation.annotation.*;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -37,8 +39,7 @@ public class UserModuleController {
 	@ApiOperation(value = "新增用户",  notes = "新增用户")
 	@PostMapping(value = "/user", produces = "application/json;charset=UTF-8")
 	@PreAuthorize("hasAuthority('RoleManageAll') AND hasAuthority('RoleManageAdd') ")
-	public RetResult<?> addUser(@RequestBody(required = true )User user,
-								JWT jwt) throws Exception{
+	public RetResult<?> addUser(@Validated({AddUserGroup.class}) User user, JWT jwt) throws Exception{
 
 		System.out.println(user.toString());
 

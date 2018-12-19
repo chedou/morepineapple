@@ -5,10 +5,13 @@ import com.alibaba.fastjson.serializer.*;
 import com.jnshu.resourceservice.core.ret.*;
 import org.slf4j.*;
 import org.springframework.http.*;
+import org.springframework.validation.*;
+import org.springframework.web.bind.*;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.*;
 import java.io.*;
+import java.util.*;
 
 /**
  * @program: morepineapple
@@ -45,6 +48,41 @@ public class GlobalExceptionResolver {
 	public void serviceExceptionHandler(HttpServletResponse response, ServiceException e) {
 		RetResult<Object> result = new RetResult<>();
 		result.setCode(RetCode.FAIL).setMsg(e.getMessage()).setData(null);
+		responseResult(response, result);
+	}
+
+	/**
+	 * @Description 参数校验异常的处理
+	 * @param [response, ex]
+	 * @return void
+	 * @author Mr.HUANG
+	 * @date 2018/12/19
+	 * @throws MethodArgumentNotValidException
+	 */
+	@ExceptionHandler(value = MethodArgumentNotValidException.class)
+	public void handleBindException(HttpServletResponse response, MethodArgumentNotValidException ex) {
+		RetResult<Object> result = new RetResult<>();
+		FieldError fieldError = ex.getBindingResult().getFieldError();
+		logger.info("参数校验异常:{}({})", fieldError.getDefaultMessage(),fieldError.getField());
+		result.setCode(RetCode.FAIL).setMsg(fieldError.getDefaultMessage()).setData(null);
+		responseResult(response, result);
+	}
+
+
+	/**
+	 * @Description 校验 除了 requestbody 注解方式的参数校验 对应的 bindingresult 为 BeanPropertyBindingResult
+	 * @param [response, ex]
+	 * @return void
+	 * @author Mr.HUANG
+	 * @date 2018/12/19
+	 * @throws BindException
+	 */
+	@ExceptionHandler(value = BindException.class)
+	public void handleBindException(HttpServletResponse response, BindException ex) {
+		RetResult<Object> result = new RetResult<>();
+		FieldError fieldError = ex.getBindingResult().getFieldError();
+		logger.info("必填校验异常:{}({})", fieldError.getDefaultMessage(),fieldError.getField());
+		result.setCode(RetCode.FAIL).setMsg(fieldError.getDefaultMessage()).setData(null);
 		responseResult(response, result);
 	}
 

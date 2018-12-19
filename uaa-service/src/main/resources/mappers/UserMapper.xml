@@ -192,7 +192,7 @@
     <!--根据用户ID查找用户信息-->
     <select id="selectUserDetailById" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     SELECT
-        u.id,
+       u.id,
         u.`name`,
         u.`password`,
         u.salt,
@@ -202,16 +202,25 @@
         u.gmt_update,
         u.create_by,
         u.update_by,
-        r.id,
+        r.id r_id,
         r.role_name,
         r.`status`,
-        p.permission_name
+        r.gmt_create r_gmt_create,
+        r.gmt_update r_gmt_update,
+        r.create_by r_create_by,
+        r.update_by r_update_by,
+        p.id p_id,
+        p.permission_name,
+        p.gmt_create p_gmt_create,
+        p.gmt_update p_gmt_update,
+        p.create_by p_create_by,
+        p.update_by p_update_by
     FROM
         `user` AS u
-    INNER JOIN user_role AS ur ON u.id = ur.user_id
-    INNER JOIN role AS r ON ur.role_id = r.id
-    INNER JOIN role_permission AS rp ON r.id = rp.role_id
-    INNER JOIN permission AS p ON rp.node_id = p.id
+    LEFT JOIN user_role AS ur ON u.id = ur.user_id
+    LEFT JOIN role AS r ON ur.role_id = r.id
+    LEFT JOIN role_permission AS rp ON r.id = rp.role_id
+    LEFT JOIN permission AS p ON rp.node_id = p.id
     WHERE
         u.id=#{id}
   </select>

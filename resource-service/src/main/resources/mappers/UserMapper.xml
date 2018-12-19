@@ -17,19 +17,20 @@
         <result column="update_by" property="updateBy"/>
         <result column="status" property="status"/>
         <collection property="roleList" ofType="com.jnshu.resourceservice.entity.Role" javaType="list" >
-            <result column="id" property="id"/>
+            <result column="r_id" property="id"/>
             <result column="role_name" property="roleName"/>
-            <result column="gmt_create" property="gmtCreate"/>
-            <result column="gmt_update" property="gmtUpdate"/>
-            <result column="create_by" property="createBy"/>
-            <result column="update_by" property="updateBy"/>
+            <result column="r_gmt_create" property="gmtCreate"/>
+            <result column="r_gmt_update" property="gmtUpdate"/>
+            <result column="r_create_by" property="createBy"/>
+            <result column="r_update_by" property="updateBy"/>
+            <!--嵌套权限信息-->
             <collection property="permissionsList" ofType="com.jnshu.resourceservice.entity.Permission" javaType="list">
-                <result column="id" property="id"/>
+                <result column="p_id" property="id"/>
                 <result column="permission_name"  property="permissionName"/>
-                <result column="gmt_create" property="gmtCreate"/>
-                <result column="gmt_update" property="gmtUpdate"/>
-                <result column="create_by" property="createBy"/>
-                <result column="update_by" property="updateBy"/>
+                <result column="p_gmt_create" property="gmtCreate"/>
+                <result column="p_gmt_update" property="gmtUpdate"/>
+                <result column="p_create_by" property="createBy"/>
+                <result column="p_update_by" property="updateBy"/>
             </collection>
         </collection>
     </resultMap>
@@ -194,7 +195,7 @@
 
     <select id="selectUserDetailById" parameterType="java.lang.Long" resultMap="BaseResultMap">
     SELECT
-        u.id,
+       u.id,
         u.`name`,
         u.`password`,
         u.salt,
@@ -204,10 +205,19 @@
         u.gmt_update,
         u.create_by,
         u.update_by,
-        r.id,
+        r.id r_id,
         r.role_name,
         r.`status`,
-        p.permission_name
+        r.gmt_create r_gmt_create,
+        r.gmt_update r_gmt_update,
+        r.create_by r_create_by,
+        r.update_by r_update_by,
+        p.id p_id,
+        p.permission_name,
+        p.gmt_create p_gmt_create,
+        p.gmt_update p_gmt_update,
+        p.create_by p_create_by,
+        p.update_by p_update_by
     FROM
         `user` AS u
     LEFT JOIN user_role AS ur ON u.id = ur.user_id
@@ -219,7 +229,7 @@
   </select>
 
     <select id="findByUsername" parameterType="String" resultMap="BaseResultMap">
-    SELECT
+   SELECT
         u.id,
         u.`name`,
         u.`password`,
@@ -230,10 +240,19 @@
         u.gmt_update,
         u.create_by,
         u.update_by,
-        r.id,
+        r.id r_id,
         r.role_name,
         r.`status`,
-        p.permission_name
+        r.gmt_create r_gmt_create,
+        r.gmt_update r_gmt_update,
+        r.create_by r_create_by,
+        r.update_by r_update_by,
+        p.id p_id,
+        p.permission_name,
+        p.gmt_create p_gmt_create,
+        p.gmt_update p_gmt_update,
+        p.create_by p_create_by,
+        p.update_by p_update_by
     FROM
         `user` AS u
     LEFT JOIN user_role AS ur ON u.id = ur.user_id
