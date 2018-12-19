@@ -64,7 +64,7 @@ public class GlobalExceptionResolver {
 		RetResult<Object> result = new RetResult<>();
 		FieldError fieldError = ex.getBindingResult().getFieldError();
 		logger.info("参数校验异常:{}({})", fieldError.getDefaultMessage(),fieldError.getField());
-		result.setCode(RetCode.FAIL).setMsg(fieldError.getDefaultMessage()).setData(null);
+		result.setCode(RetCode.FAIL).setMsg(fieldError.getDefaultMessage());
 		responseResult(response, result);
 	}
 
@@ -82,7 +82,7 @@ public class GlobalExceptionResolver {
 		RetResult<Object> result = new RetResult<>();
 		FieldError fieldError = ex.getBindingResult().getFieldError();
 		logger.info("必填校验异常:{}({})", fieldError.getDefaultMessage(),fieldError.getField());
-		result.setCode(RetCode.FAIL).setMsg(fieldError.getDefaultMessage()).setData(null);
+		result.setCode(RetCode.FAIL).setMsg(fieldError.getDefaultMessage());
 		responseResult(response, result);
 	}
 
@@ -113,7 +113,6 @@ public class GlobalExceptionResolver {
 			logger.error(ex.getMessage());
 		}
 	}
-
 
 }
 
