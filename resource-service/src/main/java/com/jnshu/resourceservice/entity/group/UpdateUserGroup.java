@@ -1,4 +1,4 @@
-package com.jnshu.resourceservice.entity.userValidateGroup;
+package com.jnshu.resourceservice.entity.group;
 /**
  * @program: morepineapple
  * @Description 用户管理-用户信息修改-参数校验

@@ -1,4 +1,4 @@
-package com.jnshu.resourceservice.entity.userValidateGroup;
+package com.jnshu.resourceservice.entity.group;
 
 /**
  * @program: morepineapple

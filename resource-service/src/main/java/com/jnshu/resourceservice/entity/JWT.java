@@ -1,7 +1,10 @@
 package com.jnshu.resourceservice.entity;
 
 import com.fasterxml.jackson.databind.annotation.*;
+import com.jnshu.resourceservice.entity.group.*;
+import org.hibernate.validator.constraints.*;
 
+import javax.validation.constraints.NotBlank;
 import java.io.*;
 
 /**
@@ -21,6 +24,8 @@ public class JWT implements Serializable {
 	private String scope;
 	private String jti;
 
+	@NotBlank
+	@Range(min = 1, message = "用户ID不在范围内", groups = UpdateUserGroup.class)
 	private Long userID;
 
 

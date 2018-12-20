@@ -1,7 +1,7 @@
 package com.jnshu.resourceservice.entity;
 
 import com.fasterxml.jackson.databind.annotation.*;
-import com.jnshu.resourceservice.entity.userValidateGroup.*;
+import com.jnshu.resourceservice.entity.group.*;
 import org.hibernate.validator.constraints.*;
 import org.springframework.security.core.*;
 import org.springframework.security.core.userdetails.*;
@@ -25,7 +25,7 @@ public class User implements UserDetails, Serializable {
 	 * @Fields 用户id
 	 */
 	@NotBlank
-	@Range(min = 1, message = "用户ID不在范围内", groups = UpdateUserGroup.class)
+	@Range(min = 1, message = "用户ID不在范围内", groups = JWTOperatingGroup.class)
 	private Long id;
 
 	/**
@@ -78,7 +78,7 @@ public class User implements UserDetails, Serializable {
 	private String updateBy;
 
 	/**
-	 * @Fields 用户有效状态
+	 * @Fields 用户有效状态，0为冻结，1为可使用
 	 */
 	private Integer status;
 
