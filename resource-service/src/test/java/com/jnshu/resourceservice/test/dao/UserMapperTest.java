@@ -11,6 +11,8 @@ import org.springframework.beans.factory.annotation.*;
 import org.springframework.boot.test.context.*;
 import org.springframework.test.context.junit4.*;
 
+import java.util.*;
+
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = ResourcesServiceApplication.class)
 public class UserMapperTest {
@@ -75,5 +77,16 @@ public class UserMapperTest {
 
 	}
 
+	@Test
+	public void selectAll(){
+		logger.info("-------------------------");
+		logger.info("查询全部有效数据");
+		List<User> userList = new ArrayList<>();
+
+		userList = userMapper.selectAll();
+		System.out.println(userList.toString());
+		logger.info("-------------------------");
+
+	}
 
 }

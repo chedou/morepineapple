@@ -1,5 +1,6 @@
 package com.jnshu.resourceservice.service.impl;
 
+import com.github.pagehelper.*;
 import com.jnshu.resourceservice.dao.*;
 import com.jnshu.resourceservice.entity.*;
 import com.jnshu.resourceservice.exception.*;
@@ -159,12 +160,17 @@ public class UserModuleServiceImpl implements UserModuleService {
 		}
 
 		// 判断需要查询的用户状态是否有效，status 有效值为:1
-		// if (0 == )
+		User returnUser = userMapper.selectUserDetailById(targetUserId);
+		if (null == returnUser || 0 == returnUser.getStatus()){
+			LOGGER.debug("查询得到的用户的姓名：{}，目标用户的ID：{}",returnUser,returnUser.getStatus());
+			throw new ServiceException("用户数据失效，请查看服务器日志!");
+		}
 
+		return returnUser;
+	}
 
-
-
-
+	@Override
+	public PageInfo<User> selectAll(Integer page, Integer size) {
 		return null;
 	}
 }

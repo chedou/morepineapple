@@ -11,6 +11,8 @@ import org.springframework.security.access.prepost.*;
 import org.springframework.validation.annotation.*;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.*;
+
 /**
  * @description: 用户管理模块
  * @author: Mr.huang
@@ -109,7 +111,7 @@ public class UserModuleController {
 	 * @date 2018/12/20
 	 * @throws
 	 */
-	@ApiOperation(value = "deleteUser",  notes = "更改用户")
+	@ApiOperation(value = "selectUser",  notes = "查询用户")
 	@PostMapping(value = "/user/{targetUserId}", produces = "application/json;charset=UTF-8")
 	@PreAuthorize("hasAuthority('RoleManageAll')")
 	public RetResult<?> selectUser(@PathVariable Long targetUserId) throws Exception{
@@ -119,13 +121,20 @@ public class UserModuleController {
 			logger.debug("需要查询的用户ID:{}", targetUserId);
 		}
 
-
-		return RetResponse.result(RetCode.SUCCESS_USER_LIST_GET);
+		Map<String,Object> returnDate =new HashMap<>();
+		returnDate.put("user",userModuleService.select(targetUserId));
+		return RetResponse.result(RetCode.SUCCESS_USER_LIST_GET).setData(returnDate);
 	}
 
 
 	//TODO: 用户管理-账号列表
 
+	public RetResult<?> seleceUserList()throws Exception{
+
+
+		return RetResponse.result(RetCode.SUCCESS_USER_LIST_GET).setData();
+
+	}
 	}
 
 

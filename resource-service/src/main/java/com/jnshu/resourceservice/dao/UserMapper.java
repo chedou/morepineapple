@@ -1,9 +1,11 @@
 package com.jnshu.resourceservice.dao;
 
+import com.github.pagehelper.*;
 import com.jnshu.resourceservice.entity.*;
 import org.apache.ibatis.annotations.*;
 
 import java.sql.*;
+import java.util.*;
 
 /**
  * @description  用户信息持久层
@@ -35,5 +37,7 @@ public interface UserMapper {
     User selectUserDetailById(Long id);
 
     User findByUsername(String username);
+
+    List<User> selectAll();
 
 }

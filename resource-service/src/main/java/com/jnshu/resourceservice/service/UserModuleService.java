@@ -1,5 +1,6 @@
 package com.jnshu.resourceservice.service;
 
+import com.github.pagehelper.*;
 import com.jnshu.resourceservice.entity.*;
 
 /**
@@ -50,4 +51,7 @@ public interface UserModuleService {
 	 */
 	User select(Long targetUserId);
 
+
+
+	PageInfo<User> selectAll(Integer page, Integer size);
 }
