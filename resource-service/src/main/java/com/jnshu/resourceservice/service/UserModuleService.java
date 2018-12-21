@@ -1,7 +1,8 @@
 package com.jnshu.resourceservice.service;
 
-import com.github.pagehelper.*;
+import com.jnshu.resourceservice.dto.*;
 import com.jnshu.resourceservice.entity.*;
+import com.jnshu.resourceservice.utils.pageutil.*;
 
 /**
  * @program: morepineapple
@@ -44,14 +45,21 @@ public interface UserModuleService {
 	/**
 	 * @Description 用户管理-获取单个用户信息
 	 * @param [targetUserId]
-	 * @return com.jnshu.resourceservice.entity.User
+	 * @return com.jnshu.resourceservice.dto.UserModuleDTO
 	 * @author Mr.HUANG
 	 * @date 2018/12/20
 	 * @throws
 	 */
-	User select(Long targetUserId);
+	UserModuleDTO select(Long targetUserId);
 
 
-
-	PageInfo<User> selectAll(Integer page, Integer size);
+	/**
+	 * @Description
+	 * @param [page, size]
+	 * @return com.jnshu.resourceservice.dto.UserModuleDTO
+	 * @author Mr.HUANG
+	 * @date 2018/12/21
+	 * @throws
+	 */
+	UserModuleDTO selectAll(PageUtil pageUtil);
 }

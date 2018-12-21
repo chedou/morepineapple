@@ -25,7 +25,6 @@ public class GlobalExceptionResolver {
 
 	private final Logger logger = LoggerFactory.getLogger(GlobalExceptionResolver.class);
 
-
 	/**
 	 * @Description 用户登录验证异常统一处理
 	 * @param [e]

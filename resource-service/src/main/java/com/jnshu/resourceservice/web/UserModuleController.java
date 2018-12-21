@@ -4,14 +4,13 @@ import com.jnshu.resourceservice.core.ret.*;
 import com.jnshu.resourceservice.entity.*;
 import com.jnshu.resourceservice.entity.group.*;
 import com.jnshu.resourceservice.service.*;
+import com.jnshu.resourceservice.utils.pageutil.*;
 import io.swagger.annotations.*;
 import org.slf4j.*;
 import org.springframework.beans.factory.annotation.*;
 import org.springframework.security.access.prepost.*;
 import org.springframework.validation.annotation.*;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.*;
 
 /**
  * @description: 用户管理模块
@@ -121,21 +120,36 @@ public class UserModuleController {
 			logger.debug("需要查询的用户ID:{}", targetUserId);
 		}
 
-		Map<String,Object> returnDate =new HashMap<>();
-		returnDate.put("user",userModuleService.select(targetUserId));
-		return RetResponse.result(RetCode.SUCCESS_USER_LIST_GET).setData(returnDate);
+		return RetResponse.result(RetCode.SUCCESS_USER_LIST_GET)
+				.setData(userModuleService.select(targetUserId));
 	}
 
 
 	//TODO: 用户管理-账号列表
+	/**
+	 * @Description 用户管理-获取用户列表
+	 * @param [pageUtil]
+	 * @return com.jnshu.resourceservice.core.ret.RetResult<?>
+	 * @author Mr.HUANG
+	 * @date 2018/12/21
+	 * @throws Exception
+	 */
+	@ApiOperation(value = "seleceUserList",  notes = "查询用户")
+	@PostMapping(value = "/user/list", produces = "application/json;charset=UTF-8")
+	@PreAuthorize("hasAuthority('RoleManageAll')")
+	public RetResult<?> seleceUserList(@Validated({PageUtilGroup.class}) PageUtil pageUtil)throws Exception{
 
-	public RetResult<?> seleceUserList()throws Exception{
+		if (logger.isDebugEnabled()){
+			logger.debug("----UserModuleController----seleceUserList-----");
+			logger.debug("分页参数为:{}", pageUtil.toString());
+		}
 
-
-		return RetResponse.result(RetCode.SUCCESS_USER_LIST_GET).setData();
+		return RetResponse.result(RetCode.SUCCESS_USER_LIST_GET)
+				.setData(userModuleService.selectAll(pageUtil));
 
 	}
-	}
+
+}
 
 
 
