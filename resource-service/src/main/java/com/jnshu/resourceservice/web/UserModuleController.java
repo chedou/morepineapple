@@ -143,10 +143,8 @@ public class UserModuleController {
 			logger.debug("----UserModuleController----seleceUserList-----");
 			logger.debug("分页参数为:{}", pageUtil.toString());
 		}
-
 		return RetResponse.result(RetCode.SUCCESS_USER_LIST_GET)
 				.setData(userModuleService.selectAll(pageUtil));
-
 	}
 
 }

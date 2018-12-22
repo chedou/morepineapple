@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="459c7217-bae0-492e-8e67-fd6eac85e2ae" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/web/RoleModuleController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/exception/GlobalExceptionResolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/exception/GlobalExceptionResolver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/service/UserModuleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/service/UserModuleService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/service/impl/UserModuleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/service/impl/UserModuleServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/utils/PageUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/utils/pageutil/PageUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/web/UserModuleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/web/UserModuleController.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
@@ -55,11 +52,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="UserModuleController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="UserModuleController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/web/UserModuleController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="449">
-              <caret line="149" column="5" lean-forward="true" selection-start-line="149" selection-start-column="5" selection-end-line="149" selection-end-column="5" />
+            <state relative-caret-position="260">
+              <caret line="23" column="33" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RoleModuleController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/web/RoleModuleController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="200">
+              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
             </state>
           </provider>
         </entry>
@@ -67,8 +73,8 @@
       <file leaf-file-name="UserModuleService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/service/UserModuleService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="445">
-              <caret line="62" column="7" lean-forward="true" selection-start-line="62" selection-start-column="7" selection-end-line="62" selection-end-column="7" />
+            <state relative-caret-position="1200">
+              <caret line="62" column="7" selection-start-line="62" selection-start-column="7" selection-end-line="62" selection-end-column="7" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -79,7 +85,7 @@
       <file leaf-file-name="UserModuleServiceImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/service/impl/UserModuleServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-675">
+            <state relative-caret-position="2440">
               <caret line="134" column="91" selection-start-line="134" selection-start-column="91" selection-end-line="134" selection-end-column="91" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -91,8 +97,8 @@
       <file leaf-file-name="PageUtil.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/utils/pageutil/PageUtil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="205">
-              <caret line="42" column="5" lean-forward="true" selection-start-line="42" selection-start-column="5" selection-end-line="42" selection-end-column="5" />
+            <state relative-caret-position="580">
+              <caret line="42" column="5" selection-start-line="42" selection-start-column="5" selection-end-line="42" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -103,12 +109,8 @@
       <file leaf-file-name="PageSerializable.class" pinned="false" current-in-tab="false">
         <entry file="jar://$MAVEN_REPOSITORY$/com/github/pagehelper/pagehelper/5.1.4/pagehelper-5.1.4.jar!/com/github/pagehelper/PageSerializable.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="329">
+            <state relative-caret-position="520">
               <caret line="32" column="16" selection-start-line="32" selection-start-column="16" selection-end-line="32" selection-end-column="16" />
-              <folding>
-                <element signature="e#770#771#0" expanded="true" />
-                <element signature="e#803#804#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -116,14 +118,10 @@
       <file leaf-file-name="UserModuleDTO.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/dto/UserModuleDTO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="63" column="20" lean-forward="true" selection-start-line="63" selection-start-column="20" selection-end-line="63" selection-end-column="20" />
+            <state relative-caret-position="880">
+              <caret line="63" column="20" selection-start-line="63" selection-start-column="20" selection-end-line="63" selection-end-column="20" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#430#431#0" expanded="true" />
-                <element signature="e#452#453#0" expanded="true" />
-                <element signature="e#499#500#0" expanded="true" />
-                <element signature="e#530#531#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -135,8 +133,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JUnit4 Test Class" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -260,10 +258,10 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-9" />
-    <option name="y" value="-9" />
-    <option name="width" value="1938" />
-    <option name="height" value="1048" />
+    <option name="x" value="-10" />
+    <option name="y" value="-10" />
+    <option name="width" value="1939" />
+    <option name="height" value="1049" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -273,6 +271,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -358,129 +357,6 @@
               <item name="com" type="462c0819:PsiDirectoryNode" />
               <item name="jnshu" type="462c0819:PsiDirectoryNode" />
               <item name="resourceservice" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="morepineapple" type="b2602c69:ProjectViewProjectNode" />
-              <item name="morepineapple" type="462c0819:PsiDirectoryNode" />
-              <item name="resource-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="jnshu" type="462c0819:PsiDirectoryNode" />
-              <item name="resourceservice" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="morepineapple" type="b2602c69:ProjectViewProjectNode" />
-              <item name="morepineapple" type="462c0819:PsiDirectoryNode" />
-              <item name="resource-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="jnshu" type="462c0819:PsiDirectoryNode" />
-              <item name="resourceservice" type="462c0819:PsiDirectoryNode" />
-              <item name="dto" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="morepineapple" type="b2602c69:ProjectViewProjectNode" />
-              <item name="morepineapple" type="462c0819:PsiDirectoryNode" />
-              <item name="resource-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="jnshu" type="462c0819:PsiDirectoryNode" />
-              <item name="resourceservice" type="462c0819:PsiDirectoryNode" />
-              <item name="entity" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="morepineapple" type="b2602c69:ProjectViewProjectNode" />
-              <item name="morepineapple" type="462c0819:PsiDirectoryNode" />
-              <item name="resource-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="jnshu" type="462c0819:PsiDirectoryNode" />
-              <item name="resourceservice" type="462c0819:PsiDirectoryNode" />
-              <item name="entity" type="462c0819:PsiDirectoryNode" />
-              <item name="group" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="morepineapple" type="b2602c69:ProjectViewProjectNode" />
-              <item name="morepineapple" type="462c0819:PsiDirectoryNode" />
-              <item name="resource-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="jnshu" type="462c0819:PsiDirectoryNode" />
-              <item name="resourceservice" type="462c0819:PsiDirectoryNode" />
-              <item name="exception" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="morepineapple" type="b2602c69:ProjectViewProjectNode" />
-              <item name="morepineapple" type="462c0819:PsiDirectoryNode" />
-              <item name="resource-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="jnshu" type="462c0819:PsiDirectoryNode" />
-              <item name="resourceservice" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="morepineapple" type="b2602c69:ProjectViewProjectNode" />
-              <item name="morepineapple" type="462c0819:PsiDirectoryNode" />
-              <item name="resource-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="jnshu" type="462c0819:PsiDirectoryNode" />
-              <item name="resourceservice" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="impl" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="morepineapple" type="b2602c69:ProjectViewProjectNode" />
-              <item name="morepineapple" type="462c0819:PsiDirectoryNode" />
-              <item name="resource-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="jnshu" type="462c0819:PsiDirectoryNode" />
-              <item name="resourceservice" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="morepineapple" type="b2602c69:ProjectViewProjectNode" />
-              <item name="morepineapple" type="462c0819:PsiDirectoryNode" />
-              <item name="resource-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="jnshu" type="462c0819:PsiDirectoryNode" />
-              <item name="resourceservice" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
-              <item name="pageutil" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="morepineapple" type="b2602c69:ProjectViewProjectNode" />
-              <item name="morepineapple" type="462c0819:PsiDirectoryNode" />
-              <item name="resource-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="jnshu" type="462c0819:PsiDirectoryNode" />
-              <item name="resourceservice" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -500,198 +376,11 @@
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="mappers" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="morepineapple" type="b2602c69:ProjectViewProjectNode" />
-              <item name="morepineapple" type="462c0819:PsiDirectoryNode" />
-              <item name="resource-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="morepineapple" type="b2602c69:ProjectViewProjectNode" />
-              <item name="morepineapple" type="462c0819:PsiDirectoryNode" />
-              <item name="resource-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="morepineapple" type="b2602c69:ProjectViewProjectNode" />
-              <item name="morepineapple" type="462c0819:PsiDirectoryNode" />
-              <item name="resource-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="morepineapple" type="b2602c69:ProjectViewProjectNode" />
-              <item name="morepineapple" type="462c0819:PsiDirectoryNode" />
-              <item name="resource-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="jnshu" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="morepineapple" type="b2602c69:ProjectViewProjectNode" />
-              <item name="morepineapple" type="462c0819:PsiDirectoryNode" />
-              <item name="resource-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="jnshu" type="462c0819:PsiDirectoryNode" />
-              <item name="resourceservice" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="morepineapple" type="b2602c69:ProjectViewProjectNode" />
-              <item name="morepineapple" type="462c0819:PsiDirectoryNode" />
-              <item name="resource-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="jnshu" type="462c0819:PsiDirectoryNode" />
-              <item name="resourceservice" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="morepineapple" type="b2602c69:ProjectViewProjectNode" />
-              <item name="morepineapple" type="462c0819:PsiDirectoryNode" />
-              <item name="resource-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="jnshu" type="462c0819:PsiDirectoryNode" />
-              <item name="resourceservice" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="morepineapple" type="b2602c69:ProjectViewProjectNode" />
-              <item name="morepineapple" type="462c0819:PsiDirectoryNode" />
-              <item name="resource-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="jnshu" type="462c0819:PsiDirectoryNode" />
-              <item name="resourceservice" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="morepineapple" type="b2602c69:ProjectViewProjectNode" />
-              <item name="morepineapple" type="462c0819:PsiDirectoryNode" />
-              <item name="uaa-service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="morepineapple" type="b2602c69:ProjectViewProjectNode" />
-              <item name="morepineapple" type="462c0819:PsiDirectoryNode" />
-              <item name="uaa-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="morepineapple" type="b2602c69:ProjectViewProjectNode" />
-              <item name="morepineapple" type="462c0819:PsiDirectoryNode" />
-              <item name="uaa-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="morepineapple" type="b2602c69:ProjectViewProjectNode" />
-              <item name="morepineapple" type="462c0819:PsiDirectoryNode" />
-              <item name="uaa-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="morepineapple" type="b2602c69:ProjectViewProjectNode" />
-              <item name="morepineapple" type="462c0819:PsiDirectoryNode" />
-              <item name="uaa-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="mappers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="morepineapple" type="b2602c69:ProjectViewProjectNode" />
-              <item name="morepineapple" type="462c0819:PsiDirectoryNode" />
-              <item name="uaa-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="morepineapple" type="b2602c69:ProjectViewProjectNode" />
-              <item name="morepineapple" type="462c0819:PsiDirectoryNode" />
-              <item name="uaa-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="morepineapple" type="b2602c69:ProjectViewProjectNode" />
-              <item name="morepineapple" type="462c0819:PsiDirectoryNode" />
-              <item name="uaa-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="morepineapple" type="b2602c69:ProjectViewProjectNode" />
-              <item name="morepineapple" type="462c0819:PsiDirectoryNode" />
-              <item name="uaa-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="jnshu" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="morepineapple" type="b2602c69:ProjectViewProjectNode" />
-              <item name="morepineapple" type="462c0819:PsiDirectoryNode" />
-              <item name="uaa-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="jnshu" type="462c0819:PsiDirectoryNode" />
-              <item name="uaaservice" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="morepineapple" type="b2602c69:ProjectViewProjectNode" />
-              <item name="morepineapple" type="462c0819:PsiDirectoryNode" />
-              <item name="uaa-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="jnshu" type="462c0819:PsiDirectoryNode" />
-              <item name="uaaservice" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="morepineapple" type="b2602c69:ProjectViewProjectNode" />
-              <item name="morepineapple" type="462c0819:PsiDirectoryNode" />
-              <item name="uaa-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="jnshu" type="462c0819:PsiDirectoryNode" />
-              <item name="uaaservice" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -704,7 +393,7 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="database.console.LAST_STATE" value="false" />
-    <property name="last_opened_file_path" value="D:/pttengtext/复盘/morepineapple/morepineapple" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -886,7 +575,8 @@
       <workItem from="1545208911267" duration="8146000" />
       <workItem from="1545267187004" duration="15519000" />
       <workItem from="1545316025155" duration="951000" />
-      <workItem from="1545353219150" duration="5300000" />
+      <workItem from="1545353219150" duration="5721000" />
+      <workItem from="1545473449280" duration="1510000" />
     </task>
     <task id="LOCAL-00001" summary="授权服务中心">
       <created>1544446554911</created>
@@ -1056,7 +746,14 @@
       <option name="project" value="LOCAL" />
       <updated>1545316917199</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="update code">
+      <created>1545359430852</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1545359430852</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1092,7 +789,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="146404000" />
+    <option name="totallyTimeSpent" value="148335000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1105,7 +802,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" weight="0.13777778" />
       <window_info anchor="bottom" id="FindBugs-IDEA" order="7" weight="0.32740742" />
@@ -1121,7 +817,7 @@
       <window_info anchor="bottom" id="Spring" order="14" weight="0.17481482" />
       <window_info anchor="bottom" id="Terminal" order="15" weight="0.3288889" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49925926" visible="true" weight="0.25938338" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49925926" visible="true" weight="0.2627346" />
       <window_info anchor="right" id="Bean Validation" order="3" weight="0.3297587" />
       <window_info id="JRebel" order="2" sideWeight="0.50074077" side_tool="true" weight="0.19839142" />
       <window_info anchor="bottom" id="Tail" order="16" />
@@ -1133,16 +829,16 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Database Console" order="17" weight="0.35407406" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3288889" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3288889" />
     </layout>
     <layout-to-restore>
       <window_info anchor="bottom" id="FindBugs-IDEA" order="7" weight="0.32740742" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3422222" />
       <window_info id="Designer" order="2" />
-      <window_info anchor="bottom" id="Run Dashboard" order="18" weight="0.15703703" />
       <window_info active="true" anchor="bottom" id="Messages" order="8" visible="true" weight="0.3288889" />
       <window_info id="JRebel" order="3" sideWeight="0.50074077" side_tool="true" weight="0.19839142" />
       <window_info anchor="bottom" id="Spring" order="14" weight="0.17481482" />
@@ -1155,22 +851,22 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49925926" weight="0.25603217" />
       <window_info anchor="bottom" id="Tail" order="16" />
       <window_info anchor="bottom" id="Java Enterprise" order="9" weight="0.3288889" />
       <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="13" weight="0.3748148" />
       <window_info anchor="right" id="Maven Projects" order="3" weight="0.211126" />
       <window_info anchor="bottom" id="JRebel Executor" order="12" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49925926" weight="0.25603217" />
       <window_info anchor="right" id="Database" order="4" weight="0.20308311" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.13777778" />
       <window_info anchor="right" id="Palette&#9;" order="5" />
       <window_info id="Structure" order="1" sideWeight="0.50074077" side_tool="true" weight="0.19839142" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3288889" />
       <window_info anchor="right" id="Bean Validation" order="6" weight="0.3297587" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3422222" />
+      <window_info anchor="bottom" id="Run Dashboard" order="18" weight="0.15703703" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1232,13 +928,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$USER_HOME$/.m2/repository/com/alibaba/fastjson/1.2.22/fastjson-1.2.22.jar!/com/alibaba/fastjson/parser/deserializer/JavaBeanDeserializer.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="347" selection-start-line="347" selection-end-line="347" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.m2/repository/org/springframework/spring-webmvc/5.0.8.RELEASE/spring-webmvc-5.0.8.RELEASE.jar!/org/springframework/web/servlet/mvc/method/annotation/RequestResponseBodyMethodProcessor.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-413">
@@ -1458,11 +1147,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
           <caret line="18" column="45" lean-forward="true" selection-start-line="18" selection-start-column="45" selection-end-line="18" selection-end-column="45" />
-          <folding>
-            <element signature="e#425#426#0" expanded="true" />
-            <element signature="e#487#488#0" expanded="true" />
-            <element signature="e#515#516#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1477,10 +1161,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-360">
           <caret line="40" column="20" lean-forward="true" selection-start-line="40" selection-start-column="20" selection-end-line="40" selection-end-column="20" />
-          <folding>
-            <element signature="e#919#920#0" expanded="true" />
-            <element signature="e#948#949#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1542,8 +1222,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/service/UserModuleService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="445">
-          <caret line="62" column="7" lean-forward="true" selection-start-line="62" selection-start-column="7" selection-end-line="62" selection-end-column="7" />
+        <state relative-caret-position="1200">
+          <caret line="62" column="7" selection-start-line="62" selection-start-column="7" selection-end-line="62" selection-end-column="7" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1552,19 +1232,15 @@
     </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/com/github/pagehelper/pagehelper/5.1.4/pagehelper-5.1.4.jar!/com/github/pagehelper/PageSerializable.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
+        <state relative-caret-position="520">
           <caret line="32" column="16" selection-start-line="32" selection-start-column="16" selection-end-line="32" selection-end-column="16" />
-          <folding>
-            <element signature="e#770#771#0" expanded="true" />
-            <element signature="e#803#804#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/utils/pageutil/PageUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="42" column="5" lean-forward="true" selection-start-line="42" selection-start-column="5" selection-end-line="42" selection-end-column="5" />
+        <state relative-caret-position="580">
+          <caret line="42" column="5" selection-start-line="42" selection-start-column="5" selection-end-line="42" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1573,21 +1249,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/dto/UserModuleDTO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="63" column="20" lean-forward="true" selection-start-line="63" selection-start-column="20" selection-end-line="63" selection-end-column="20" />
+        <state relative-caret-position="880">
+          <caret line="63" column="20" selection-start-line="63" selection-start-column="20" selection-end-line="63" selection-end-column="20" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#430#431#0" expanded="true" />
-            <element signature="e#452#453#0" expanded="true" />
-            <element signature="e#499#500#0" expanded="true" />
-            <element signature="e#530#531#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/service/impl/UserModuleServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-675">
+        <state relative-caret-position="2440">
           <caret line="134" column="91" selection-start-line="134" selection-start-column="91" selection-end-line="134" selection-end-column="91" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1597,8 +1269,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/web/UserModuleController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="449">
-          <caret line="149" column="5" lean-forward="true" selection-start-line="149" selection-start-column="5" selection-end-line="149" selection-end-column="5" />
+        <state relative-caret-position="260">
+          <caret line="23" column="33" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/web/RoleModuleController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
         </state>
       </provider>
     </entry>
