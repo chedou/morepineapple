@@ -20,7 +20,7 @@ public interface UserModuleService {
 	 * @date 2018/12/17
 	 * @throws
 	 */
-	void addUser(User newuUser, JWT jwt);
+	void addUser(User newUser, JWT jwt);
 
 	/**
 	 * @Description 用户管理-修改个人信息

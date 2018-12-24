@@ -3,7 +3,6 @@ package com.jnshu.resourceservice.utils.pageutil;
 import org.codehaus.jackson.map.annotate.*;
 import org.hibernate.validator.constraints.*;
 
-import javax.validation.constraints.*;
 import javax.validation.constraints.NotBlank;
 import java.io.*;
 

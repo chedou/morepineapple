@@ -23,4 +23,7 @@ public interface RoleMapper {
     int updateByPrimaryKey(Role record);
 
     Role selectRolePermissionById(Integer id);
+
+    int insertRole(Role role);
+
 }

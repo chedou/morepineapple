@@ -104,7 +104,8 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.jnshu.resourceservice.entity.Role">
+
+    <update id="updateByPrimaryKeySelective" parameterType="com.jnshu.resourceservice.entity.Role">
     update role
     <set>
       <if test="roleName != null">
@@ -162,6 +163,12 @@
 	r.id = #{id}
   </select>
 
+  <insert id="insertRole">
+
+
+
+
+  </insert>
 
 
 </mapper>
