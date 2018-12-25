@@ -1,17 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.jnshu.resourceservice.dao.RoleMapper">
-  <resultMap id="BaseResultMap" type="com.jnshu.resourceservice.entity.Role">
-    <!--<constructor>-->
-      <!--<idArg column="id" javaType="java.lang.Integer" jdbcType="INTEGER" />-->
-      <!--<arg column="role_name" javaType="java.lang.String" jdbcType="VARCHAR" />-->
-      <!--<arg column="gmt_create" javaType="java.lang.Long" jdbcType="BIGINT" />-->
-      <!--<arg column="gmt_update" javaType="java.lang.Long" jdbcType="BIGINT" />-->
-      <!--<arg column="create_by" javaType="java.lang.String" jdbcType="VARCHAR" />-->
-      <!--<arg column="update_by" javaType="java.lang.String" jdbcType="VARCHAR" />-->
-      <!--<arg column="status" javaType="java.lang.Integer" jdbcType="INTEGER" />-->
-    <!--</constructor>-->
 
+  <resultMap id="BaseResultMap" type="com.jnshu.resourceservice.entity.Role">
     <id column="id" property="id"/>
     <result column="role_name" property="roleName"/>
     <result column="gmt_create" property="gmtCreate"/>
@@ -19,17 +10,17 @@
     <result column="create_by" property="createBy"/>
     <result column="update_by" property="updateBy"/>
     <result column="status" property="status"/>
-    <collection property="permissionsList" ofType="com.jnshu.resourceservice.entity.Permission" autoMapping="true"/>
+    <collection property="permissionsList" ofType="com.jnshu.resourceservice.entity.Permission"
+                javaType="list">
+        <id column="p_id" property="id"/>
+        <result column="permission_name" property="permissionName"/>
+        <result column="p_gmt_create" property="gmtCreate"/>
+        <result column="p_gmt_update" property="gmtUpdate"/>
+        <result column="p_create_by" property="createBy"/>
+        <result column="p_update_by" property="updateBy"/>
+    </collection>
   </resultMap>
 
-    <!--<resultMap id="PermissionResultMap" type="com.jnshu.uaaservice.pojo.Permission">-->
-        <!--<id column="id" property="id"/>-->
-        <!--<result column="permission_name" property="permissionName"/>-->
-        <!--<result column="gmt_create" property="gmtCreate"/>-->
-        <!--<result column="gmt_update" property="gmtUpdate"/>-->
-        <!--<result column="create_by" property="createBy"/>-->
-        <!--<result column="update_by" property="updateBy"/>-->
-    <!--</resultMap>-->
 
   <sql id="Base_Column_List">
     id, role_name, gmt_create, gmt_update, create_by, update_by, status
@@ -56,6 +47,12 @@
       #{status})
   </insert>
   <insert id="insertSelective" parameterType="com.jnshu.resourceservice.entity.Role">
+    --         此种写法，keyProperty：将查询到主键值设置到parameterType指定的对象的哪个属性
+    --         order：SELECT LAST_INSERT_ID()执行顺序，相对于insert语句来说它的执行顺序
+    --         resultType：指定SELECT LAST_INSERT_ID()的结果类型
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
     insert into role
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -163,11 +160,32 @@
 	r.id = #{id}
   </select>
 
+
+
+
+  <select id="selectByRoleName" resultMap="BaseResultMap">
+     SELECT
+	r.id,
+	r.role_name,
+	r.gmt_create,
+	r.gmt_update,
+	r.create_by,
+	r.update_by,
+	r.`status`,
+	p.id p_id,
+	p.permission_name,
+	p.gmt_create p_gmt_create,
+	p.gmt_update p_gmt_update,
+	p.create_by p_create_by,
+	p.update_by p_update_by
+    FROM
+	(role AS r LEFT JOIN role_permission AS rp ON r.id = rp.role_id)
+	RIGHT JOIN permission AS p ON rp.node_id = p.id
+    WHERE
+	r.role_name = #{roleName}
+  </select>
+
   <insert id="insertRole">
-
-
-
-
   </insert>
 
 

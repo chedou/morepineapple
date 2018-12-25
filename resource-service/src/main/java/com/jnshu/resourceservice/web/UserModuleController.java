@@ -53,7 +53,7 @@ public class UserModuleController {
 
 	}
 
-	//TODO：用户管理-更改你用户
+	//TODO：用户管理-更改用户
 	/**
 	 * @Description 用户管理-修改个人信息
 	 * @param [user, jwt] 

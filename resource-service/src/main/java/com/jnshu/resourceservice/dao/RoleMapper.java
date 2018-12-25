@@ -14,6 +14,14 @@ public interface RoleMapper {
 
     int insert(Role record);
 
+    /**
+     * @Description 用户管理-插入角色附带相关的权限信息
+     * @param [record]
+     * @return int
+     * @author Mr.HUANG
+     * @date 2018/12/25
+     * @throws Exception
+     */
     int insertSelective(Role record);
 
     Role selectByPrimaryKey(Integer id);
@@ -26,4 +34,13 @@ public interface RoleMapper {
 
     int insertRole(Role role);
 
+    /**
+     * @Description 角色管理-根据角色名查询角色信息
+     * @param [RoleName]
+     * @return com.jnshu.resourceservice.entity.Role
+     * @author Mr.HUANG
+     * @date 2018/12/25
+     * @throws
+     */
+    Role selectByRoleName(String roleName);
 }

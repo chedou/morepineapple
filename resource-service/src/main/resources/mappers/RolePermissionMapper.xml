@@ -13,16 +13,6 @@
       <arg column="update_by" javaType="java.lang.String" jdbcType="VARCHAR" />
     </constructor>
 
-    <!--<id column="id" property="id"/>-->
-    <!--<result column="role_id" property="roleId"/>-->
-    <!--<result column="node_id" property="nodeId"/>-->
-    <!--<result column="status" property="status"/>-->
-    <!--<result column="gmt_create" property="gmtCreate"/>-->
-    <!--<result column="gmt_update" property="gmtUpdate"/>-->
-    <!--<result column="create_by" property="createBy"/>-->
-    <!--<result column="update_by" property="updateBy"/>-->
-    <!--<collection property="Permission"/>-->
-
   </resultMap>
   <sql id="Base_Column_List">
     id, role_id, node_id, status, gmt_create, gmt_update, create_by, update_by
@@ -143,7 +133,13 @@
     where id = #{id,jdbcType=INTEGER}
   </update>
 
-
+  <insert id="insertRolePermission" parameterType="map">
+    INSERT INTO role_permission(role_id,node_id,status,gmt_create,gmt_update,create_by,update_by)
+    VALUES
+    <foreach collection="Permissions" item="nodeId" separator=",">
+      (${roleId},#{nodeId},${status},${gmtCreate},${gmtUpdate},${createBy},${updateBy})
+    </foreach>
+  </insert>
 
 
 </mapper>

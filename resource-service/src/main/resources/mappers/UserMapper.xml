@@ -16,7 +16,8 @@
         <result column="create_by" property="createBy"/>
         <result column="update_by" property="updateBy"/>
         <result column="status" property="status"/>
-        <collection property="roleList" ofType="com.jnshu.resourceservice.entity.Role" javaType="list" >
+        <collection property="roleList" ofType="com.jnshu.resourceservice.entity.Role"
+                    javaType="list" >
             <result column="r_id" property="id"/>
             <result column="role_name" property="roleName"/>
             <result column="r_gmt_create" property="gmtCreate"/>

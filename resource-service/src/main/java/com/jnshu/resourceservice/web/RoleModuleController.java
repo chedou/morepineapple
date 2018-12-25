@@ -1,10 +1,14 @@
 package com.jnshu.resourceservice.web;
 
 import com.jnshu.resourceservice.core.ret.*;
+import com.jnshu.resourceservice.entity.*;
+import com.jnshu.resourceservice.entity.group.*;
 import com.jnshu.resourceservice.service.*;
 import io.swagger.annotations.*;
 import org.slf4j.*;
 import org.springframework.beans.factory.annotation.*;
+import org.springframework.security.access.prepost.*;
+import org.springframework.validation.annotation.*;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -23,28 +27,68 @@ public class RoleModuleController {
 	@Autowired
 	private RoleModuleService roleModuleService;
 
+	//TODO:橘色管理-新增角色
 	/**
 	 * @Description 角色管理-增加角色
-	 * @param []
+	 * @param [role, jwt]
 	 * @return com.jnshu.resourceservice.core.ret.RetResult<?>
 	 * @author Mr.HUANG
 	 * @date 2018/12/24
 	 * @throws
 	 */
-	public RetResult<?> addRole(){
+	@ApiOperation(value = "addRole",  notes = "新增角色")
+	@PostMapping(value = "/role", produces = "application/json;charset=UTF-8")
+	@PreAuthorize("hasAuthority('RoleManageAll') AND hasAuthority('RoleManageAdd') ")
+	public RetResult<?> addRole(@Validated({addAndUpdateRoleGroup.class})Role role,
+								@Validated({JWTOperatingGroup.class})JWT jwt)throws Exception{
+		if (logger.isDebugEnabled()){
+			logger.debug("----RoleModuleController----addRole------");
+			logger.debug("插入的角色名:{}", role.getRoleName());
+		}
+		roleModuleService.addRole(role, jwt);
+		return RetResponse.result(RetCode.SUCCESS_ROLE_ONE_ADD);
+	}
 
 
-		return RetResponse.result(RetCode.SUCCESS_USER_ONE_ADD);
+
+	//TODO:橘色管理-更改角色信息
+	/**
+	 * @Description 角色管理-更改角色信息
+	 * @param [role, jwt]
+	 * @return com.jnshu.resourceservice.core.ret.RetResult<?>
+	 * @author Mr.HUANG
+	 * @date 2018/12/25
+	 * @throws Exception
+	 */
+	@ApiOperation(value = "updateRole",  notes = "更改角色")
+	@DeleteMapping(value = "/role/{targetRoleId}", produces = "application/json;charset=UTF-8")
+	@PreAuthorize("hasAuthority('RoleManageAll') AND hasAuthority('RoleManageDelete') ")
+	public RetResult<?> updateRole(@Validated({addAndUpdateRoleGroup.class})Role role,
+								   @Validated({JWTOperatingGroup.class})JWT jwt)throws Exception{
+
+
+		return RetResponse.result(RetCode.SUCCESS_USER_ONE_UPDATE);
 
 	}
 
-	//TODO:橘色管理-新增角色
 
-	//TODO:橘色管理-更改角色信息
 
 	//TODO:橘色管理-删除角色
 
+	public RetResult<?> delectRole(@PathVariable Integer roleId,
+								   @Validated({JWTOperatingGroup.class})JWT jwt)throws Exception{
+
+		return RetResponse.result(RetCode.SUCCESS_USER_ONE_DELETE);
+
+	}
+
+
+
 	//TODO:橘色管理-查询单个角色
+
+
+
+
 
 	//TODO:橘色管理-查询角色列表
 
