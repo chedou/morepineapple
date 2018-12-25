@@ -66,19 +66,31 @@ public class RoleModuleController {
 	public RetResult<?> updateRole(@Validated({addAndUpdateRoleGroup.class})Role role,
 								   @Validated({JWTOperatingGroup.class})JWT jwt)throws Exception{
 
-
+		roleModuleService.updateRole(role, jwt);
 		return RetResponse.result(RetCode.SUCCESS_USER_ONE_UPDATE);
 
 	}
 
 
 
-	//TODO:橘色管理-删除角色
-
-	public RetResult<?> delectRole(@PathVariable Integer roleId,
+	//TODO:角色管理-删除角色
+	/**
+	 * @Description 角色管理-删除角色
+	 * @param [targetRoleId, jwt]
+	 * @return com.jnshu.resourceservice.core.ret.RetResult<?>
+	 * @author Mr.HUANG
+	 * @date 2018/12/25
+	 * @throws Exception
+	 */
+	public RetResult<?> deleteRole(@PathVariable Integer targetRoleId,
 								   @Validated({JWTOperatingGroup.class})JWT jwt)throws Exception{
 
-		return RetResponse.result(RetCode.SUCCESS_USER_ONE_DELETE);
+		if (logger.isDebugEnabled()){
+			logger.debug("----RoleModuleController----deleteRole-----");
+			logger.debug("需要删除的角色ID:{}", targetRoleId);
+		}
+		roleModuleService.deleteRole(targetRoleId, jwt);
+		return RetResponse.result(RetCode.SUCCESS_ROLE_ONE_DELETE);
 
 	}
 

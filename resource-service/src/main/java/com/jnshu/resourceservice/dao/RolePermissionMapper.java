@@ -1,6 +1,7 @@
 package com.jnshu.resourceservice.dao;
 
 import com.jnshu.resourceservice.entity.*;
+import io.swagger.models.auth.*;
 import org.apache.ibatis.annotations.*;
 
 import java.util.*;
@@ -34,5 +35,17 @@ public interface RolePermissionMapper {
      * @throws
      */
     int insertRolePermission(Map roleAndPermission);
+
+    /**
+     * @Description 根据角id roleId删除该角色的 角色与权限关联的信息
+     * @param [roleUId]
+     * @return int
+     * @author Mr.HUANG
+     * @date 2018/12/25
+     * @throws
+     */
+    int deleteByRoleId(Integer roleUId);
+
+    RolePermission selectByRoleId(Integer roleId);
 
 }
