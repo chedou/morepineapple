@@ -41,7 +41,7 @@ public class RolePermissionMapperTest {
 		rolePermissionMap.put("createBy",333);
 		rolePermissionMap.put("updateBy",444);
 		rolePermissionMap.put("Permissions",Arrays.asList("888","777"));
-		rolePermissionMapper.insertRolePermission(rolePermissionMap);
+		System.out.println(rolePermissionMapper.insertRolePermission(rolePermissionMap));
 		LOGGER.info("-------------------------");
 		LOGGER.info("插入新增的用户");
 

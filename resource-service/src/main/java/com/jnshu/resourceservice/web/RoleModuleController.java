@@ -4,7 +4,9 @@ import com.jnshu.resourceservice.core.ret.*;
 import com.jnshu.resourceservice.entity.*;
 import com.jnshu.resourceservice.entity.group.*;
 import com.jnshu.resourceservice.service.*;
+import com.jnshu.resourceservice.utils.pageutil.*;
 import io.swagger.annotations.*;
+import org.bouncycastle.jcajce.provider.asymmetric.ec.KeyFactorySpi.*;
 import org.slf4j.*;
 import org.springframework.beans.factory.annotation.*;
 import org.springframework.security.access.prepost.*;
@@ -61,8 +63,8 @@ public class RoleModuleController {
 	 * @throws Exception
 	 */
 	@ApiOperation(value = "updateRole",  notes = "更改角色")
-	@DeleteMapping(value = "/role/{targetRoleId}", produces = "application/json;charset=UTF-8")
-	@PreAuthorize("hasAuthority('RoleManageAll') AND hasAuthority('RoleManageDelete') ")
+	@DeleteMapping(value = "/role", produces = "application/json;charset=UTF-8")
+	@PreAuthorize("hasAuthority('RoleManageAll') AND hasAuthority('RoleManageUpdate') ")
 	public RetResult<?> updateRole(@Validated({addAndUpdateRoleGroup.class})Role role,
 								   @Validated({JWTOperatingGroup.class})JWT jwt)throws Exception{
 
@@ -82,6 +84,9 @@ public class RoleModuleController {
 	 * @date 2018/12/25
 	 * @throws Exception
 	 */
+	@ApiOperation(value = "deleteRole",  notes = "更改角色")
+	@DeleteMapping(value = "/role/{targetRoleId}", produces = "application/json;charset=UTF-8")
+	@PreAuthorize("hasAuthority('RoleManageAll') AND hasAuthority('RoleManageDelete') ")
 	public RetResult<?> deleteRole(@PathVariable Integer targetRoleId,
 								   @Validated({JWTOperatingGroup.class})JWT jwt)throws Exception{
 
@@ -97,13 +102,47 @@ public class RoleModuleController {
 
 
 	//TODO:橘色管理-查询单个角色
+	/**
+	 * @Description 角色管理-新增单个角色信息
+	 * @param [targetRoleId]
+	 * @return com.jnshu.resourceservice.core.ret.RetResult<?>
+	 * @author Mr.HUANG
+	 * @date 2018/12/25
+	 * @throws Exception
+	 */
+	@ApiOperation(value = "selectRole",  notes = "查询角色")
+	@PostMapping(value = "/role/{targetUserId}", produces = "application/json;charset=UTF-8")
+	@PreAuthorize("hasAuthority('RoleManageAll')")
+	public RetResult<?> selectRole(@PathVariable Integer targetRoleId) throws Exception{
+		if (logger.isDebugEnabled()){
+			logger.debug("----RoleModuleController----selectRole-----");
+			logger.debug("需要查询的用户ID:{}", targetRoleId);
+		}
+
+		return RetResponse.result(RetCode.SUCCESS_ROLE_ONE_GET).
+				setData(roleModuleService.selectRole(targetRoleId));
+	}
 
 
+	//TODO:角色管理-查询角色列表
+	/**
+	 * @Description 角色管理-获取角色列表，分页默返回参数单页8组数据
+	 * @param [pageUtil]
+	 * @return com.jnshu.resourceservice.core.ret.RetResult<?>
+	 * @author Mr.HUANG
+	 * @date 2018/12/26
+	 * @throws Exception
+	 */
+	public RetResult<?> selectRoleList(@Validated ({PageUtilGroup.class})PageUtil pageUtil) throws Exception {
+		if (logger.isDebugEnabled()){
+			logger.debug("----UserModuleController----seleceUserList-----");
+			logger.debug("分页参数为:{}", pageUtil.toString());
 
+		}
 
-
-	//TODO:橘色管理-查询角色列表
-
+		return RetResponse.result(RetCode.SUCCESS_ROLE_LIST_GET)
+				.setData(roleModuleService.selectRoleList(pageUtil));
+	}
 
 
 }

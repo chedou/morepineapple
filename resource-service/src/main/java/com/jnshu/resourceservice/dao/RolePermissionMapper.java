@@ -46,6 +46,14 @@ public interface RolePermissionMapper {
      */
     int deleteByRoleId(Integer roleUId);
 
+    /**
+     * @Description 根据角色的ID查出角色与权限的关联信息
+     * @param [roleId]
+     * @return com.jnshu.resourceservice.entity.RolePermission
+     * @author Mr.HUANG
+     * @date 2018/12/25
+     * @throws Exception
+     */
     RolePermission selectByRoleId(Integer roleId);
 
 }

@@ -3,6 +3,8 @@ package com.jnshu.resourceservice.dao;
 import com.jnshu.resourceservice.entity.*;
 import org.apache.ibatis.annotations.*;
 
+import java.util.*;
+
 /**
  * @description Role角色持久层
  * @author Mr.HUANG
@@ -30,9 +32,15 @@ public interface RoleMapper {
 
     int updateByPrimaryKey(Role record);
 
+    /**
+     * @Description 根据角色ID查询对应的角色信息以及权限信息
+     * @param [id]
+     * @return com.jnshu.resourceservice.entity.Role
+     * @author Mr.HUANG
+     * @date 2018/12/26
+     * @throws Exception
+     */
     Role selectRolePermissionById(Integer id);
-
-    int insertRole(Role role);
 
     /**
      * @Description 角色管理-根据角色名查询角色信息
@@ -43,4 +51,15 @@ public interface RoleMapper {
      * @throws
      */
     Role selectByRoleName(String roleName);
+
+    /**
+     * @Description 获取角色信息列表
+     * @param []
+     * @return java.util.List<com.jnshu.resourceservice.entity.Role>
+     * @author Mr.HUANG
+     * @date 2018/12/26
+     * @throws Exception
+     */
+    List<Role> selectAll();
+
 }

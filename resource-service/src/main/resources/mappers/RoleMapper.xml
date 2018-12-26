@@ -146,22 +146,18 @@
 	r.create_by,
 	r.update_by,
 	r.`status`,
-	p.id,
+	p.id p_id,
 	p.permission_name,
-	p.gmt_create,
-	p.gmt_update,
-	p.create_by,
-	p.update_by
+	p.gmt_create p_gmt_create,
+	p.gmt_update p_gmt_update,
+	p.create_by p_create_by,
+	p.update_by p_update_by
     FROM
-	role AS r
-	INNER JOIN role_permission AS rp ON r.id = rp.role_id
-	INNER JOIN permission AS p ON rp.node_id = p.id
+	(role AS r LEFT JOIN role_permission AS rp ON r.id = rp.role_id)
+	RIGHT JOIN permission AS p ON rp.node_id = p.id
     WHERE
 	r.id = #{id}
   </select>
-
-
-
 
   <select id="selectByRoleName" resultMap="BaseResultMap">
      SELECT
@@ -183,10 +179,29 @@
 	RIGHT JOIN permission AS p ON rp.node_id = p.id
     WHERE
 	r.role_name = #{roleName}
+
+</select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    SELECT
+	r.id,
+	r.role_name,
+	r.gmt_create,
+	r.gmt_update,
+	r.create_by,
+	r.update_by,
+	r.`status`,
+	p.id p_id,
+	p.permission_name,
+	p.gmt_create p_gmt_create,
+	p.gmt_update p_gmt_update,
+	p.create_by p_create_by,
+	p.update_by p_update_by
+    FROM (role AS r
+	LEFT JOIN role_permission AS rp ON r.id = rp.role_id)
+	RIGHT JOIN permission AS p ON rp.node_id = p.id
+    WHERE
+	r.`status` = 1
+	ORDER BY r.gmt_update
   </select>
-
-  <insert id="insertRole">
-  </insert>
-
 
 </mapper>

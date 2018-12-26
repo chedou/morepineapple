@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.*;
 import org.springframework.boot.test.context.*;
 import org.springframework.test.context.junit4.*;
 
+import java.util.*;
+
 import static org.junit.Assert.*;
 
 @RunWith(SpringRunner.class)
@@ -27,6 +29,28 @@ public class RoleMapperTest {
 		Role role = roleMapper.selectByRoleName("admin");
 		System.out.println(role.toString());
 
+
+	}
+
+
+	@Test
+	public void selectById() {
+		LOGGER.info("-------------------------");
+		LOGGER.info("插入新增的角色");
+
+		Role role = roleMapper.selectRolePermissionById(1);
+		System.out.println(role.toString());
+		System.out.println(role.getPermissionsList().get(1).getId());
+
+	}
+
+	@Test
+	public void selectAll() {
+		LOGGER.info("-------------------------");
+		LOGGER.info("插入新增的角色");
+		List<Role> roleList = roleMapper.selectAll();
+		System.out.println(roleList.toString());
+		System.out.println(roleList.get(0).getPermissionsList().get(1).getId());
 
 	}
 }

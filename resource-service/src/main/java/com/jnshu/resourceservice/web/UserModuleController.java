@@ -145,7 +145,7 @@ public class UserModuleController {
 		}
 		return RetResponse.result(RetCode.SUCCESS_USER_LIST_GET)
 				.setData(userModuleService.selectAll(pageUtil));
-	}
+	} 
 
 }
 
