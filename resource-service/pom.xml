@@ -137,6 +137,19 @@
             <version>1.2.5</version>
         </dependency>
 
+        <!--commons-lang用来字符串判空（也可以自己手写）-->
+        <dependency>
+            <groupId>commons-lang</groupId>
+            <artifactId>commons-lang</artifactId>
+            <version>2.4</version>
+        </dependency>
+        <!--commons-io用来读取请求封装为字符串类型（也可以自己封装）-->
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.6</version>
+        </dependency>
+
 
     </dependencies>
 

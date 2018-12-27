@@ -1,5 +1,6 @@
 package com.jnshu.resourceservice.web;
 
+import com.jnshu.resourceservice.core.HandlerMethodArgumentResolver.*;
 import com.jnshu.resourceservice.core.ret.*;
 import com.jnshu.resourceservice.entity.*;
 import com.jnshu.resourceservice.entity.group.*;
@@ -11,6 +12,8 @@ import org.springframework.beans.factory.annotation.*;
 import org.springframework.security.access.prepost.*;
 import org.springframework.validation.annotation.*;
 import org.springframework.web.bind.annotation.*;
+
+import javax.validation.*;
 
 /**
  * @description: 用户管理模块
@@ -103,7 +106,7 @@ public class UserModuleController {
 	//TODO：用户管理-单个用户信息
 
 	/**
-	 * @Description 用户管理-获取单个用户信息
+	 * @Description 用户管理-获取单个用户信息及根据条件搜索单个用户
 	 * @param [targetUserID]
 	 * @return com.jnshu.resourceservice.core.ret.RetResult<?>
 	 * @author Mr.HUANG
@@ -127,25 +130,51 @@ public class UserModuleController {
 
 	//TODO: 用户管理-账号列表
 	/**
-	 * @Description 用户管理-获取用户列表
-	 * @param [pageUtil]
+	 * @Description 用户管理-获取用户列表、根据条件查询对应的用户信息（查询条件主要有：角色名字、用户名）
+	 * @param [pageUtil， user]
+	 *        pageUtil 	分页参数
+	 *        user		用户详细参数
 	 * @return com.jnshu.resourceservice.core.ret.RetResult<?>
 	 * @author Mr.HUANG
 	 * @date 2018/12/21
 	 * @throws Exception
 	 */
-	@ApiOperation(value = "seleceUserList",  notes = "查询用户")
+	@ApiOperation(value = "selectUserList",  notes = "查询用户")
 	@PostMapping(value = "/user/list", produces = "application/json;charset=UTF-8")
 	@PreAuthorize("hasAuthority('RoleManageAll')")
-	public RetResult<?> seleceUserList(@Validated({PageUtilGroup.class}) PageUtil pageUtil)throws Exception{
+	public RetResult<?> selectUserList(@MultiRequestBody @Validated({PageUtilGroup.class}) PageUtil pageUtil,
+									   @MultiRequestBody User user)throws Exception{
 
 		if (logger.isDebugEnabled()){
-			logger.debug("----UserModuleController----seleceUserList-----");
+			logger.debug("----UserModuleController----selectUserList-----");
 			logger.debug("分页参数为:{}", pageUtil.toString());
 		}
 		return RetResponse.result(RetCode.SUCCESS_USER_LIST_GET)
-				.setData(userModuleService.selectAll(pageUtil));
-	} 
+				.setData(userModuleService.selectUserList(pageUtil, user));
+	}
+
+
+	// -------------------------------------------------- 测试-------------------------------------
+
+	@ApiOperation(value = "test",  notes = "测试")
+	@PostMapping(value = "/user/test", produces = "application/json;charset=UTF-8")
+	@PreAuthorize("hasAuthority('RoleManageAll')")
+	public RetResult<?> test( @Validated({PageUtilGroup.class})  @MultiRequestBody(value = "pageUtil")PageUtil pageUtil,
+							 @MultiRequestBody(value = "user")@Validated({AddUserGroup.class}) User user)
+			throws Exception{
+
+		System.out.println("---------------------------");
+		System.out.println(user.toString());
+		if (null != user.getRoleList()){
+			System.out.println(user.getRoleList().size());
+			System.out.println(user.getRoleList().get(0).getPermissionsList().size());
+		}
+		System.out.println(pageUtil.toString());
+
+		return RetResponse.result(RetCode.SUCCESS_USER_LIST_GET);
+	}
+
+
 
 }
 

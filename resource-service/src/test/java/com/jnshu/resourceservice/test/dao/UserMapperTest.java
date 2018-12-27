@@ -18,7 +18,7 @@ import java.util.*;
 public class UserMapperTest {
 	private final org.slf4j.Logger logger =LoggerFactory.getLogger(this.getClass());
 
-	@Autowired
+	@Autowired(required = false)
 	private UserMapper userMapper;
 
 	@Test
@@ -83,10 +83,39 @@ public class UserMapperTest {
 		logger.info("查询全部有效数据");
 		List<User> userList = new ArrayList<>();
 
-		userList = userMapper.selectAll();
+		// userList = userMapper.selectAll();
 		System.out.println(userList.toString());
 		logger.info("-------------------------");
 
 	}
 
+	@Test
+	public void selectUserList(){
+		logger.info("-------------------------");
+		logger.info("查询全部有效数据");
+		List<User> userList = new ArrayList<>();
+
+		// 模拟参数
+		// User user = new User();
+		// user.setName("admin");
+		// Role role = new Role();
+		// role.setRoleName("super");
+
+		// System.out.println(user.toString());
+		// System.out.println(role.toString());
+
+
+		// String a = null;
+		// String b = null;
+		userList = userMapper.selectUserList("admin", "super");
+		// userList = userMapper.selectUserList(a, b);
+		System.out.println(userList.size());
+		System.out.println(userList.toString());
+		if (0 != userList.size()){
+			System.out.println(userList.get(0).toString());
+		}
+
+		logger.info("-------------------------");
+
+	}
 }

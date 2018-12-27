@@ -1,4 +1,4 @@
-package com.jnshu.resourceservice.utils;
+package com.jnshu.resourceservice.utils.password;
 
 
 import org.springframework.security.crypto.bcrypt.*;

@@ -2,7 +2,6 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.jnshu.resourceservice.dao.UserMapper">
-
     <resultMap id="BaseResultMap" type="com.jnshu.resourceservice.entity.User" >
         <id column="id" property="id"/>
         <result column="name" property="name"/>
@@ -266,7 +265,7 @@
          u.`name`=#{username}
   </select>
 
-    <select id="selectAll" parameterType="String" resultMap="BaseResultMap">
+    <select id="selectUserList" resultMap="BaseResultMap">
     SELECT
         u.id,
         u.`name`,
@@ -298,8 +297,17 @@
     LEFT JOIN role AS r ON ur.role_id = r.id
     LEFT JOIN role_permission AS rp ON r.id = rp.role_id
     LEFT JOIN permission AS p ON rp.node_id = p.id
-    WHERE u.`status`=1
-    order by u.gmt_update
+    <where>
+        u.`status`=1
+        <if test="name != null" >
+          <bind name="name" value="'%'+name+'%'"/>
+          AND name LIKE #{name}
+        </if>
+        <if test="roleName != null">
+          AND r.role_name LIKE "%"#{roleName}"%"
+        </if>
+    </where>
+    ORDER BY u.gmt_update
   </select>
 
 </mapper>

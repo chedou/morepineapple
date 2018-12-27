@@ -3,10 +3,13 @@ package com.jnshu.resourceservice.config;
 import org.springframework.context.annotation.*;
 import org.springframework.web.servlet.config.annotation.*;
 import springfox.documentation.builders.*;
+import springfox.documentation.schema.*;
 import springfox.documentation.service.*;
 import springfox.documentation.spi.*;
 import springfox.documentation.spring.web.plugins.*;
 import springfox.documentation.swagger2.annotations.*;
+
+import java.util.*;
 
 /**
  * @program: morepineapple
@@ -22,12 +25,20 @@ public class SwaggerConfigurer extends WebMvcConfigurerAdapter {
 
 	@Bean
 	public Docket createRestApi() {
+		//添加head参数start
+		ParameterBuilder tokenPar = new ParameterBuilder();
+		List<Parameter> pars = new ArrayList<Parameter>();
+		tokenPar.name("Authorization").description("令牌").modelRef(new ModelRef("string")).parameterType("header").required(false).build();
+		pars.add(tokenPar.build());
+		//添加head参数end
+
 		return new Docket(DocumentationType.SWAGGER_2)
 				.apiInfo(apiInfo())
 				.select()
 				.apis(RequestHandlerSelectors.basePackage("com.jnshu.resourceservice.web"))
 				.paths(PathSelectors.any())
-				.build();
+				.build()
+				.globalOperationParameters(pars);
 	}
 
 	private ApiInfo apiInfo() {

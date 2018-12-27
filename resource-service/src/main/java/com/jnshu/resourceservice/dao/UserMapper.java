@@ -14,6 +14,14 @@ import java.util.*;
  */
 @Mapper
 public interface UserMapper {
+    /**
+     * @Description 根据用户ID删除对应用户的用户信息
+     * @param [id]
+     * @return int 
+     * @author Mr.HUANG
+     * @date 2018/12/27 
+     * @throws 
+     */ 
     int deleteByPrimaryKey(Long id) throws SQLException;
 
     int insert(User record) throws SQLException;
@@ -27,17 +35,49 @@ public interface UserMapper {
      * @throws
      */
     int insertSelective(User record);
-
+    
     User selectByPrimaryKey(Long id);
 
+    /**
+     * @Description 根据用户信息动态更新数据库中的用户信息
+     * @param [record]
+     * @return int 
+     * @author Mr.HUANG
+     * @date 2018/12/27 
+     * @throws 
+     */ 
     int updateByPrimaryKeySelective(User record);
 
     int updateByPrimaryKey(User record);
 
+    /**
+     * @Description 根据用户ID查询用户信息、角色信息以及权限信息
+     * @param [id] 
+     * @return com.jnshu.resourceservice.entity.User 
+     * @author Mr.HUANG
+     * @date 2018/12/27 
+     * @throws 
+     */ 
     User selectUserDetailById(Long id);
 
+    /**
+     * @Description 根据用户名查询用户信息、角色信息以及权限信息
+     * @param [username]
+     * @return com.jnshu.resourceservice.entity.User 
+     * @author Mr.HUANG
+     * @date 2018/12/27 
+     * @throws 
+     */ 
     User findByUsername(String username);
 
-    List<User> selectAll();
+    /**
+     * @Description 用户管理-获取用户列表、根据条件（用户名、角色名）模糊查询
+     * @param [user, role] 
+     * @return java.util.List<com.jnshu.resourceservice.entity.User>
+     * @author Mr.HUANG
+     * @date 2018/12/27 
+     * @throws 
+     */ 
+    List<User> selectUserList(@Param("name") String user, @Param("roleName") String role);
 
 }

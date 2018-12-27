@@ -6,8 +6,8 @@ import com.jnshu.resourceservice.dto.*;
 import com.jnshu.resourceservice.entity.*;
 import com.jnshu.resourceservice.exception.*;
 import com.jnshu.resourceservice.service.*;
-import com.jnshu.resourceservice.utils.*;
 import com.jnshu.resourceservice.utils.pageutil.*;
+import com.jnshu.resourceservice.utils.password.*;
 import org.slf4j.*;
 import org.springframework.beans.factory.annotation.*;
 import org.springframework.stereotype.*;
@@ -168,20 +168,44 @@ public class UserModuleServiceImpl implements UserModuleService {
 	}
 
 	/**
-	 * @param pageUtil
+	 * @Description 用户管理-获取用户列表-用户模糊查询相关的参数
+	 * 				（查询的参数有：用户名：name,角色名：roleName）
+	 * @param [pageUtil， user]
+	 *        pageUtil 	分页参数
+	 *        user		用户详细参数
 	 * @return com.jnshu.resourceservice.dto.UserModuleDTO
-	 * @throws
-	 * @Description
 	 * @author Mr.HUANG
 	 * @date 2018/12/21
+	 * @throws
 	 */
 	@Override
-	public UserModuleDTO selectAll(PageUtil pageUtil) {
+	public UserModuleDTO selectUserList(PageUtil pageUtil, User user ) {
 
-		List<User> userList =userMapper.selectAll();
+		// debug模式下打印前端传入的参数，方便调试
+		if (LOGGER.isDebugEnabled()){
+			LOGGER.debug("分页参数为：{}，如有用到模糊查询则其参数为：{}，{}",
+					pageUtil.toString(),user.getName(),user.getRoleList().toString());
+		}
+		// 对模糊查询的条件进行判断，如有问题，抛出异常
+		// （根据需求，模糊查询中 用户名：username 和角色名:roleName 都只能有一个值）
+		if (user.getRoleList().size() > 1){
+			throw new ServiceException("根据用户参数获取用户详细信息参数异常," +
+					"异常参数为：user.getRoleList().size()" + user.getRoleList().size());
+		}
+		// 将角色信息从请求参数中取出
+		String targetRoleName = null ;
+		if (null != user.getRoleList() & 1 == user.getRoleList().size()){
+			Role targetRole =user.getRoleList().get(0);
+			targetRoleName = targetRole.getRoleName();
+		}
+		// 根据请求参数发起查询
+		List<User> userList = userMapper.selectUserList(user.getName(), targetRoleName);
+
 
 		// 对页数进行判断是否超过最大页
-		if (pageUtil.getPage() > userList.size()/pageUtil.getSize() +1){
+		if ( null == pageUtil.getSize() || 0 == pageUtil.getSize()){
+			throw new ServiceException("pageUtil.size请求参数有异常，请查看日志");
+		}else if (pageUtil.getPage() > userList.size()/pageUtil.getSize() +1){
 			throw new ServiceException("所查询页码已超过最大值");
 		}
 		// 设置物理分页插件参数

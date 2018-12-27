@@ -29,7 +29,7 @@ public class RoleModuleController {
 	@Autowired
 	private RoleModuleService roleModuleService;
 
-	//TODO:橘色管理-新增角色
+	//TODO:角色管理-新增角色
 	/**
 	 * @Description 角色管理-增加角色
 	 * @param [role, jwt]
@@ -63,7 +63,7 @@ public class RoleModuleController {
 	 * @throws Exception
 	 */
 	@ApiOperation(value = "updateRole",  notes = "更改角色")
-	@DeleteMapping(value = "/role", produces = "application/json;charset=UTF-8")
+	@PutMapping(value = "/role", produces = "application/json;charset=UTF-8")
 	@PreAuthorize("hasAuthority('RoleManageAll') AND hasAuthority('RoleManageUpdate') ")
 	public RetResult<?> updateRole(@Validated({addAndUpdateRoleGroup.class})Role role,
 								   @Validated({JWTOperatingGroup.class})JWT jwt)throws Exception{
@@ -133,9 +133,12 @@ public class RoleModuleController {
 	 * @date 2018/12/26
 	 * @throws Exception
 	 */
+	@ApiOperation(value = "selectRoleList",  notes = "查询角色列表")
+	@PostMapping(value = "/role/list", produces = "application/json;charset=UTF-8")
+	@PreAuthorize("hasAuthority('RoleManageAll')")
 	public RetResult<?> selectRoleList(@Validated ({PageUtilGroup.class})PageUtil pageUtil) throws Exception {
 		if (logger.isDebugEnabled()){
-			logger.debug("----UserModuleController----seleceUserList-----");
+			logger.debug("----UserModuleController----selectRoleList-----");
 			logger.debug("分页参数为:{}", pageUtil.toString());
 
 		}

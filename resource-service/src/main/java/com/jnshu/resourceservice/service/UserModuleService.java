@@ -54,12 +54,15 @@ public interface UserModuleService {
 
 
 	/**
-	 * @Description
-	 * @param [page, size]
+	 * @Description 用户管理-获取用户列表-用户模糊查询相关的参数
+	 * 				（查询的参数有：用户名：name,角色名：roleName）
+	 * @param [pageUtil， user]
+	 *        pageUtil 	分页参数
+	 *        user		用户详细参数
 	 * @return com.jnshu.resourceservice.dto.UserModuleDTO
 	 * @author Mr.HUANG
 	 * @date 2018/12/21
 	 * @throws
 	 */
-	UserModuleDTO selectAll(PageUtil pageUtil);
+	UserModuleDTO selectUserList(PageUtil pageUtil, User user);
 }
