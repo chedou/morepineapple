@@ -37,6 +37,8 @@ public class WebConfigurer extends WebMvcConfigurationSupport {
 				SerializerFeature.WriteNullStringAsEmpty,
 				// Number null -> 0 字符类型字段如果为null,输出为"",而非null
 				SerializerFeature.WriteNullNumberAsZero,
+				// 是否输出值为null的字段,默认为false
+				SerializerFeature.WriteMapNullValue,
 				//禁止循环引用 消除对同一对象循环引用的问题，默认为false（如果不配置有可能会进入死循环）
 				SerializerFeature.DisableCircularReferenceDetect
 		);

@@ -68,9 +68,9 @@ public class UserModuleController {
 	@ApiOperation(value = "updateUser",  notes = "更改用户")
 	@PutMapping(value = "/user", produces = "application/json;charset=UTF-8")
 	@PreAuthorize("hasAuthority('RoleManageAll') AND hasAuthority('RoleManageUpdate') ")
-	public RetResult<?> updateUser(@Validated({UpdateUserGroup.class, AddUserGroup.class}) User user,
+	public RetResult<?> updateUser(@Validated({UpdateUserGroup.class, AddUserGroup.class})User user,
 								   @Validated({JWTOperatingGroup.class})JWT jwt)throws Exception{
-
+		System.out.println(user.toString());
 		if (logger.isDebugEnabled()){
 			logger.debug("----UserModuleController----updateUser-----");
 			logger.debug("需要修改的用户ID:{}", user.getName());
@@ -88,7 +88,7 @@ public class UserModuleController {
 	 * @date 2018/12/20
 	 * @throws
 	 */
-	@ApiOperation(value = "deleteUser",  notes = "更改用户")
+	@ApiOperation(value = "deleteUser",  notes = "删除用户")
 	@DeleteMapping(value = "/user/{targetUserId}", produces = "application/json;charset=UTF-8")
 	@PreAuthorize("hasAuthority('RoleManageAll') AND hasAuthority('RoleManageDelete') ")
 	public RetResult<?> deleteUser(@PathVariable Long targetUserId,
@@ -139,7 +139,7 @@ public class UserModuleController {
 	 * @date 2018/12/21
 	 * @throws Exception
 	 */
-	@ApiOperation(value = "selectUserList",  notes = "查询用户")
+	@ApiOperation(value = "selectUserList",  notes = "查询用户列表")
 	@PostMapping(value = "/user/list", produces = "application/json;charset=UTF-8")
 	@PreAuthorize("hasAuthority('RoleManageAll')")
 	public RetResult<?> selectUserList(@MultiRequestBody @Validated({PageUtilGroup.class}) PageUtil pageUtil,

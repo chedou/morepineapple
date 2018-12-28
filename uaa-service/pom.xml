@@ -103,7 +103,10 @@
                     <nonFilteredFileExtensions>
                         <nonFilteredFileExtension>cert</nonFilteredFileExtension>
                         <nonFilteredFileExtension>jks</nonFilteredFileExtension>
+
                     </nonFilteredFileExtensions>
+                    <!-- 不指定单元测试 -->
+
                 </configuration>
             </plugin>
 

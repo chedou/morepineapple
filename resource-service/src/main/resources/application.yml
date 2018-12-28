@@ -2,7 +2,12 @@
 eureka:
   client:
     serviceUrl:
-      defaultZone: "http://localhost:8761/eureka/"
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
+#    instance-id: ${spring.cloud.client.ip_address}:${server.port}
+    #以IP地址注册到服务中心，相互注册使用IP地址
+    #ip-address: 192.168.1.1 #强制指定IP地址，默认会获取本机的IP地址
 feign:
   hystrix:
     enabled: true
@@ -22,22 +27,49 @@ spring:
   application:
     name: sources-service
   datasource:
-    filters: "stat,wall,slf4j"
+    type: com.alibaba.druid.pool.DruidDataSource
+#    driverClassName: com.mysql.jdbc.Driver
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+    platform: mysql
+#    本地
+    url: jdbc:mysql://localhost:3306/duoboluo?serverTimezone=GMT&useUnicode=true&characterEncoding=utf8&characterSetResults=utf8&useSSL=false&autoReconnect=true&failOverReadOnly=false
+#    服务器
+#    url: jdbc:mysql://120.79.82.72:3306/duoboluo?serverTimezone=GMT&useUnicode=true&characterEncoding=utf8&characterSetResults=utf8&useSSL=false&autoReconnect=true&failOverReadOnly=false
+    username: root
+    password: 123456
     initialSize: 5
-    logSlowSql: true
+    minIdle: 5
     maxActive: 20
     maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000
     minEvictableIdleTimeMillis: 300000
-    minIdle: 5
-    password: 123456
-    platform: mysql
+#    validationQuery: SELECT1FROMDUAL
+    testWhileIdle: true
     testOnBorrow: false
     testOnReturn: false
-    testWhileIdle: true
-    timeBetweenEvictionRunsMillis: 60000
-    type: com.alibaba.druid.pool.DruidDataSource
-    url: "jdbc:mysql://localhost:3306/duoboluo?serverTimezone=GMT&useUnicode=true&characterEncoding=utf8&characterSetResults=utf8&useSSL=true"
-    username: root
+    filters: stat,wall,slf4j
+    logSlowSql: true
+    driver-class-name: com.mysql.jdbc.Driver
+#  datasource:
+#    filters: "stat,wall,slf4j"
+#    initialSize: 5
+#    logSlowSql: true
+#    maxActive: 20
+#    maxWait: 60000
+#    minEvictableIdleTimeMillis: 300000
+#    minIdle: 5
+#    password: 123456
+#    platform: mysql
+#    testOnBorrow: false
+#    testOnReturn: false
+#    testWhileIdle: true
+#    timeBetweenEvictionRunsMillis: 60000
+#    type: com.alibaba.druid.pool.DruidDataSource
+##    本地数据库
+##    url: "jdbc:mysql://localhost:3306/duoboluo?serverTimezone=GMT&useUnicode=true&characterEncoding=utf8&characterSetResults=utf8&useSSL=true"
+##      服务器数据库
+#    url: jdbc:mysql://120.79.82.72:3306/duoboluo?serverTimezone=GMT&useUnicode=true&characterEncoding=utf8&characterSetResults=utf8&useSSL=false&autoReconnect=true&failOverReadOnly=false
+#    username: root
   jackson:
     date-format: "yyyy-MM-dd HH:mm:ss"
 #    default-property-inclusion: non_null
@@ -50,16 +82,6 @@ pagehelper:
   support-methods-arguments: true
   params: count=countSql
   page-size-zero: true
-
-
-
-
-
-
-
-
-
-
 
 
 

@@ -44,7 +44,7 @@ public class OAuth2Config extends AuthorizationServerConfigurerAdapter {
 				// 客户端可以使用的额授权类型
 				.authorizedGrantTypes("implicit","refresh_token", "password", "authorization_code")
 				// 访问令牌有效时长
-				.accessTokenValiditySeconds(12*300)
+				.accessTokenValiditySeconds(12*300*100)
 				// 刷新令牌有效时长
 				.refreshTokenValiditySeconds(12*300);
 	}

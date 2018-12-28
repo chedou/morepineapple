@@ -53,4 +53,8 @@ public class RoleMapperTest {
 		System.out.println(roleList.get(0).getPermissionsList().get(1).getId());
 
 	}
+
+
+
+
 }

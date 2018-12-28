@@ -6,7 +6,10 @@ spring:
 #    driverClassName: com.mysql.jdbc.Driver
 #    driver-class-name: com.mysql.cj.jdbc.Driver
     platform: mysql
-    url: jdbc:mysql://localhost:3306/duoboluo?serverTimezone=GMT&useUnicode=true&characterEncoding=utf8&characterSetResults=utf8&useSSL=true&autoReconnect=true&failOverReadOnly=false
+#    本地
+#    url: jdbc:mysql://localhost:3306/duoboluo?serverTimezone=GMT&useUnicode=true&characterEncoding=utf8&characterSetResults=utf8&useSSL=true&autoReconnect=true&failOverReadOnly=false
+#    服务器
+    url: jdbc:mysql://localhost:3306/duoboluo?serverTimezone=GMT&useUnicode=true&characterEncoding=utf8&characterSetResults=utf8&useSSL=false&autoReconnect=true&failOverReadOnly=false
     username: root
     password: 123456
     initialSize: 5
@@ -71,9 +74,14 @@ server:
   port: 7777
 
 eureka:
+  instance:
+    preferIpAddress: true
+    instance-id: ${spring.cloud.client.ipAddress}:${server.port}
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
+
+
 
 
 mybatis:

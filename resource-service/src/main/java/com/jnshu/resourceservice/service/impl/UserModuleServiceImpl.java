@@ -8,6 +8,7 @@ import com.jnshu.resourceservice.exception.*;
 import com.jnshu.resourceservice.service.*;
 import com.jnshu.resourceservice.utils.pageutil.*;
 import com.jnshu.resourceservice.utils.password.*;
+import groovy.util.*;
 import org.slf4j.*;
 import org.springframework.beans.factory.annotation.*;
 import org.springframework.stereotype.*;
@@ -56,9 +57,14 @@ public class UserModuleServiceImpl implements UserModuleService {
 		newUser.setGmtCreate(nowTime);
 		newUser.setGmtUpdate(nowTime);
 		// 写入操作人，默认更新人为创建人
+		if (null ==userMapper.selectUserDetailById(jwt.getUserID())){
+			throw new ServiceException("操作用户ID有误，请查看服务器日志");
+		}
 		User userExecutor = userMapper.selectUserDetailById(jwt.getUserID());
 		newUser.setCreateBy(userExecutor.getName());
 		newUser.setUpdateBy(userExecutor.getName());
+		// 写入用户有效状态,有效为：1，失效为：0
+		newUser.setStatus(1);
 		// 将新增数据插入数据库
 		userMapper.insertSelective(newUser);
 		// 对插入数据库的数据的返回ID进行查询，判断是否成功
@@ -91,8 +97,8 @@ public class UserModuleServiceImpl implements UserModuleService {
 		}
 
 		// 判断目标数据是否为失效数据
-		if (0 == userMapper.selectUserDetailById(targetUser.getId()).getStatus()){
-			throw new ServiceException("目标用户为失效用户");
+		if (null == targetUser.getId() || 0 == userMapper.selectUserDetailById(targetUser.getId()).getStatus()){
+			throw new ServiceException("目标用户不存在或为失效用户");
 		}
 		// 若对密码进行修改，则先对其加密
 		if (null != targetUser.getPassword()){
@@ -121,6 +127,7 @@ public class UserModuleServiceImpl implements UserModuleService {
 	public void delete(Long targetUserId, JWT jwt) {
 		// 打印核心参数，用户id，操作者ID
 		if (LOGGER.isDebugEnabled()){
+			LOGGER.debug("------------------------------------------------------");
 			LOGGER.debug("当前用户id是：{}，删除目标ID是:{}",
 					jwt.getUserID(), targetUserId);
 		}
@@ -132,6 +139,9 @@ public class UserModuleServiceImpl implements UserModuleService {
 		// 写入修改时间
 		returnUser.setGmtUpdate(System.currentTimeMillis());
 		// 写入修改人
+		if (null == userMapper.selectUserDetailById(jwt.getUserID())){
+			throw new ServiceException("操作用户ID有误，请查看服务器日志");
+		}
 		returnUser.setUpdateBy(userMapper.selectUserDetailById(jwt.getUserID()).getName());
 		if (1 != userMapper.updateByPrimaryKeySelective(returnUser)){
 			throw new ServiceException("数据删除失败，请查看服务器日志");
@@ -153,6 +163,7 @@ public class UserModuleServiceImpl implements UserModuleService {
 
 		// 打印核心参数，用户id，操作者ID
 		if (LOGGER.isDebugEnabled()){
+			LOGGER.debug("------------------------------------------------------");
 			LOGGER.debug("查询目标用户id是：{}", targetUserId);
 		}
 
@@ -183,6 +194,7 @@ public class UserModuleServiceImpl implements UserModuleService {
 
 		// debug模式下打印前端传入的参数，方便调试
 		if (LOGGER.isDebugEnabled()){
+			LOGGER.debug("------------------------------------------------------");
 			LOGGER.debug("分页参数为：{}，如有用到模糊查询则其参数为：{}，{}",
 					pageUtil.toString(),user.getName(),user.getRoleList().toString());
 		}
@@ -198,13 +210,20 @@ public class UserModuleServiceImpl implements UserModuleService {
 			Role targetRole =user.getRoleList().get(0);
 			targetRoleName = targetRole.getRoleName();
 		}
+		System.out.println("-----------------------");
+		System.out.println(user.toString());
+		System.out.println(user.getName());
+		System.out.println(targetRoleName);
+		String name =user.getName();
+		String roleName =targetRoleName;
 		// 根据请求参数发起查询
-		List<User> userList = userMapper.selectUserList(user.getName(), targetRoleName);
+		List<User> userList = userMapper.selectUserList(name, roleName);
 
 
 		// 对页数进行判断是否超过最大页
 		if ( null == pageUtil.getSize() || 0 == pageUtil.getSize()){
-			throw new ServiceException("pageUtil.size请求参数有异常，请查看日志");
+			// 如果被重写页长，这里更改为默认值：10
+			pageUtil.setSize(10);
 		}else if (pageUtil.getPage() > userList.size()/pageUtil.getSize() +1){
 			throw new ServiceException("所查询页码已超过最大值");
 		}

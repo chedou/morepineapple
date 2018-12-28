@@ -24,12 +24,28 @@ public class MultiRequestBodyArgumentResolver implements HandlerMethodArgumentRe
 	private static final String JSONBODY_ATTRIBUTE = "JSON_REQUEST_BODY";
 
 
-
+	/**
+	 * @Description  supportsParameter指明RequestModelArgumentResolver
+	 * 				只处理带有@MultiRequestBody注解的参数
+	 * @author Mr.HUANG
+	 * @date 2018/12/27
+	 *
+	 */
 	@Override
 	public boolean supportsParameter(MethodParameter parameter) {
 		return parameter.hasParameterAnnotation(MultiRequestBody.class);
 	}
 
+	/**
+	 * @Description 对入参进行解析
+	 * 				首先获取参数值（json串），然后获取参数的完整类型（带泛型），
+	 * 				最后使用fastjson解析器将json格式的参数值转化为具体类型的对象。
+	 * @param [parameter, mavContainer, webRequest, binderFactory] 
+	 * @return java.lang.Object 
+	 * @author Mr.HUANG
+	 * @date 2018/12/27 
+	 * @throws Exception
+	 */ 
 	@Override
 	public Object resolveArgument(MethodParameter parameter, ModelAndViewContainer mavContainer,
 								  NativeWebRequest webRequest, WebDataBinderFactory binderFactory) throws Exception {

@@ -25,6 +25,10 @@ public class AuthServiceHystrix implements AuthServiceClient {
      */
     @Override
     public JWT getToken(String authorization, String type, String username, String password) {
+        System.out.println("authorization:" + authorization );
+        System.out.println("username:" + username);
+        System.out.println("type:" + type);
+        System.out.println("password:" + password);
         return null;
     }
 }

@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.*;
 import org.springframework.boot.test.context.*;
 import org.springframework.test.context.junit4.*;
 
+import java.sql.*;
 import java.util.*;
 
 @RunWith(SpringRunner.class)
@@ -57,6 +58,23 @@ public class UserMapperTest {
 			System.out.println(user.getAuthorities().toString());
 
 		}
+	}
+
+	@Test
+	public void insert() throws SQLException {
+		logger.info("-------------------------");
+		logger.info("插入单个用户");
+
+		User user = new User();
+		user.setName("1");
+		user.setPassword("12awsdfewcfasdawd");
+		System.out.println(user.toString());
+		System.out.println(userMapper.insert(user));
+		System.out.println("新增数据之后返回的id:" + user.getId());
+		logger.info("-------------------------");
+		System.out.println(userMapper);
+
+
 	}
 
 	@Test
