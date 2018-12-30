@@ -1,6 +1,7 @@
 package com.jnshu.resourceservice.config;
 
 import org.springframework.beans.factory.annotation.*;
+import org.springframework.boot.autoconfigure.security.*;
 import org.springframework.context.annotation.*;
 import org.springframework.core.io.*;
 import org.springframework.security.oauth2.provider.token.*;
@@ -22,6 +23,9 @@ public class JwtConfig {
 	 */
 	@Autowired
 	JwtAccessTokenConverter jwtAccessTokenConverter;
+
+	@Autowired
+	private SecurityProperties securityProperties;
 
 	/**
 	 * 写入令牌存储
@@ -56,4 +60,6 @@ public class JwtConfig {
 		converter.setVerifierKey(publicKey);
 		return converter;
 	}
+
+
 }

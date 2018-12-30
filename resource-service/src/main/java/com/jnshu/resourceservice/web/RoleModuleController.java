@@ -1,17 +1,37 @@
 package com.jnshu.resourceservice.web;
 
+import com.auth0.jwt.impl.*;
+import com.jnshu.resourceservice.client.*;
 import com.jnshu.resourceservice.core.ret.*;
 import com.jnshu.resourceservice.entity.*;
 import com.jnshu.resourceservice.entity.group.*;
 import com.jnshu.resourceservice.service.*;
 import com.jnshu.resourceservice.utils.pageutil.*;
+import io.jsonwebtoken.*;
 import io.swagger.annotations.*;
+import org.apache.commons.lang.*;
+import org.apache.commons.lang.StringUtils;
+import org.apache.tomcat.util.bcel.classfile.*;
+import org.apache.tomcat.util.http.parser.Authorization;
 import org.bouncycastle.jcajce.provider.asymmetric.ec.KeyFactorySpi.*;
 import org.slf4j.*;
 import org.springframework.beans.factory.annotation.*;
+import org.springframework.core.io.*;
 import org.springframework.security.access.prepost.*;
+import org.springframework.security.core.*;
+import org.springframework.security.oauth2.provider.*;
+import org.springframework.security.oauth2.provider.token.*;
+import org.springframework.security.oauth2.provider.token.store.*;
+import org.springframework.util.*;
 import org.springframework.validation.annotation.*;
 import org.springframework.web.bind.annotation.*;
+
+import javax.crypto.spec.*;
+import javax.servlet.http.*;
+import javax.xml.bind.*;
+import java.io.*;
+import java.security.*;
+import java.util.*;
 
 /**
  * @program: morepineapple
@@ -29,6 +49,60 @@ public class RoleModuleController {
 	@Autowired
 	private RoleModuleService roleModuleService;
 
+	@Autowired
+	AuthServiceClient client;
+
+	@Autowired
+	JwtAccessTokenConverter jwtAccessTokenConverter;
+
+	//TODO:角色管理-查询角色列表
+	/**
+	 * @Description 角色管理-获取角色列表，分页默返回参数单页8组数据
+	 * @param [pageUtil]
+	 * @return com.jnshu.resourceservice.core.ret.RetResult<?>
+	 * @author Mr.HUANG
+	 * @date 2018/12/26
+	 * @throws Exception
+	 */
+	@ApiOperation(value = "selectRoleList",  notes = "查询角色列表")
+	@GetMapping(value = "/role/list", produces = "application/json;charset=UTF-8")
+	@PreAuthorize("hasAuthority('RoleManageAll')")
+	public RetResult<?> selectRoleList(@Validated ({PageUtilGroup.class})PageUtil pageUtil
+			) throws Exception {
+
+		if (logger.isDebugEnabled()){
+			logger.debug("----UserModuleController----selectRoleList-----");
+			logger.debug("分页参数为:{}", pageUtil.toString());
+
+		}
+
+		// Key KEY = new SecretKeySpec("hwb-jwt".getBytes(),
+		// 		SignatureAlgorithm.HS512.getJcaName());
+		// Jws<Claims> claimsJws = Jwts.parser().setSigningKey(KEY).parseClaimsJws(compactJws);
+		// JwsHeader header = claimsJws.getHeader();
+		// Claims body = claimsJws.getBody();
+		//
+		// System.out.println("jwt header:" + header);
+		// System.out.println("jwt body:" + body);
+		// System.out.println("jwt body user-id:" + body.get("user_id", String.class));
+
+		// DefaultAccessTokenConverter defaultAccessTokenConverter =new DefaultAccessTokenConverter();
+		// DefaultTokenServices defaultTokenServices =new DefaultTokenServices();
+		// OAuth2Authentication oAuth2Authentication = defaultTokenServices.loadAuthentication(Authorization);
+		// Authentication authorization = oAuth2Authentication.getUserAuthentication();
+		// Object a1 = authorization.getDetails();
+		// System.out.println(a1.toString());
+
+
+
+
+
+		return RetResponse.result(RetCode.SUCCESS_ROLE_LIST_GET)
+				.setData(roleModuleService.selectRoleList(pageUtil));
+	}
+
+
+
 	//TODO:角色管理-新增角色
 	/**
 	 * @Description 角色管理-增加角色
@@ -43,6 +117,8 @@ public class RoleModuleController {
 	@PreAuthorize("hasAuthority('RoleManageAll') AND hasAuthority('RoleManageAdd') ")
 	public RetResult<?> addRole(@Validated({addAndUpdateRoleGroup.class})Role role,
 								@Validated({JWTOperatingGroup.class})JWT jwt)throws Exception{
+
+
 		if (logger.isDebugEnabled()){
 			logger.debug("----RoleModuleController----addRole------");
 			logger.debug("插入的角色名:{}", role.getRoleName());
@@ -68,6 +144,8 @@ public class RoleModuleController {
 	public RetResult<?> updateRole(@Validated({addAndUpdateRoleGroup.class})Role role,
 								   @Validated({JWTOperatingGroup.class})JWT jwt)throws Exception{
 
+
+		// defaultAccessTokenConverter
 		roleModuleService.updateRole(role, jwt);
 		return RetResponse.result(RetCode.SUCCESS_USER_ONE_UPDATE);
 
@@ -123,25 +201,59 @@ public class RoleModuleController {
 				setData(roleModuleService.selectRole(targetRoleId));
 	}
 
-
-	//TODO:角色管理-查询角色列表
-	/**
-	 * @Description 角色管理-获取角色列表，分页默返回参数单页8组数据
-	 * @param [pageUtil]
-	 * @return com.jnshu.resourceservice.core.ret.RetResult<?>
-	 * @author Mr.HUANG
-	 * @date 2018/12/26
-	 * @throws Exception
-	 */
 	@ApiOperation(value = "selectRoleList",  notes = "查询角色列表")
-	@PostMapping(value = "/role/list", produces = "application/json;charset=UTF-8")
+	@GetMapping(value = "/role/me", produces = "application/json;charset=UTF-8")
 	@PreAuthorize("hasAuthority('RoleManageAll')")
-	public RetResult<?> selectRoleList(@Validated ({PageUtilGroup.class})PageUtil pageUtil) throws Exception {
-		if (logger.isDebugEnabled()){
-			logger.debug("----UserModuleController----selectRoleList-----");
-			logger.debug("分页参数为:{}", pageUtil.toString());
+	public RetResult<?> getCurrentUser( HttpServletRequest request,PageUtil pageUtil
+									   ) throws Exception {
 
+		// String s = user.getPrincipal().toString();
+		// String name = user.getName();
+		String header = request.getHeader("Authorization");
+		System.out.println(header);
+		String token = StringUtils.substringAfter(header,"Bearer ");
+		System.out.println("token:"  + token);
+
+		//
+		// Claims body = Jwts.parser().setSigningKey("hwb123")
+		// 		.parseClaimsJws(token).getBody();
+		//
+		// String username = (String) body.get("username");
+		// logger.info("解析token获取到的username为{}",username);
+		// logger.info("从Authentication里获取到的username为{}",s);
+		// logger.info("从Authentication里获取到的username为{}",name);
+		// return ServerResponse.createBySuccess(user);
+
+
+		// ---------------------------------
+		// Key KEY = new SecretKeySpec("javastack".getBytes(),
+		// 		SignatureAlgorithm.HS512.getJcaName());
+		Resource resource = new ClassPathResource("public.cert");
+		String publicKey ;
+		// 通过IO流读取公钥文件
+		try {
+			publicKey = new String(FileCopyUtils.copyToByteArray(resource.getInputStream()));
+		} catch (IOException e) {
+			throw new RuntimeException(e);
 		}
+		// 将公钥写入JWT转换器
+		System.out.println("================================");
+		System.out.println("publicKey:" + publicKey);
+
+		Jws<Claims> claimsJws = Jwts.parser().setSigningKey("hwb123".getBytes("UTF-8"))
+				.parseClaimsJws(token);
+		JwsHeader header1 = claimsJws.getHeader();
+		Claims body1 = claimsJws.getBody();
+
+		System.out.println("header1:" + header1);
+		System.out.println("body1:" + body1);
+
+
+		// if (logger.isDebugEnabled()){
+		// 	logger.debug("----UserModuleController----selectRoleList-----");
+		// 	logger.debug("分页参数为:{}", pageUtil.toString());
+		//
+		// }
 
 		return RetResponse.result(RetCode.SUCCESS_ROLE_LIST_GET)
 				.setData(roleModuleService.selectRoleList(pageUtil));

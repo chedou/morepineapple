@@ -51,11 +51,13 @@ public class UserServiceDetail implements UserDetailsService {
 		// 获取token
 		JWT jwt=client.getToken("Basic dXNlci1zZXJ2aWNlOjEyMzQ1Ng==","password",username,password);
 		// 获得用户菜单
+		
 		if(jwt==null){
 			throw new UserLoginException("error internal");
 		}
 		// 用户id写入jwt
 		jwt.setUserID(user.getId());
+
 
 		UserLoginDTO userLoginDTO=new UserLoginDTO();
 		userLoginDTO.setJwt(jwt);

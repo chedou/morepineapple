@@ -9,6 +9,7 @@ import com.jnshu.resourceservice.service.*;
 import com.jnshu.resourceservice.utils.pageutil.*;
 import org.slf4j.*;
 import org.springframework.beans.factory.annotation.*;
+import org.springframework.security.oauth2.provider.token.store.*;
 import org.springframework.stereotype.*;
 
 import java.util.*;
@@ -33,6 +34,8 @@ public class RoleModuleServiceImpl implements RoleModuleService {
 	@Autowired(required = false)
 	private RolePermissionMapper rolePermissionMapper;
 
+
+
 	/**
 	 * @param newRole
 	 * @param jwt
@@ -44,6 +47,8 @@ public class RoleModuleServiceImpl implements RoleModuleService {
 	 */
 	@Override
 	public void addRole(Role newRole, JWT jwt) {
+
+
 		if (LOGGER.isDebugEnabled()){
 			LOGGER.debug("当前用户id是：{}，传入的参数是:{},传入的权限参数：{}",
 					jwt.getUserID(), newRole.getRoleName(), newRole.getPermissionsList().toString());

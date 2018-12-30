@@ -189,13 +189,7 @@
 	r.gmt_update,
 	r.create_by,
 	r.update_by,
-	r.`status`,
-	p.id p_id,
-	p.permission_name,
-	p.gmt_create p_gmt_create,
-	p.gmt_update p_gmt_update,
-	p.create_by p_create_by,
-	p.update_by p_update_by
+	r.`status`
     FROM (role AS r
 	LEFT JOIN role_permission AS rp ON r.id = rp.role_id)
 	RIGHT JOIN permission AS p ON rp.node_id = p.id
