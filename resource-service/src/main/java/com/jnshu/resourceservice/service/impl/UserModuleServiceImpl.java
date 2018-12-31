@@ -8,7 +8,6 @@ import com.jnshu.resourceservice.exception.*;
 import com.jnshu.resourceservice.service.*;
 import com.jnshu.resourceservice.utils.pageutil.*;
 import com.jnshu.resourceservice.utils.password.*;
-import groovy.util.*;
 import org.slf4j.*;
 import org.springframework.beans.factory.annotation.*;
 import org.springframework.stereotype.*;
@@ -40,14 +39,14 @@ public class UserModuleServiceImpl implements UserModuleService {
 	 * @throws
 	 */
 	@Override
-	public void addUser(User newUser, JWT jwt){
+	public UserModuleDTO addUser(User newUser,Long operatorId){
+
 		// 打印核心参数，用户姓名，手机号，操作者ID
-		if (LOGGER.isDebugEnabled()){
-			LOGGER.debug("当前用户id是：{}，传入的参数是:{}，{}",
-					jwt.getUserID(),newUser.getUsername(),newUser.getPhoneNum());
-		}
+		LOGGER.info("当前用户id是：{}，传入的参数是:{}，{}",
+					operatorId,newUser.getUsername(),newUser.getPhoneNum());
+
 		// 判断新增用户名是否已使用
-		if (null == newUser || null != userMapper.findByUsername(newUser.getName()) ){
+		if (null != userMapper.findByUsername(newUser.getName())){
 			throw new ServiceException("用户名已被使用，请重新输入");
 		}
 		// 对输入的用户进行加密
@@ -57,10 +56,10 @@ public class UserModuleServiceImpl implements UserModuleService {
 		newUser.setGmtCreate(nowTime);
 		newUser.setGmtUpdate(nowTime);
 		// 写入操作人，默认更新人为创建人
-		if (null ==userMapper.selectUserDetailById(jwt.getUserID())){
+		User userExecutor = userMapper.selectUserDetailById(operatorId);
+		if (null == userExecutor){
 			throw new ServiceException("操作用户ID有误，请查看服务器日志");
 		}
-		User userExecutor = userMapper.selectUserDetailById(jwt.getUserID());
 		newUser.setCreateBy(userExecutor.getName());
 		newUser.setUpdateBy(userExecutor.getName());
 		// 写入用户有效状态,有效为：1，失效为：0
@@ -68,32 +67,38 @@ public class UserModuleServiceImpl implements UserModuleService {
 		// 将新增数据插入数据库
 		userMapper.insertSelective(newUser);
 		// 对插入数据库的数据的返回ID进行查询，判断是否成功
-		if (LOGGER.isDebugEnabled()){
-			LOGGER.debug("新增用户的ID为：{}",newUser.getId());
-		}
 		LOGGER.info("新增用户的ID为：{}",newUser.getId());
 		LOGGER.info( "新增用户是否存在" +  userMapper.selectUserDetailById(newUser.getId()));
 		// 检验插入是否成功
 		if (null == userMapper.selectUserDetailById(newUser.getId())){
 			throw new ServiceException("数据插入失败，请查看日志");
 		}
+		// 将新增的用户id返回
+		User returnUser = new User();
+		returnUser.setId(newUser.getId());
+		UserModuleDTO userModuleDTO =new UserModuleDTO();
+		userModuleDTO.setUser(returnUser);
+		return userModuleDTO;
 	}
 
 	/**
 	 * @Description 用户管理-修改个人信息
-	 * @param [user, jwt]
+	 * @param [user, operatorId]
+	 *               user		 更改的目标用户
+	 *               operatorId	 操作者ID
 	 * @return void
 	 * @author Mr.HUANG
 	 * @date 2018/12/19
 	 * @throws
 	 */
 	@Override
-	public void update(User targetUser, JWT jwt) {
+	public User update(User targetUser, Long operatorId) {
 
+		Long targetId =targetUser.getId();
 		// 打印核心参数，用户id，操作者ID
 		if (LOGGER.isDebugEnabled()){
 			LOGGER.debug("当前用户id是：{}，修改目标ID是:{}",
-					jwt.getUserID(), targetUser.getId());
+					operatorId, targetUser.getId());
 		}
 
 		// 判断目标数据是否为失效数据
@@ -107,12 +112,17 @@ public class UserModuleServiceImpl implements UserModuleService {
 		// 写入修改时间
 		targetUser.setGmtUpdate(System.currentTimeMillis());
 		// 写入修改人
-		targetUser.setUpdateBy(userMapper.selectUserDetailById(jwt.getUserID()).getName());
+		targetUser.setUpdateBy(userMapper.selectUserDetailById(operatorId).getName());
 		// 对数据库信息进行修改,并对返回值做判断，于此来确认数据是否更改成功
-		if (1 != userMapper.updateByPrimaryKeySelective(targetUser)){
+		// 对更改参数之后返回的ID与前端传入的ID进行比较，看是否有出错
+		if (1 != userMapper.updateByPrimaryKeySelective(targetUser) & !targetId.equals(targetUser.getId())){
+			LOGGER.info("前端传入的ID为：{},参数修改之后返回的参数为：{}", targetId, targetUser.getId());
 			throw new ServiceException("数据更改失败，请查看服务器日志");
 		}
 
+		User returnUser =new User();
+		returnUser.setId(targetUser.getId());
+		return returnUser;
 	}
 
 	/**
@@ -124,13 +134,12 @@ public class UserModuleServiceImpl implements UserModuleService {
 	 * @throws
 	 */
 	@Override
-	public void delete(Long targetUserId, JWT jwt) {
+	public void delete(Long targetUserId, Long operatorId) {
 		// 打印核心参数，用户id，操作者ID
-		if (LOGGER.isDebugEnabled()){
-			LOGGER.debug("------------------------------------------------------");
-			LOGGER.debug("当前用户id是：{}，删除目标ID是:{}",
-					jwt.getUserID(), targetUserId);
-		}
+
+		LOGGER.info("------------------------------------------------------");
+		LOGGER.info("当前用户id是：{}，删除目标ID是:{}", operatorId, targetUserId);
+
 		// 此处的删除，只是将数据的状态 status 更改为 0
 		User returnUser = userMapper.selectUserDetailById(targetUserId);
 		if (1 == returnUser.getStatus()){
@@ -139,10 +148,10 @@ public class UserModuleServiceImpl implements UserModuleService {
 		// 写入修改时间
 		returnUser.setGmtUpdate(System.currentTimeMillis());
 		// 写入修改人
-		if (null == userMapper.selectUserDetailById(jwt.getUserID())){
+		if (null == userMapper.selectUserDetailById(operatorId)){
 			throw new ServiceException("操作用户ID有误，请查看服务器日志");
 		}
-		returnUser.setUpdateBy(userMapper.selectUserDetailById(jwt.getUserID()).getName());
+		returnUser.setUpdateBy(userMapper.selectUserDetailById(operatorId).getName());
 		if (1 != userMapper.updateByPrimaryKeySelective(returnUser)){
 			throw new ServiceException("数据删除失败，请查看服务器日志");
 		}
@@ -193,11 +202,10 @@ public class UserModuleServiceImpl implements UserModuleService {
 	public UserModuleDTO selectUserList(PageUtil pageUtil, User user ) {
 
 		// debug模式下打印前端传入的参数，方便调试
-		if (LOGGER.isDebugEnabled()){
-			LOGGER.debug("------------------------------------------------------");
-			LOGGER.debug("分页参数为：{}，如有用到模糊查询则其参数为：{}，{}",
+		LOGGER.info("------------------------------------------------------");
+		LOGGER.info("分页参数为：{}，如有用到模糊查询则其参数为：{}，{}",
 					pageUtil.toString(),user.getName(),user.getRoleList().toString());
-		}
+
 		// 对模糊查询的条件进行判断，如有问题，抛出异常
 		// （根据需求，模糊查询中 用户名：username 和角色名:roleName 都只能有一个值）
 		if (user.getRoleList().size() > 1){

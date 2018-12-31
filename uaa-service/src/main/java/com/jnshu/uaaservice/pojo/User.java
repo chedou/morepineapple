@@ -148,14 +148,14 @@ public class User implements UserDetails, Serializable {
 	/**
 	 * @Description 获取用户名
 	 * @param
-	 * @return
+	 * @return 重写返回用户名，更改为 用户ID+用户名
 	 * @author Mr.HUANG
 	 * @date 2018/12/12
 	 * @throws
 	 */
 	@Override
 	public String getUsername() {
-		return name;
+		return id + "," + name;
 	}
 
 	/**

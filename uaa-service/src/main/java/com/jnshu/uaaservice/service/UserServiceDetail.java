@@ -1,6 +1,7 @@
 package com.jnshu.uaaservice.service;
 
 import com.jnshu.uaaservice.dao.*;
+import com.jnshu.uaaservice.pojo.User;
 import org.springframework.beans.factory.annotation.*;
 import org.springframework.security.core.userdetails.*;
 import org.springframework.stereotype.*;
@@ -27,6 +28,10 @@ public class UserServiceDetail implements UserDetailsService {
 	 */
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-		return userMapper.findByUsername(username);
+		User returnUser =userMapper.findByUsername(username);
+		System.out.println("uaa-server-封装的用户信息为：" + returnUser);
+		System.out.println("--------------------------------------");
+		System.out.println(returnUser.getUsername());
+		return returnUser;
 	}
 }

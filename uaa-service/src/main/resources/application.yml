@@ -1,3 +1,16 @@
+#服务端点
+server:
+  port: 7777
+
+eureka:
+  instance:
+    preferIpAddress: true
+#    instance-id: ${spring.cloud.client.ipAddress}:${server.port}
+  client:
+    serviceUrl:
+      defaultZone: http://120.79.82.72:8761/eureka/
+
+
 spring:
   application:
     name: uaa-service
@@ -68,19 +81,6 @@ spring:
 #      ddl-auto: update
 #    show-sql: true
 #
-
-#服务端点
-server:
-  port: 7777
-
-eureka:
-  instance:
-    preferIpAddress: true
-    instance-id: ${spring.cloud.client.ipAddress}:${server.port}
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
-
 
 
 

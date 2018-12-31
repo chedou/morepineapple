@@ -1,13 +1,14 @@
 package com.jnshu.resourceservice.entity;
 
+import com.fasterxml.jackson.annotation.*;
 import com.fasterxml.jackson.databind.annotation.*;
 import com.jnshu.resourceservice.entity.group.*;
 import org.hibernate.validator.constraints.*;
 import org.springframework.security.core.*;
 import org.springframework.security.core.userdetails.*;
 
-import javax.validation.constraints.*;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.*;
 import java.io.*;
 import java.util.*;
 
@@ -90,6 +91,7 @@ public class User implements UserDetails, Serializable {
 	/**
 	 * @Fields 用户所拥有的权限信息
 	 */
+	@JsonProperty("authorities")
 	private List<Permission> authorities;
 
 	/**
@@ -125,8 +127,10 @@ public class User implements UserDetails, Serializable {
 	 * @author Mr.HUANG
 	 * @date 2018/12/12
 	 * @throws
+	 * @备注： JsonIgnore是为了解决继承不能序列化成Json格式的问题
 	 */
 	@Override
+	@JsonIgnore
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 
 		List<Permission> permissionListTem = new ArrayList<>();

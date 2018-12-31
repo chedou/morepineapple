@@ -14,23 +14,23 @@ public interface UserModuleService {
 
 	/**
 	 * @Description 用户管理-新增用户
-	 * @param [newuUser, jwt]
+	 * @param [newuUser, operatorId]
 	 * @return java.lang.Integer
 	 * @author Mr.HUANG
 	 * @date 2018/12/17
 	 * @throws
 	 */
-	void addUser(User newUser, JWT jwt);
+	UserModuleDTO addUser(User newUser,Long operatorId);
 
 	/**
 	 * @Description 用户管理-修改个人信息
-	 * @param [targetUser, jwt]
-	 * @return void
+	 * @param [targetUser, operatorId]
+	 * @return UserModuleDTO
 	 * @author Mr.HUANG
 	 * @date 2018/12/19
 	 * @throws
 	 */
-	void update(User targetUser, JWT jwt);
+	User update(User targetUser, Long operatorId);
 
 	/**
 	 * @Description 用户管理-删除用户
@@ -40,7 +40,7 @@ public interface UserModuleService {
 	 * @date 2018/12/20
 	 * @throws
 	 */
-	void delete(Long targetUserId, JWT jwt);
+	void delete(Long targetUserId, Long operatorId);
 
 	/**
 	 * @Description 用户管理-获取单个用户信息

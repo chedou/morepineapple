@@ -1,6 +1,7 @@
 package com.jnshu.resourceservice.core.ret;
 
 
+import java.io.*;
 import java.util.*;
 
 /**
@@ -9,7 +10,9 @@ import java.util.*;
  * @author: Mr.huang
  * @create: 2018-10-14 21:36
  **/
-public class RetResult<T> {
+public class RetResult<T> implements Serializable {
+	private static final long serialVersionUID = -1428285660796168326L;
+
 
 	private int code;
 

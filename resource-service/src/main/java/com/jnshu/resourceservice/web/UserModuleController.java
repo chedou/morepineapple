@@ -2,9 +2,11 @@ package com.jnshu.resourceservice.web;
 
 import com.jnshu.resourceservice.core.HandlerMethodArgumentResolver.*;
 import com.jnshu.resourceservice.core.ret.*;
+import com.jnshu.resourceservice.dto.*;
 import com.jnshu.resourceservice.entity.*;
 import com.jnshu.resourceservice.entity.group.*;
 import com.jnshu.resourceservice.service.*;
+import com.jnshu.resourceservice.utils.*;
 import com.jnshu.resourceservice.utils.pageutil.*;
 import io.swagger.annotations.*;
 import org.slf4j.*;
@@ -12,8 +14,6 @@ import org.springframework.beans.factory.annotation.*;
 import org.springframework.security.access.prepost.*;
 import org.springframework.validation.annotation.*;
 import org.springframework.web.bind.annotation.*;
-
-import javax.validation.*;
 
 /**
  * @description: 用户管理模块
@@ -43,16 +43,16 @@ public class UserModuleController {
 	@ApiOperation(value = "addUser",  notes = "新增用户")
 	@PostMapping(value = "/user", produces = "application/json;charset=UTF-8")
 	@PreAuthorize("hasAuthority('RoleManageAll') AND hasAuthority('RoleManageAdd') ")
-	public RetResult<?> addUser(@Validated({AddUserGroup.class}) User user,
-								@Validated({JWTOperatingGroup.class})JWT jwt) throws Exception{
+	public RetResult<?> addUser(@Validated({AddUserGroup.class}) User user) throws Exception{
 
-		if (logger.isDebugEnabled()){
-			logger.debug("----UserModuleController----addUser------");
-			logger.debug("插入的用户名:{}", user.getName());
-		}
+		logger.info("----UserModuleController----addUser------");
+		logger.info("插入的用户名:{}", user.getName());
 
-		userModuleService.addUser(user, jwt);
-		return RetResponse.result(RetCode.SUCCESS_USER_ONE_ADD);
+		Long operatorId =Long.parseLong(AuthorizationUtils.getUserId());
+
+		UserModuleDTO newUser = userModuleService.addUser(user, operatorId);
+		System.out.println(newUser.toString());
+		return RetResponse.result(RetCode.SUCCESS_USER_ONE_ADD).setData(newUser);
 
 	}
 
@@ -68,14 +68,15 @@ public class UserModuleController {
 	@ApiOperation(value = "updateUser",  notes = "更改用户")
 	@PutMapping(value = "/user", produces = "application/json;charset=UTF-8")
 	@PreAuthorize("hasAuthority('RoleManageAll') AND hasAuthority('RoleManageUpdate') ")
-	public RetResult<?> updateUser(@Validated({UpdateUserGroup.class, AddUserGroup.class})User user,
-								   @Validated({JWTOperatingGroup.class})JWT jwt)throws Exception{
-		System.out.println(user.toString());
-		if (logger.isDebugEnabled()){
-			logger.debug("----UserModuleController----updateUser-----");
-			logger.debug("需要修改的用户ID:{}", user.getName());
-		}
-		userModuleService.update(user, jwt);
+	public RetResult<?> updateUser(@Validated({UpdateUserGroup.class, AddUserGroup.class})User user)throws Exception{
+
+		logger.info("----UserModuleController----updateUser-----");
+		logger.info("需要修改的用户ID:{}", user.getId());
+		System.out.println("--------------------");
+		System.out.println(user);
+
+		Long operatorId =Long.parseLong(AuthorizationUtils.getUserId());
+		userModuleService.update(user, operatorId);
 		return RetResponse.result(RetCode.SUCCESS_USER_ONE_UPDATE);
 	}
 
@@ -91,14 +92,14 @@ public class UserModuleController {
 	@ApiOperation(value = "deleteUser",  notes = "删除用户")
 	@DeleteMapping(value = "/user/{targetUserId}", produces = "application/json;charset=UTF-8")
 	@PreAuthorize("hasAuthority('RoleManageAll') AND hasAuthority('RoleManageDelete') ")
-	public RetResult<?> deleteUser(@PathVariable Long targetUserId,
-								   @Validated({JWTOperatingGroup.class}) JWT jwt) throws Exception{
+	public RetResult<?> deleteUser(@PathVariable Long targetUserId) throws Exception{
 
 		if (logger.isDebugEnabled()){
 			logger.debug("----UserModuleController----deleteUser-----");
 			logger.debug("需要删除的用户ID:{}", targetUserId);
 		}
-		userModuleService.delete(targetUserId, jwt);
+		Long operatorId =Long.parseLong(AuthorizationUtils.getUserId());
+		userModuleService.delete(targetUserId, operatorId);
 		return RetResponse.result(RetCode.SUCCESS_USER_ONE_DELETE);
 	}
 
@@ -149,33 +150,11 @@ public class UserModuleController {
 			logger.debug("----UserModuleController----selectUserList-----");
 			logger.debug("分页参数为:{}", pageUtil.toString());
 		}
+		System.out.println(user);
+		System.out.println(pageUtil);
 		return RetResponse.result(RetCode.SUCCESS_USER_LIST_GET)
 				.setData(userModuleService.selectUserList(pageUtil, user));
 	}
-
-
-	// -------------------------------------------------- 测试-------------------------------------
-
-	@ApiOperation(value = "test",  notes = "测试")
-	@PostMapping(value = "/user/test", produces = "application/json;charset=UTF-8")
-	@PreAuthorize("hasAuthority('RoleManageAll')")
-	public RetResult<?> test( @Validated({PageUtilGroup.class})  @MultiRequestBody(value = "pageUtil")PageUtil pageUtil,
-							 @MultiRequestBody(value = "user")@Validated({AddUserGroup.class}) User user)
-			throws Exception{
-
-		System.out.println("---------------------------");
-		System.out.println(user.toString());
-		if (null != user.getRoleList()){
-			System.out.println(user.getRoleList().size());
-			System.out.println(user.getRoleList().get(0).getPermissionsList().size());
-		}
-		System.out.println(pageUtil.toString());
-
-		return RetResponse.result(RetCode.SUCCESS_USER_LIST_GET);
-	}
-
-
-
 }
 
 

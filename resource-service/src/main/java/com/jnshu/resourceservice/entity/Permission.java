@@ -3,15 +3,13 @@ package com.jnshu.resourceservice.entity;
 import com.fasterxml.jackson.databind.annotation.*;
 import org.springframework.security.core.*;
 
-import java.io.*;
-
 /**
  * @description 权限实体类model
  * @author Mr.HUANG
  * @date 2018/12/6
  */
 @JsonSerialize
-public class Permission implements GrantedAuthority, Serializable {
+public class Permission implements GrantedAuthority {
 
     private static final long serialVersionUID = -1428285660796168326L;
 

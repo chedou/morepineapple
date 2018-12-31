@@ -1,37 +1,20 @@
 package com.jnshu.resourceservice.web;
 
-import com.auth0.jwt.impl.*;
-import com.jnshu.resourceservice.client.*;
 import com.jnshu.resourceservice.core.ret.*;
 import com.jnshu.resourceservice.entity.*;
 import com.jnshu.resourceservice.entity.group.*;
 import com.jnshu.resourceservice.service.*;
+import com.jnshu.resourceservice.utils.*;
 import com.jnshu.resourceservice.utils.pageutil.*;
-import io.jsonwebtoken.*;
 import io.swagger.annotations.*;
 import org.apache.commons.lang.*;
-import org.apache.commons.lang.StringUtils;
-import org.apache.tomcat.util.bcel.classfile.*;
-import org.apache.tomcat.util.http.parser.Authorization;
-import org.bouncycastle.jcajce.provider.asymmetric.ec.KeyFactorySpi.*;
 import org.slf4j.*;
 import org.springframework.beans.factory.annotation.*;
-import org.springframework.core.io.*;
 import org.springframework.security.access.prepost.*;
-import org.springframework.security.core.*;
-import org.springframework.security.oauth2.provider.*;
-import org.springframework.security.oauth2.provider.token.*;
-import org.springframework.security.oauth2.provider.token.store.*;
-import org.springframework.util.*;
 import org.springframework.validation.annotation.*;
 import org.springframework.web.bind.annotation.*;
 
-import javax.crypto.spec.*;
 import javax.servlet.http.*;
-import javax.xml.bind.*;
-import java.io.*;
-import java.security.*;
-import java.util.*;
 
 /**
  * @program: morepineapple
@@ -49,11 +32,6 @@ public class RoleModuleController {
 	@Autowired
 	private RoleModuleService roleModuleService;
 
-	@Autowired
-	AuthServiceClient client;
-
-	@Autowired
-	JwtAccessTokenConverter jwtAccessTokenConverter;
 
 	//TODO:角色管理-查询角色列表
 	/**
@@ -75,26 +53,9 @@ public class RoleModuleController {
 			logger.debug("分页参数为:{}", pageUtil.toString());
 
 		}
-
-		// Key KEY = new SecretKeySpec("hwb-jwt".getBytes(),
-		// 		SignatureAlgorithm.HS512.getJcaName());
-		// Jws<Claims> claimsJws = Jwts.parser().setSigningKey(KEY).parseClaimsJws(compactJws);
-		// JwsHeader header = claimsJws.getHeader();
-		// Claims body = claimsJws.getBody();
-		//
-		// System.out.println("jwt header:" + header);
-		// System.out.println("jwt body:" + body);
-		// System.out.println("jwt body user-id:" + body.get("user_id", String.class));
-
-		// DefaultAccessTokenConverter defaultAccessTokenConverter =new DefaultAccessTokenConverter();
-		// DefaultTokenServices defaultTokenServices =new DefaultTokenServices();
-		// OAuth2Authentication oAuth2Authentication = defaultTokenServices.loadAuthentication(Authorization);
-		// Authentication authorization = oAuth2Authentication.getUserAuthentication();
-		// Object a1 = authorization.getDetails();
-		// System.out.println(a1.toString());
-
-
-
+		System.out.println("-----------------------------------------");
+		System.out.println(AuthorizationUtils.getUserId());
+		System.out.println(AuthorizationUtils.getDetails().toString());
 
 
 		return RetResponse.result(RetCode.SUCCESS_ROLE_LIST_GET)
@@ -228,25 +189,30 @@ public class RoleModuleController {
 		// ---------------------------------
 		// Key KEY = new SecretKeySpec("javastack".getBytes(),
 		// 		SignatureAlgorithm.HS512.getJcaName());
-		Resource resource = new ClassPathResource("public.cert");
-		String publicKey ;
-		// 通过IO流读取公钥文件
-		try {
-			publicKey = new String(FileCopyUtils.copyToByteArray(resource.getInputStream()));
-		} catch (IOException e) {
-			throw new RuntimeException(e);
-		}
-		// 将公钥写入JWT转换器
-		System.out.println("================================");
-		System.out.println("publicKey:" + publicKey);
+		// Resource resource = new ClassPathResource("public.cert");
+		// String publicKey ;
+		// // 通过IO流读取公钥文件
+		// try {
+		// 	publicKey = new String(FileCopyUtils.copyToByteArray(resource.getInputStream()));
+		// } catch (IOException e) {
+		// 	throw new RuntimeException(e);
+		// }
+		// // 将公钥写入JWT转换器
+		// System.out.println("================================");
+		// System.out.println("publicKey:" + publicKey);
 
-		Jws<Claims> claimsJws = Jwts.parser().setSigningKey("hwb123".getBytes("UTF-8"))
-				.parseClaimsJws(token);
-		JwsHeader header1 = claimsJws.getHeader();
-		Claims body1 = claimsJws.getBody();
 
-		System.out.println("header1:" + header1);
-		System.out.println("body1:" + body1);
+		// Jws<Claims> claimsJws = Jwts.parser()
+		// 		.setSigningKey(publicKey).parseClaimsJws(token);
+		// JwsHeader header1 = claimsJws.getHeader();
+		// Claims body1 = claimsJws.getBody();
+
+		// SecretKey secretKey = generalKey();
+		// Claims body1 = Jwts.parser().setSigningKey("hwb123").setSigningKey(publicKey).parseClaimsJws(token).getBody();
+
+
+		// System.out.println("header1:" + header1);
+		// System.out.println("body1:" + body1);
 
 
 		// if (logger.isDebugEnabled()){

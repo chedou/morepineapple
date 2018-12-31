@@ -10,6 +10,9 @@ import java.io.*;
  **/
 public class RetResponse implements Serializable   {
 
+	private static final long serialVersionUID = -1428285660796168326L;
+
+
 	private final static String SUCCESS = "success";
 
 	public static <T> RetResult<T> makeOKRsp() {

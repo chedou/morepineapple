@@ -32,7 +32,7 @@ public class UserModuleServiceTest {
 		JWT jwt = new JWT();
 		jwt.setUserID(1L);
 
-		userModuleService.addUser(userOne, jwt);
+		userModuleService.addUser(userOne,jwt.getUserID() );
 
 
 	}
