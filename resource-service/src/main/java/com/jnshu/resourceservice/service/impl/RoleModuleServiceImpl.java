@@ -9,7 +9,6 @@ import com.jnshu.resourceservice.service.*;
 import com.jnshu.resourceservice.utils.pageutil.*;
 import org.slf4j.*;
 import org.springframework.beans.factory.annotation.*;
-import org.springframework.security.oauth2.provider.token.store.*;
 import org.springframework.stereotype.*;
 
 import java.util.*;
@@ -34,11 +33,32 @@ public class RoleModuleServiceImpl implements RoleModuleService {
 	@Autowired(required = false)
 	private RolePermissionMapper rolePermissionMapper;
 
-
+	@Autowired(required = false)
+	private PermissionMapper permissionMapper;
+	
+	/**
+	 * @Description 将请求参数中的权限ID给取出
+	 * @param [targetRole, operatorId, permissionIds, maxId] 
+	 * @return void 
+	 * @author Mr.HUANG
+	 * @date 2019/1/1 
+	 * @throws 
+	 */ 
+	private void addRolePerm(Role targetRole, Long operatorId, List<Integer> permissionIds, Integer maxId) {
+		Integer perID;
+		for (int i = 0; i< targetRole.getPermissionsList().size(); i++){
+			permissionIds.add(perID =targetRole.getPermissionsList().get(i).getId());
+			LOGGER.info("当前用户ID为：{}，权限的最大ID为{}，从请求参数中获取到的权限ID为：{}",
+					operatorId, maxId, perID);
+			if (perID == null || perID >maxId){
+				throw new ServiceException("权限ID有误，请查看服务器");
+			}
+		}
+	}
 
 	/**
 	 * @param newRole
-	 * @param jwt
+	 * @param operatorId
 	 * @return void
 	 * @throws
 	 * @Description 角色管理-增加角色
@@ -46,15 +66,13 @@ public class RoleModuleServiceImpl implements RoleModuleService {
 	 * @date 2018/12/24
 	 */
 	@Override
-	public void addRole(Role newRole, JWT jwt) {
+	public RoleModuleDTO addRole(Role newRole, Long operatorId) {
 
+		LOGGER.info("当前用户id是：{}，传入的参数是:{},传入的权限参数：{}", operatorId,
+				newRole.getRoleName(), newRole.getPermissionsList().toString());
 
-		if (LOGGER.isDebugEnabled()){
-			LOGGER.debug("当前用户id是：{}，传入的参数是:{},传入的权限参数：{}",
-					jwt.getUserID(), newRole.getRoleName(), newRole.getPermissionsList().toString());
-		}
 		// 判断新增的角色是否已被使用
-		if (null == roleMapper.selectByRoleName(newRole.getRoleName())){
+		if (null != roleMapper.selectByRoleName(newRole.getRoleName())){
 			throw new ServiceException("角色名已被使用，请重新输入");
 		}
 		// 判断新增的权限参数是否为null
@@ -66,15 +84,13 @@ public class RoleModuleServiceImpl implements RoleModuleService {
 		newRole.setGmtCreate(nowTime);
 		newRole.setGmtUpdate(nowTime);
 
-		User userExecutor = userMapper.selectUserDetailById(jwt.getUserID());
+		User userExecutor = userMapper.selectUserDetailById(operatorId);
 		newRole.setCreateBy(userExecutor.getName());
 		newRole.setUpdateBy(userExecutor.getName());
 
 		// 插入之前打印相应的核心参数
-		if (LOGGER.isDebugEnabled()){
-			LOGGER.debug("当前用户id是：{}，准备插入的数据为:{}",
-					jwt.getUserID(), newRole.toString());
-		}
+
+		LOGGER.info("当前用户id是：{}，准备插入的数据为:{}", operatorId, newRole.toString());
 		// 插入数据后，新增的ID将返回到原对象中的ID，详细请看mapper文件中的SQL语句
 		roleMapper.insertSelective(newRole);
 		if (null == newRole.getId()){
@@ -83,21 +99,34 @@ public class RoleModuleServiceImpl implements RoleModuleService {
 		// 获取角色的ID和权限的ID集合，并写入Map中
 		List<Integer> permissionIds = new ArrayList<>();
 		Map<String, Object> rolePermissionMap =new HashMap<>();
-		for (int i =0; i< newRole.getPermissionsList().size(); i++){
-			permissionIds.add(newRole.getPermissionsList().get(i).getId());
-		}
+
+		// 对前端传回的权限ID进行转移，并进行判断
+		Integer maxId =(permissionMapper.selectMaxId()).getId();
+		Integer perID =null;
+
+		addRolePerm(newRole, operatorId, permissionIds, maxId);
+
 		rolePermissionMap.put("roleId", newRole.getId());
-		rolePermissionMap.put("Permissions", Collections.singletonList(permissionIds));
-		if (LOGGER.isDebugEnabled()){
-			LOGGER.debug("当前用户id是：{}，准备新增的数据为:新增角色ID：{}，权限ID集合：{}",
-					jwt.getUserID(), rolePermissionMap.get("roleId"),rolePermissionMap.get("Permissions"));
-		}
+		rolePermissionMap.put("Permissions", permissionIds);
+		rolePermissionMap.put("status",1);
+		rolePermissionMap.put("gmtCreate", System.currentTimeMillis());
+		rolePermissionMap.put("gmtUpdate", System.currentTimeMillis());
+		rolePermissionMap.put("createBy", userExecutor.getName());
+		rolePermissionMap.put("updateBy", userExecutor.getName());
+		LOGGER.info("当前用户id是：{}，准备新增的数据为:新增角色ID：{}，权限ID集合：{},整体参数：{}",
+					operatorId, rolePermissionMap.get("roleId"), rolePermissionMap.get("Permissions"), rolePermissionMap.toString());
 		// 插入角色与权限的关联信息，此处需要验证
 		if (0 == rolePermissionMapper.insertRolePermission(rolePermissionMap)){
 			throw new ServiceException("角色与权限关联信息出错，请查看服务器日志");
 		}
 		// 事务管理逻辑，此处带优化
 		// 验证数据是否插入成功
+		Role returnRole =new Role();
+		returnRole.setId(newRole.getId());
+		RoleModuleDTO roleModuleDTO =new RoleModuleDTO();
+		roleModuleDTO.setRole(returnRole);
+
+		return roleModuleDTO;
 	}
 
 	/**
@@ -111,20 +140,22 @@ public class RoleModuleServiceImpl implements RoleModuleService {
 	 * @date 2018/12/25
 	 */
 	@Override
-	public void deleteRole(Integer targetRole, JWT jwt) {
-		if (LOGGER.isDebugEnabled()){
-			LOGGER.debug("当前用户id是：{}，传入的参数是:删除的目标ID：{}",
-					jwt.getUserID(), targetRole);
-		}
+	public void deleteRole(Integer targetRole, Long operatorId) {
+
+		LOGGER.info("当前用户id是：{}，传入的参数是:删除的目标ID：{}", operatorId, targetRole);
+
 		// 更改角色信息状态
-		Role roleDB = roleMapper.selectRolePermissionById(targetRole);
+		Role roleDB = roleMapper.selectByPrimaryKey(targetRole);
+		LOGGER.info("从数据库中查询到的参数roleDB为：{}",roleDB);
 		if (1 == roleDB.getStatus()){
 			roleDB.setStatus(0);
 		}
 		// 写入修改时间、修改人
 		roleDB.setGmtUpdate(System.currentTimeMillis());
-		roleDB.setUpdateBy(userMapper.selectUserDetailById(jwt.getUserID()).getName());
-		if (1 != rolePermissionMapper.deleteByPrimaryKey(roleDB.getId())){
+		roleDB.setUpdateBy(userMapper.selectUserDetailById(operatorId).getName());
+		LOGGER.info("当前用户id是：{}，传入的参数是:删除的目标ID：{}，删除之后的参数信息为：{}", operatorId, targetRole, roleDB);
+
+		if (1 != roleMapper.updateByPrimaryKeySelective(roleDB)){
 			throw new ServiceException("数据库中删除角色信息出错，请查看服务器日志");
 		}
 		// 删除角色与权限关联的信息
@@ -143,14 +174,14 @@ public class RoleModuleServiceImpl implements RoleModuleService {
 	 * @throws Exception
 	 */
 	@Override
-	public void updateRole(Role targetRole, JWT jwt) {
+	public RoleModuleDTO updateRole(Role targetRole, Long operatorId) {
 		// 打印核心参数，角色id，操作者ID
-		if (LOGGER.isDebugEnabled()){
-			LOGGER.debug("当前用户id是：{}，修改目标ID是:{}",
-					jwt.getUserID(), targetRole.getId());
-		}
+		LOGGER.debug("当前用户id是：{}，修改目标ID是:{}", operatorId, targetRole.getId());
+
 		// 判断目标数据是否为失效数据
-		if (0 == roleMapper.selectByPrimaryKey(targetRole.getId()).getStatus()){
+		Role roleBase;
+		if (0 == (roleBase = roleMapper.selectByPrimaryKey(targetRole.getId())).getStatus()
+				|| null == roleBase.getRoleName()){
 			throw new ServiceException("目标用户为失效用户");
 		}
 		// 判断新增的权限参数是否为null
@@ -160,7 +191,9 @@ public class RoleModuleServiceImpl implements RoleModuleService {
 		// 写入修改时间
 		targetRole.setGmtUpdate(System.currentTimeMillis());
 		// 写入修改人
-		targetRole.setUpdateBy(userMapper.selectUserDetailById(jwt.getUserID()).getName());
+		User userExecutor =userMapper.selectUserDetailById(operatorId);
+		targetRole.setUpdateBy(userExecutor.getName());
+		targetRole.setCreateBy(userExecutor.getCreateBy());
 
 		// 对于角色的信息直接修改，对于角色与权限关联的信息，则直接删除只之后，再重新生成
 		roleMapper.updateByPrimaryKeySelective(targetRole);
@@ -173,21 +206,36 @@ public class RoleModuleServiceImpl implements RoleModuleService {
 		List<Integer> permissionIds = new ArrayList<>();
 		// 存放插入的信息
 		Map<String, Object> rolePermissionMap =new HashMap<>();
-		for (int i =0; i< targetRole.getPermissionsList().size(); i++){
-			permissionIds.add(targetRole.getPermissionsList().get(i).getId());
-		}
+
+		// 对前端传回的权限ID进行转移，并进行判断
+		Integer maxId =(permissionMapper.selectMaxId()).getId();
+		Integer perID =null;
+		addRolePerm(targetRole, operatorId, permissionIds, maxId);
 		rolePermissionMap.put("roleId", targetRole.getId());
-		rolePermissionMap.put("Permissions", Collections.singletonList(permissionIds));
-		if (LOGGER.isDebugEnabled()){
-			LOGGER.debug("当前用户id是：{}，准备更改的数据为:更改角色ID：{}，权限ID集合：{}",
-					jwt.getUserID(), rolePermissionMap.get("roleId"),rolePermissionMap.get("Permissions"));
-		}
-		// 插入角色与权限的关联信息
+		rolePermissionMap.put("Permissions", permissionIds);
+		rolePermissionMap.put("status",1);
+		rolePermissionMap.put("gmtCreate", System.currentTimeMillis());
+		rolePermissionMap.put("gmtUpdate", System.currentTimeMillis());
+		rolePermissionMap.put("createBy", userExecutor.getName());
+		rolePermissionMap.put("updateBy", userExecutor.getName());
+		LOGGER.info("当前用户id是：{}，准备新增的数据为:新增角色ID：{}，权限ID集合：{},整体参数：{}",
+				operatorId, rolePermissionMap.get("roleId"), rolePermissionMap.get("Permissions"), rolePermissionMap.toString());
+		// 插入角色与权限的关联信息，此处需要验证
 		if (0 == rolePermissionMapper.insertRolePermission(rolePermissionMap)){
-			throw new ServiceException("更新角色与权限关联信息出错，请查看服务器日志");
+			throw new ServiceException("角色与权限关联信息出错，请查看服务器日志");
 		}
+		// 事务管理逻辑，此处带优化
+		// 验证数据是否插入成功
+		Role returnRole =new Role();
+		returnRole.setId(targetRole.getId());
+		RoleModuleDTO roleModuleDTO =new RoleModuleDTO();
+		roleModuleDTO.setRole(returnRole);
+
+		return roleModuleDTO;
 
 	}
+
+
 
 	/**
 	 * @param targetRoleId
@@ -245,6 +293,9 @@ public class RoleModuleServiceImpl implements RoleModuleService {
 		}
 		return roleModuleDTO;
 	}
+
+
+
 
 
 }

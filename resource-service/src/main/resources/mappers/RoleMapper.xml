@@ -50,7 +50,7 @@
     --         此种写法，keyProperty：将查询到主键值设置到parameterType指定的对象的哪个属性
     --         order：SELECT LAST_INSERT_ID()执行顺序，相对于insert语句来说它的执行顺序
     --         resultType：指定SELECT LAST_INSERT_ID()的结果类型
-    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
       SELECT LAST_INSERT_ID()
     </selectKey>
     insert into role

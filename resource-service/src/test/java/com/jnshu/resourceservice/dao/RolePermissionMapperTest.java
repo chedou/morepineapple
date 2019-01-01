@@ -1,6 +1,5 @@
 package com.jnshu.resourceservice.dao;
 
-import io.swagger.models.auth.*;
 import org.junit.*;
 import org.junit.runner.*;
 import org.slf4j.*;
@@ -38,9 +37,8 @@ public class RolePermissionMapperTest {
 		rolePermissionMap.put("status",1);
 		rolePermissionMap.put("gmtCreate",111);
 		rolePermissionMap.put("gmtUpdate",222);
-		rolePermissionMap.put("createBy",333);
-		rolePermissionMap.put("updateBy",444);
-		rolePermissionMap.put("Permissions",Arrays.asList("888","777"));
+		rolePermissionMap.put("createBy","1212");
+		rolePermissionMap.put("Permissions",Arrays.asList(888,777));
 		System.out.println(rolePermissionMapper.insertRolePermission(rolePermissionMap));
 		LOGGER.info("-------------------------");
 		LOGGER.info("插入新增的用户");

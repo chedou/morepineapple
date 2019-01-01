@@ -80,7 +80,7 @@ public enum RetCode {
 	SUCCESS_ROLE_ONE_ADD(1,"role角色添加成功"),
 	SUCCESS_ROLE_ONE_UPDATE(1,"role角色更新成功"),
 	SUCCESS_ROLE_ONE_DELETE(1,"role角色删除成功"),
-	SUCCESS_ROLE_ONE_GET(1,"短信验证码已发送"),
+	SUCCESS_ROLE_ONE_GET(1,"role单个角色获取成功"),
 
 
 	/**

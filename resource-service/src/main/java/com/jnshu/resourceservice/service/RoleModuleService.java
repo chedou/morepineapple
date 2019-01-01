@@ -20,18 +20,18 @@ public interface RoleModuleService {
 	 * @date 2018/12/24
 	 * @throws
 	 */
-	void addRole(Role newRole, JWT jwt);
+	RoleModuleDTO addRole(Role newRole, Long operatorId);
 
 	/**
 	 * @Description 角色管理-删除角色，此处为直接删除原有数据，在更改参数时，
 	 * 					也是删除关联的参数，以此保证不生成脏数据
-	 * @param [targetRole, jwt]
+	 * @param [targetRole, operatorId]
 	 * @return void
 	 * @author Mr.HUANG
 	 * @date 2018/12/25
 	 * @throws
 	 */
-	void deleteRole(Integer targetRole, JWT jwt);
+	void deleteRole(Integer targetRole, Long operatorId);
 
 
 	/**
@@ -43,7 +43,7 @@ public interface RoleModuleService {
 	 * @date 2018/12/25
 	 * @throws Exception
 	 */
-	void updateRole(Role targetRole, JWT jwt);
+	RoleModuleDTO updateRole(Role targetRole, Long operatorId);
 
 	/**
 	 * @Description 角色管理-获取单个角色信息

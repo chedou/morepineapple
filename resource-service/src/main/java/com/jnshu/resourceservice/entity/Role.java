@@ -25,7 +25,7 @@ public class Role implements Serializable {
     /**
      * @Fields 角色名
      */
-    @NotBlank(message = "name 不允许为空", groups = {addAndUpdateRoleGroup.class})
+    @NotNull(message = "name 不允许为空", groups = {addAndUpdateRoleGroup.class})
     private String roleName;
 
     /**

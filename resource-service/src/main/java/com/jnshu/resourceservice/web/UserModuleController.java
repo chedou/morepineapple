@@ -115,14 +115,12 @@ public class UserModuleController {
 	 * @throws
 	 */
 	@ApiOperation(value = "selectUser",  notes = "查询用户")
-	@PostMapping(value = "/user/{targetUserId}", produces = "application/json;charset=UTF-8")
+	@GetMapping(value = "/user/{targetUserId}", produces = "application/json;charset=UTF-8")
 	@PreAuthorize("hasAuthority('RoleManageAll')")
 	public RetResult<?> selectUser(@PathVariable Long targetUserId) throws Exception{
 
-		if (logger.isDebugEnabled()){
-			logger.debug("----UserModuleController----deleteUser-----");
-			logger.debug("需要查询的用户ID:{}", targetUserId);
-		}
+		logger.debug("----UserModuleController----deleteUser-----");
+		logger.debug("需要查询的用户ID:{}", targetUserId);
 
 		return RetResponse.result(RetCode.SUCCESS_USER_LIST_GET)
 				.setData(userModuleService.select(targetUserId));

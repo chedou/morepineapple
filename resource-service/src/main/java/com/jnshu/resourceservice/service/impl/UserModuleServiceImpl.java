@@ -171,10 +171,9 @@ public class UserModuleServiceImpl implements UserModuleService {
 	public UserModuleDTO select(Long targetUserId) {
 
 		// 打印核心参数，用户id，操作者ID
-		if (LOGGER.isDebugEnabled()){
-			LOGGER.debug("------------------------------------------------------");
-			LOGGER.debug("查询目标用户id是：{}", targetUserId);
-		}
+		LOGGER.info("------------------------------------------------------");
+		LOGGER.info("查询目标用户id是：{}", targetUserId);
+
 
 		// 判断需要查询的用户状态是否有效，status 有效值为:1
 		User returnUser = userMapper.selectUserDetailById(targetUserId);

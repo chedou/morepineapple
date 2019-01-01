@@ -146,9 +146,61 @@
     INSERT INTO role_permission(role_id,node_id,status,gmt_create,gmt_update,create_by,update_by)
     VALUES
     <foreach collection="Permissions" item="nodeId" separator=",">
-      (${roleId},#{nodeId},${status},${gmtCreate},${gmtUpdate},${createBy},${updateBy})
+      (${roleId},#{nodeId},${status},${gmtCreate},${gmtUpdate},#{createBy},#{updateBy})
     </foreach>
   </insert>
 
+  <insert id="insertSelectiveRolePer" parameterType="com.jnshu.resourceservice.entity.RolePermission">
+    insert into role_permission
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="roleId != null">
+        role_id,
+      </if>
+      <if test="nodeId != null">
+        node_id,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="gmtCreate != null">
+        gmt_create,
+      </if>
+      <if test="gmtUpdate != null">
+        gmt_update,
+      </if>
+      <if test="createBy != null">
+        create_by,
+      </if>
+      <if test="updateBy != null">
+        update_by,
+      </if>
+    </trim>
+    values
+    <foreach collection="Permissions" item="nodeId" separator=",">
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="roleId != null">
+        ${roleId},
+      </if>
+      <if test="nodeId != null">
+        #{nodeId},
+      </if>
+      <if test="status != null">
+        ${status},
+      </if>
+      <if test="gmtCreate != null">
+        ${gmtCreate},
+      </if>
+      <if test="gmtUpdate != null">
+        ${gmtUpdate},
+      </if>
+      <if test="createBy != null">
+        ${createBy},
+      </if>
+      <if test="updateBy != null">
+        ${updateBy},
+      </if>
+    </trim>
+    </foreach>
+  </insert>
 
 </mapper>

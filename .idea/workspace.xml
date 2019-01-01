@@ -3,20 +3,21 @@
   <component name="ChangeListManager">
     <list default="true" id="459c7217-bae0-492e-8e67-fd6eac85e2ae" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/core/ret/RetResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/core/ret/RetResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/core/ret/RetResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/core/ret/RetResult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/entity/Permission.java" beforeDir="false" afterPath="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/entity/Permission.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/exception/ExceptionHandle.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/service/UserModuleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/service/UserModuleService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/core/ret/RetCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/core/ret/RetCode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/dao/PermissionMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/dao/PermissionMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/dao/RoleMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/dao/RoleMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/dao/RolePermissionMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/dao/RolePermissionMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/entity/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/entity/Role.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/exception/GlobalExceptionResolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/exception/GlobalExceptionResolver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/service/RoleModuleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/service/RoleModuleService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/service/impl/RoleModuleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/service/impl/RoleModuleServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/service/impl/UserModuleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/service/impl/UserModuleServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/web/RoleModuleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/web/RoleModuleController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/web/UserModuleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/web/UserModuleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resource-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/resource-service/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resource-service/src/test/java/com/jnshu/resourceservice/service/UserModuleServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/resource-service/src/test/java/com/jnshu/resourceservice/service/UserModuleServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uaa-service/src/main/java/com/jnshu/uaaservice/pojo/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/uaa-service/src/main/java/com/jnshu/uaaservice/pojo/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uaa-service/src/main/java/com/jnshu/uaaservice/service/UserServiceDetail.java" beforeDir="false" afterPath="$PROJECT_DIR$/uaa-service/src/main/java/com/jnshu/uaaservice/service/UserServiceDetail.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uaa-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/uaa-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resource-service/src/main/resources/mappers/PermissionMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/resource-service/src/main/resources/mappers/PermissionMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resource-service/src/main/resources/mappers/RoleMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/resource-service/src/main/resources/mappers/RoleMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resource-service/src/main/resources/mappers/RolePermissionMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/resource-service/src/main/resources/mappers/RolePermissionMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resource-service/src/test/java/com/jnshu/resourceservice/dao/RolePermissionMapperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/resource-service/src/test/java/com/jnshu/resourceservice/dao/RolePermissionMapperTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/eureka-server/target/" />
@@ -69,52 +70,75 @@
     <favorites_list name="morepineapple" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="UserModuleService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/service/UserModuleService.java">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="RoleModuleController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/web/RoleModuleController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="199">
+            <state relative-caret-position="381">
+              <caret line="144" column="50" lean-forward="true" selection-start-line="144" selection-start-column="50" selection-end-line="144" selection-end-column="50" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RetCode.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/core/ret/RetCode.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="85" column="7" lean-forward="true" selection-start-line="85" selection-start-column="7" selection-end-line="85" selection-end-column="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RolePermissionMapper.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resource-service/src/main/resources/mappers/RolePermissionMapper.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="220">
+              <caret line="34" column="11" selection-start-line="34" selection-start-column="11" selection-end-line="34" selection-end-column="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RoleModuleService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/service/RoleModuleService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="341">
+              <caret line="55" column="18" selection-start-line="55" selection-start-column="18" selection-end-line="55" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RoleModuleServiceImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/service/impl/RoleModuleServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="20">
+              <caret line="272" column="25" selection-start-line="272" selection-start-column="25" selection-end-line="272" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RolePermissionMapper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/dao/RolePermissionMapper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="200">
+              <caret line="15" column="8" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RoleMapper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/dao/RoleMapper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="217">
               <caret line="42" column="9" selection-start-line="42" selection-start-column="9" selection-end-line="42" selection-end-column="9" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserModuleController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/web/UserModuleController.java">
+      <file leaf-file-name="RoleMapper.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resource-service/src/main/resources/mappers/RoleMapper.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="419">
-              <caret line="101" column="31" selection-start-line="101" selection-start-column="31" selection-end-line="101" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserModuleServiceImpl.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/service/impl/UserModuleServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-181">
-              <caret line="148" column="33" lean-forward="true" selection-start-line="148" selection-start-column="33" selection-end-line="148" selection-end-column="33" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="User.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/entity/User.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="454">
-              <caret line="293" column="16" selection-start-line="293" selection-start-column="16" selection-end-line="293" selection-end-column="16" />
-              <folding>
-                <element signature="e#5365#5366#0" expanded="true" />
-                <element signature="e#5429#5430#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserMapper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/dao/UserMapper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="259">
-              <caret line="51" lean-forward="true" selection-start-line="51" selection-end-line="51" />
+            <state relative-caret-position="197">
+              <caret line="139" column="2" selection-start-line="139" selection-start-column="2" selection-end-line="139" selection-end-column="2" />
             </state>
           </provider>
         </entry>
@@ -160,6 +184,8 @@
       <find>新增用户的ID为：{}</find>
       <find>getAuthorities</find>
       <find>getA</find>
+      <find>角色名已被使用，请重新输入</find>
+      <find>selectRoleList</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -171,16 +197,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/dao/RolePermissionMapper.java" />
-        <option value="$PROJECT_DIR$/resource-service/src/test/java/com/jnshu/resourceservice/dao/RolePermissionMapperTest.java" />
-        <option value="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/dto/RoleModuleDTO.java" />
-        <option value="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/service/RoleModuleService.java" />
-        <option value="$PROJECT_DIR$/uaa-service/src/main/java/com/jnshu/uaaservice/configue/WebSecurityConfig.java" />
-        <option value="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/ResourcesServiceApplication.java" />
-        <option value="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/config/ResourceServerConfig.java" />
-        <option value="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/config/SwaggerConfigurer.java" />
-        <option value="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/dao/UserMapper.java" />
-        <option value="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/utils/pageutil/PageUtil.java" />
         <option value="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/core/BodyReaderHttpServletRequestWrapper/BodyReaderHttpServletRequestWrapper.java" />
         <option value="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/core/HandlerMethodArgumentResolver/MultiRequestBody.java" />
         <option value="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/core/HandlerMethodArgumentResolver/MultiRequestBodyArgumentResolver.java" />
@@ -194,10 +210,7 @@
         <option value="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/config/WebConfigurer.java" />
         <option value="$PROJECT_DIR$/resource-service/target/classes/mappers/UserMapper.xml" />
         <option value="$PROJECT_DIR$/resource-service/src/test/java/com/jnshu/resourceservice/test/dao/UserMapperTest.java" />
-        <option value="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/dao/RoleMapper.java" />
-        <option value="$PROJECT_DIR$/resource-service/src/main/resources/mappers/RoleMapper.xml" />
         <option value="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/service/UserServiceDetail.java" />
-        <option value="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/service/impl/RoleModuleServiceImpl.java" />
         <option value="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/config/jwt/AccessTokenConverterMutil.java" />
         <option value="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/config/JwtConfig.java" />
         <option value="$PROJECT_DIR$/resource-service/src/test/java/com/jnshu/resourceservice/dao/RoleMapperTest.java" />
@@ -210,18 +223,31 @@
         <option value="$PROJECT_DIR$/uaa-service/src/main/resources/application.yml" />
         <option value="$PROJECT_DIR$/uaa-service/src/main/java/com/jnshu/uaaservice/pojo/User.java" />
         <option value="$PROJECT_DIR$/uaa-service/src/main/java/com/jnshu/uaaservice/service/UserServiceDetail.java" />
-        <option value="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/web/RoleModuleController.java" />
         <option value="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/utils/AuthorizationUtils.java" />
         <option value="$PROJECT_DIR$/resource-service/src/test/java/com/jnshu/resourceservice/service/UserModuleServiceTest.java" />
         <option value="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/config/GlobalMethodSecurityConfig.java" />
         <option value="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/core/ret/RetResponse.java" />
         <option value="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/core/ret/RetResult.java" />
-        <option value="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/service/UserModuleService.java" />
         <option value="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/entity/Permission.java" />
         <option value="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/entity/User.java" />
-        <option value="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/web/UserModuleController.java" />
         <option value="$PROJECT_DIR$/resource-service/src/main/resources/mappers/UserMapper.xml" />
         <option value="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/service/impl/UserModuleServiceImpl.java" />
+        <option value="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/service/UserModuleService.java" />
+        <option value="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/web/UserModuleController.java" />
+        <option value="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/dao/RoleMapper.java" />
+        <option value="$PROJECT_DIR$/resource-service/src/main/resources/mappers/RoleMapper.xml" />
+        <option value="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/dao/PermissionMapper.java" />
+        <option value="$PROJECT_DIR$/resource-service/src/main/resources/mappers/PermissionMapper.xml" />
+        <option value="$PROJECT_DIR$/resource-service/src/main/resources/mappers/RolePermissionMapper.xml" />
+        <option value="$PROJECT_DIR$/resource-service/src/test/java/com/jnshu/resourceservice/dao/RolePermissionMapperTest.java" />
+        <option value="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/entity/Role.java" />
+        <option value="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/exception/GlobalExceptionResolver.java" />
+        <option value="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/config/PutFilter.java" />
+        <option value="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/dao/RolePermissionMapper.java" />
+        <option value="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/service/RoleModuleService.java" />
+        <option value="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/service/impl/RoleModuleServiceImpl.java" />
+        <option value="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/web/RoleModuleController.java" />
+        <option value="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/core/ret/RetCode.java" />
       </list>
     </option>
   </component>
@@ -296,8 +322,8 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="361" />
-    <option name="y" value="222" />
+    <option name="x" value="360" />
+    <option name="y" value="220" />
     <option name="width" value="1940" />
     <option name="height" value="1040" />
   </component>
@@ -312,8 +338,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -399,68 +423,6 @@
               <item name="com" type="462c0819:PsiDirectoryNode" />
               <item name="jnshu" type="462c0819:PsiDirectoryNode" />
               <item name="resourceservice" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-              <item name="jwt" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="morepineapple" type="b2602c69:ProjectViewProjectNode" />
-              <item name="morepineapple" type="462c0819:PsiDirectoryNode" />
-              <item name="resource-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="jnshu" type="462c0819:PsiDirectoryNode" />
-              <item name="resourceservice" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="morepineapple" type="b2602c69:ProjectViewProjectNode" />
-              <item name="morepineapple" type="462c0819:PsiDirectoryNode" />
-              <item name="resource-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="jnshu" type="462c0819:PsiDirectoryNode" />
-              <item name="resourceservice" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-              <item name="ret" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="morepineapple" type="b2602c69:ProjectViewProjectNode" />
-              <item name="morepineapple" type="462c0819:PsiDirectoryNode" />
-              <item name="resource-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="jnshu" type="462c0819:PsiDirectoryNode" />
-              <item name="resourceservice" type="462c0819:PsiDirectoryNode" />
-              <item name="dto" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="morepineapple" type="b2602c69:ProjectViewProjectNode" />
-              <item name="morepineapple" type="462c0819:PsiDirectoryNode" />
-              <item name="resource-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="jnshu" type="462c0819:PsiDirectoryNode" />
-              <item name="resourceservice" type="462c0819:PsiDirectoryNode" />
-              <item name="entity" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="morepineapple" type="b2602c69:ProjectViewProjectNode" />
-              <item name="morepineapple" type="462c0819:PsiDirectoryNode" />
-              <item name="resource-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="jnshu" type="462c0819:PsiDirectoryNode" />
-              <item name="resourceservice" type="462c0819:PsiDirectoryNode" />
               <item name="exception" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -487,18 +449,6 @@
               <item name="resourceservice" type="462c0819:PsiDirectoryNode" />
               <item name="service" type="462c0819:PsiDirectoryNode" />
               <item name="impl" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="morepineapple" type="b2602c69:ProjectViewProjectNode" />
-              <item name="morepineapple" type="462c0819:PsiDirectoryNode" />
-              <item name="resource-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="jnshu" type="462c0819:PsiDirectoryNode" />
-              <item name="resourceservice" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="morepineapple" type="b2602c69:ProjectViewProjectNode" />
@@ -584,12 +534,44 @@
               <item name="com" type="462c0819:PsiDirectoryNode" />
               <item name="jnshu" type="462c0819:PsiDirectoryNode" />
               <item name="resourceservice" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="morepineapple" type="b2602c69:ProjectViewProjectNode" />
+              <item name="morepineapple" type="462c0819:PsiDirectoryNode" />
+              <item name="resource-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="jnshu" type="462c0819:PsiDirectoryNode" />
+              <item name="resourceservice" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="morepineapple" type="b2602c69:ProjectViewProjectNode" />
+              <item name="morepineapple" type="462c0819:PsiDirectoryNode" />
+              <item name="resource-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="jnshu" type="462c0819:PsiDirectoryNode" />
+              <item name="resourceservice" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="morepineapple" type="b2602c69:ProjectViewProjectNode" />
+              <item name="morepineapple" type="462c0819:PsiDirectoryNode" />
+              <item name="uaa-service" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -597,11 +579,12 @@
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelWidth1" value="75" />
-    <property name="SearchEverywhereHistoryKey" value="Authentication&#9;PSI&#9;JAVA://org.springframework.security.core.Authentication&#10;oauth2authenticationpro&#9;PSI&#9;JAVA://org.springframework.security.oauth2.provider.authentication.OAuth2AuthenticationProcessingFilter" />
+    <property name="SearchEverywhereHistoryKey" value="String&#9;null&#9;null&#10;Authentication&#9;PSI&#9;JAVA://org.springframework.security.core.Authentication&#10;oauth2authenticationpro&#9;PSI&#9;JAVA://org.springframework.security.oauth2.provider.authentication.OAuth2AuthenticationProcessingFilter" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="database.console.LAST_STATE" value="false" />
+    <property name="extract.method.default.visibility" value="private" />
     <property name="last_opened_file_path" value="F:/技能树/参考代码/carrots/admin-service" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
@@ -651,7 +634,7 @@
     </option>
     <option name="contentProportion" value="0.16573745" />
   </component>
-  <component name="RunManager" selected="Application.JwtUtil">
+  <component name="RunManager" selected="JUnit.RolePermissionMapperTest.insertRolePermission">
     <configuration name="JwtUtil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.jnshu.resourceservice.config.jwt.JwtUtil" />
       <module name="resource-service" />
@@ -660,13 +643,13 @@
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     </configuration>
-    <configuration name="UserMapperTest.insert" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RolePermissionMapperTest.insertRolePermission" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="resource-service" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.jnshu.resourceservice.test.dao" />
-      <option name="MAIN_CLASS_NAME" value="com.jnshu.resourceservice.test.dao.UserMapperTest" />
-      <option name="METHOD_NAME" value="insert" />
+      <option name="PACKAGE_NAME" value="com.jnshu.resourceservice.dao" />
+      <option name="MAIN_CLASS_NAME" value="com.jnshu.resourceservice.dao.RolePermissionMapperTest" />
+      <option name="METHOD_NAME" value="insertRolePermission" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -730,17 +713,17 @@
       <item itemvalue="Spring Boot.UaaServiceApplication" />
       <item itemvalue="Spring Boot.EurekaServerApplication" />
       <item itemvalue="Spring Boot.ResourcesServiceApplication" />
-      <item itemvalue="JUnit.UserMapperTest.insert" />
       <item itemvalue="JUnit.UserMapperTest.insertSelective" />
       <item itemvalue="Application.JwtUtil" />
+      <item itemvalue="JUnit.RolePermissionMapperTest.insertRolePermission" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.ResourcesServiceApplication" />
+        <item itemvalue="JUnit.RolePermissionMapperTest.insertRolePermission" />
         <item itemvalue="Spring Boot.EurekaServerApplication" />
         <item itemvalue="Application.JwtUtil" />
         <item itemvalue="JUnit.UserMapperTest.insertSelective" />
-        <item itemvalue="JUnit.UserMapperTest.insert" />
       </list>
     </recent_temporary>
   </component>
@@ -789,7 +772,9 @@
       <workItem from="1546007318204" duration="284000" />
       <workItem from="1546046094738" duration="29581000" />
       <workItem from="1546136585908" duration="6976000" />
-      <workItem from="1546218923984" duration="30097000" />
+      <workItem from="1546218923984" duration="30463000" />
+      <workItem from="1546269126156" duration="1499000" />
+      <workItem from="1546304882291" duration="20247000" />
     </task>
     <task id="LOCAL-00001" summary="授权服务中心">
       <created>1544446554911</created>
@@ -1015,43 +1000,50 @@
       <option name="project" value="LOCAL" />
       <updated>1546136726590</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="update code">
+      <created>1546267671981</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1546267671981</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="UserMapperTest_selectUserList - 2018.12.27 at 10h 37m 11s.xml">
-      <configuration name="UserMapperTest.selectUserList" configurationId="JUnit" />
+    <history-entry file="RolePermissionMapperTest_insertRolePermission - 2019.01.01 at 11h 21m 55s.xml">
+      <configuration name="RolePermissionMapperTest.insertRolePermission" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UserMapperTest_selectUserList - 2018.12.27 at 10h 47m 44s.xml">
-      <configuration name="UserMapperTest.selectUserList" configurationId="JUnit" />
+    <history-entry file="RolePermissionMapperTest_insertRolePermission - 2019.01.01 at 11h 23m 10s.xml">
+      <configuration name="RolePermissionMapperTest.insertRolePermission" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UserMapperTest_selectUserList - 2018.12.27 at 10h 48m 28s.xml">
-      <configuration name="UserMapperTest.selectUserList" configurationId="JUnit" />
+    <history-entry file="RolePermissionMapperTest_insertRolePermission - 2019.01.01 at 11h 27m 07s.xml">
+      <configuration name="RolePermissionMapperTest.insertRolePermission" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UserMapperTest_selectUserList - 2018.12.27 at 10h 50m 48s.xml">
-      <configuration name="UserMapperTest.selectUserList" configurationId="JUnit" />
+    <history-entry file="RolePermissionMapperTest_insertRolePermission - 2019.01.01 at 19h 52m 16s.xml">
+      <configuration name="RolePermissionMapperTest.insertRolePermission" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UserMapperTest_selectUserList - 2018.12.27 at 10h 51m 45s.xml">
-      <configuration name="UserMapperTest.selectUserList" configurationId="JUnit" />
+    <history-entry file="RolePermissionMapperTest_insertRolePermission - 2019.01.01 at 19h 54m 29s.xml">
+      <configuration name="RolePermissionMapperTest.insertRolePermission" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UserMapperTest_selectUserList - 2018.12.27 at 15h 39m 23s.xml">
-      <configuration name="UserMapperTest.selectUserList" configurationId="JUnit" />
+    <history-entry file="RolePermissionMapperTest_insertRolePermission - 2019.01.01 at 19h 57m 05s.xml">
+      <configuration name="RolePermissionMapperTest.insertRolePermission" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UserMapperTest_selectUserList - 2018.12.27 at 15h 41m 27s.xml">
-      <configuration name="UserMapperTest.selectUserList" configurationId="JUnit" />
+    <history-entry file="RolePermissionMapperTest_insertRolePermission - 2019.01.01 at 19h 58m 28s.xml">
+      <configuration name="RolePermissionMapperTest.insertRolePermission" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UserMapperTest_selectUserList - 2018.12.27 at 15h 53m 59s.xml">
-      <configuration name="UserMapperTest.selectUserList" configurationId="JUnit" />
+    <history-entry file="RolePermissionMapperTest_insertRolePermission - 2019.01.01 at 19h 59m 33s.xml">
+      <configuration name="RolePermissionMapperTest.insertRolePermission" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UserMapperTest_insert - 2018.12.28 at 21h 30m 16s.xml">
-      <configuration name="UserMapperTest.insert" configurationId="JUnit" />
+    <history-entry file="RolePermissionMapperTest_insertRolePermission - 2019.01.01 at 20h 00m 35s.xml">
+      <configuration name="RolePermissionMapperTest.insertRolePermission" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UserMapperTest_insertSelective - 2018.12.28 at 21h 30m 52s.xml">
-      <configuration name="UserMapperTest.insertSelective" configurationId="JUnit" />
+    <history-entry file="RolePermissionMapperTest_insertRolePermission - 2019.01.01 at 20h 04m 27s.xml">
+      <configuration name="RolePermissionMapperTest.insertRolePermission" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="341077000" />
+    <option name="totallyTimeSpent" value="363189000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1064,31 +1056,32 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="2062" height="1126" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="FindBugs-IDEA" order="7" weight="0.32740742" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.18263473" side_tool="true" weight="0.32987553" />
-      <window_info anchor="bottom" id="JRebel Console" order="11" sideWeight="0.50149703" side_tool="true" weight="0.29253113" />
+      <window_info anchor="bottom" id="JRebel Console" order="11" sideWeight="0.3813673" side_tool="true" weight="0.3239645" />
       <window_info anchor="right" id="Maven Projects" order="3" weight="0.21107784" />
       <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
       <window_info anchor="bottom" id="JRebel Executor" order="12" />
       <window_info id="Designer" order="2" />
       <window_info anchor="bottom" id="Tail" order="16" />
       <window_info anchor="right" id="Database" order="3" weight="0.20308311" />
-      <window_info id="Structure" order="1" sideWeight="0.5043988" side_tool="true" weight="0.25449103" />
+      <window_info id="Structure" order="1" sideWeight="0.50560224" side_tool="true" weight="0.2240519" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3416407" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.13777778" />
       <window_info anchor="bottom" id="Messages" order="8" sideWeight="0.499501" weight="0.32780084" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info anchor="bottom" id="Java Enterprise" order="9" weight="0.3288889" />
-      <window_info active="true" anchor="bottom" id="Run Dashboard" order="18" sideWeight="0.81586826" visible="true" weight="0.32676348" />
+      <window_info active="true" anchor="bottom" id="Run Dashboard" order="18" sideWeight="0.61863273" visible="true" weight="0.3246888" />
       <window_info anchor="bottom" id="Version Control" order="13" weight="0.23651452" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.498503" weight="0.23962656" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.498503" weight="0.27178425" />
       <window_info anchor="bottom" id="Spring" order="14" weight="0.17481482" />
       <window_info anchor="bottom" id="Terminal" order="15" weight="0.3281412" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49560118" visible="true" weight="0.17914172" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49439776" visible="true" weight="0.2240519" />
       <window_info anchor="bottom" id="Problems" order="11" />
       <window_info anchor="right" id="Bean Validation" order="3" weight="0.3297587" />
-      <window_info id="JRebel" order="2" sideWeight="0.50074077" side_tool="true" weight="0.19839142" />
+      <window_info id="JRebel" order="2" sideWeight="0.50560224" side_tool="true" weight="0.2240519" />
       <window_info id="Favorites" order="2" sideWeight="0.50155765" side_tool="true" weight="0.26946107" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -1101,26 +1094,26 @@
     </layout>
     <layout-to-restore>
       <window_info anchor="bottom" id="FindBugs-IDEA" order="7" weight="0.32740742" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3416407" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.498503" weight="0.23962656" />
+      <window_info id="Designer" order="4" />
+      <window_info anchor="bottom" id="Run Dashboard" order="20" sideWeight="0.81586826" visible="true" weight="0.5103735" />
       <window_info anchor="bottom" id="Messages" order="8" sideWeight="0.499501" weight="0.32780084" />
       <window_info id="JRebel" order="2" sideWeight="0.50074077" side_tool="true" weight="0.19839142" />
       <window_info anchor="bottom" id="Spring" order="16" weight="0.17481482" />
       <window_info anchor="bottom" id="Database Console" order="19" weight="0.35407406" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.498503" weight="0.23962656" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="Favorites" order="3" sideWeight="0.50155765" side_tool="true" weight="0.26946107" />
       <window_info anchor="bottom" id="Terminal" order="17" weight="0.3281412" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.18263473" side_tool="true" weight="0.32987553" />
-      <window_info id="Designer" order="4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Tail" order="18" />
       <window_info anchor="bottom" id="Problems" order="11" />
       <window_info anchor="bottom" id="Java Enterprise" order="9" weight="0.3288889" />
       <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="15" weight="0.23651452" />
       <window_info anchor="right" id="Maven Projects" order="3" weight="0.21107784" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3288889" />
       <window_info anchor="bottom" id="JRebel Executor" order="14" />
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49560118" visible="true" weight="0.25848302" />
       <window_info anchor="bottom" id="JRebel Console" order="13" sideWeight="0.50149703" side_tool="true" weight="0.29253113" />
@@ -1130,9 +1123,9 @@
       <window_info anchor="right" id="Palette&#9;" order="5" />
       <window_info id="Structure" order="1" sideWeight="0.5043988" side_tool="true" weight="0.25449103" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Tail" order="18" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3288889" />
       <window_info anchor="right" id="Bean Validation" order="6" weight="0.3297587" />
-      <window_info anchor="bottom" id="Run Dashboard" order="20" sideWeight="0.81586826" visible="true" weight="0.5103735" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3416407" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1194,102 +1187,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://D:/Program Files/Java/jdk1.8.0_181/src.zip!/java/lang/CharSequence.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="58" column="17" selection-start-line="58" selection-start-column="17" selection-end-line="58" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/io/jsonwebtoken/jjwt/0.7.0/jjwt-0.7.0-sources.jar!/io/jsonwebtoken/impl/TextCodec.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="17" column="17" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/entity/JWT.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="22" column="27" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/uaa-service/src/main/java/com/jnshu/uaaservice/UaaServiceApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/io/jsonwebtoken/jjwt/0.7.0/jjwt-0.7.0-sources.jar!/io/jsonwebtoken/Jwts.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
-          <caret line="104" column="38" selection-start-line="104" selection-start-column="38" selection-end-line="104" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3913#3914#0" expanded="true" />
-            <element signature="e#3958#3959#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/Program Files/Java/jdk1.8.0_181/src.zip!/java/security/Key.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="101" column="17" selection-start-line="101" selection-start-column="17" selection-end-line="101" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/config/JwtConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-340">
-          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resource-service/src/main/resources/public.cert">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/uaa-service/src/main/java/com/jnshu/uaaservice/configue/OAuth2Config.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="438">
-          <caret line="99" column="5" lean-forward="true" selection-start-line="99" selection-start-column="5" selection-end-line="99" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/ResourcesServiceApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resource-service/src/main/resources/application.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="19" column="23" lean-forward="true" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/uaa-service/src/main/resources/application.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="101" lean-forward="true" selection-start-line="101" selection-end-line="101" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/uaa-service/src/main/resources/mappers/UserMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="228" column="4" selection-start-line="228" selection-start-column="4" selection-end-line="228" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/uaa-service/src/main/java/com/jnshu/uaaservice/dao/UserMapper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="526">
@@ -1329,10 +1226,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="227">
           <caret line="103" column="18" selection-start-line="103" selection-start-column="18" selection-end-line="103" selection-end-column="18" />
-          <folding>
-            <element signature="e#3454#3455#0" expanded="true" />
-            <element signature="e#3475#3476#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1347,33 +1240,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="637">
           <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/config/jwt/SimpleJWTProcessor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="8" column="10" lean-forward="true" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/config/jwt/SimpleJWTProcessor.java" />
     <entry file="file://$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/config/jwt/JwtUtil.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="740">
           <caret line="46" column="33" lean-forward="true" selection-start-line="46" selection-start-column="33" selection-end-line="46" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/web/RoleModuleController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="56" column="48" selection-start-line="56" selection-start-column="48" selection-end-line="56" selection-end-column="48" />
         </state>
       </provider>
     </entry>
@@ -1388,22 +1262,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1082">
           <caret line="195" selection-start-line="195" selection-end-line="195" />
-          <folding>
-            <element signature="e#1795#1796#0" expanded="true" />
-            <element signature="e#1809#1810#0" expanded="true" />
-            <element signature="e#2720#2721#0" expanded="true" />
-            <element signature="e#2749#2750#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/exception/ExceptionHandle.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/exception/ExceptionHandle.java" />
     <entry file="file://$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/utils/AuthorizationUtils.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="440">
@@ -1429,10 +1291,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
-          <folding>
-            <element signature="e#404#405#0" expanded="true" />
-            <element signature="e#425#426#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1447,9 +1305,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
           <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-          <folding>
-            <element signature="method#toString#0;class#UserModuleDTO#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1460,38 +1315,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/exception/GlobalExceptionResolver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="108" column="32" lean-forward="true" selection-start-line="108" selection-start-column="32" selection-end-line="108" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/core/ret/RetCode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="9" column="12" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/core/ret/RetResponse.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
           <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/entity/Role.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/Program Files/Java/jdk1.8.0_181/src.zip!/java/util/Collections.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="5399" selection-start-line="5399" selection-end-line="5399" />
         </state>
       </provider>
     </entry>
@@ -1516,27 +1343,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/web/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="398">
-          <caret line="30" column="38" lean-forward="true" selection-start-line="30" selection-start-column="38" selection-end-line="30" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.0.8.RELEASE/spring-web-5.0.8.RELEASE.jar!/org/springframework/http/converter/json/AbstractJackson2HttpMessageConverter.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="327">
           <caret line="218" selection-start-line="218" selection-end-line="218" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/core/ret/RetResult.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="74" selection-start-line="74" selection-end-line="74" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1547,17 +1357,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/web/UserModuleController.java">
+    <entry file="file://$PROJECT_DIR$/resource-service/src/main/resources/mappers/UserMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="419">
-          <caret line="101" column="31" selection-start-line="101" selection-start-column="31" selection-end-line="101" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/service/UserModuleService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="42" column="9" selection-start-line="42" selection-start-column="9" selection-end-line="42" selection-end-column="9" />
+        <state relative-caret-position="-3281">
+          <caret line="26" column="34" selection-start-line="26" selection-start-column="34" selection-end-line="26" selection-end-column="34" />
         </state>
       </provider>
     </entry>
@@ -1565,10 +1368,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="454">
           <caret line="293" column="16" selection-start-line="293" selection-start-column="16" selection-end-line="293" selection-end-column="16" />
-          <folding>
-            <element signature="e#5365#5366#0" expanded="true" />
-            <element signature="e#5429#5430#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1579,17 +1378,175 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resource-service/src/main/resources/mappers/UserMapper.xml">
+    <entry file="file://$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/service/UserModuleService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3281">
-          <caret line="26" column="34" selection-start-line="26" selection-start-column="34" selection-end-line="26" selection-end-column="34" />
+        <state relative-caret-position="219">
+          <caret line="53" lean-forward="true" selection-start-line="53" selection-end-line="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/web/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="29" column="42" lean-forward="true" selection-start-line="29" selection-start-column="42" selection-end-line="29" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/Program Files/Java/jdk1.8.0_181/src.zip!/java/util/Collections.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="4787" column="30" selection-start-line="4787" selection-start-column="30" selection-end-line="4787" selection-end-column="30" />
+          <folding>
+            <element signature="e#186747#186748#0" expanded="true" />
+            <element signature="e#186792#186793#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resource-service/src/main/resources/mappers/PermissionMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-968">
+          <caret line="27" column="46" selection-start-line="27" selection-start-column="46" selection-end-line="27" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/core/ret/RetResult.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="494">
+          <caret line="74" selection-start-line="74" selection-end-line="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resource-service/src/test/java/com/jnshu/resourceservice/dao/RoleMapperTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-80">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resource-service/src/test/java/com/jnshu/resourceservice/dao/RolePermissionMapperTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="489">
+          <caret line="32" column="57" lean-forward="true" selection-start-line="32" selection-start-column="57" selection-end-line="32" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/web/UserModuleController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="137">
+          <caret line="96" column="16" lean-forward="true" selection-start-line="96" selection-start-column="16" selection-end-line="96" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/dao/PermissionMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="484">
+          <caret line="27" column="19" lean-forward="true" selection-start-line="27" selection-start-column="19" selection-end-line="27" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/service/impl/UserModuleServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-181">
-          <caret line="148" column="33" lean-forward="true" selection-start-line="148" selection-start-column="33" selection-end-line="148" selection-end-column="33" />
+        <state relative-caret-position="619">
+          <caret line="190" column="50" lean-forward="true" selection-start-line="190" selection-start-column="50" selection-end-line="190" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/exception/GlobalExceptionResolver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="50" column="7" lean-forward="true" selection-start-line="50" selection-start-column="7" selection-end-line="50" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/entity/Role.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="24" column="7" lean-forward="true" selection-start-line="24" selection-start-column="7" selection-end-line="24" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/config/WebMvcConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+          <folding>
+            <element signature="e#470#471#0" expanded="true" />
+            <element signature="e#514#515#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/config/PutFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/Program Files/Java/jdk1.8.0_181/src.zip!/java/lang/Long.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="629" column="23" selection-start-line="629" selection-start-column="23" selection-end-line="629" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/dao/RoleMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="42" column="9" selection-start-line="42" selection-start-column="9" selection-end-line="42" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resource-service/src/main/resources/mappers/RoleMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="139" column="2" selection-start-line="139" selection-start-column="2" selection-end-line="139" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/dao/RolePermissionMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="15" column="8" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resource-service/src/main/resources/mappers/RolePermissionMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="34" column="11" selection-start-line="34" selection-start-column="11" selection-end-line="34" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/service/RoleModuleService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="341">
+          <caret line="55" column="18" selection-start-line="55" selection-start-column="18" selection-end-line="55" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/service/impl/RoleModuleServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="20">
+          <caret line="272" column="25" selection-start-line="272" selection-start-column="25" selection-end-line="272" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/web/RoleModuleController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="381">
+          <caret line="144" column="50" lean-forward="true" selection-start-line="144" selection-start-column="50" selection-end-line="144" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/core/ret/RetCode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="85" column="7" lean-forward="true" selection-start-line="85" selection-start-column="7" selection-end-line="85" selection-end-column="7" />
         </state>
       </provider>
     </entry>

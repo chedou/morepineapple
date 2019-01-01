@@ -12,9 +12,9 @@ import java.util.*;
  */
 @Mapper
 public interface RoleMapper {
-    int deleteByPrimaryKey(Integer id);
+    Integer deleteByPrimaryKey(Integer id);
 
-    int insert(Role record);
+    Integer insert(Role record);
 
     /**
      * @Description 用户管理-插入角色附带相关的权限信息
@@ -24,13 +24,13 @@ public interface RoleMapper {
      * @date 2018/12/25
      * @throws Exception
      */
-    int insertSelective(Role record);
+    Integer insertSelective(Role record);
 
     Role selectByPrimaryKey(Integer id);
 
-    int updateByPrimaryKeySelective(Role record);
+    Integer updateByPrimaryKeySelective(Role record);
 
-    int updateByPrimaryKey(Role record);
+    Integer updateByPrimaryKey(Role record);
 
     /**
      * @Description 根据角色ID查询对应的角色信息以及权限信息
