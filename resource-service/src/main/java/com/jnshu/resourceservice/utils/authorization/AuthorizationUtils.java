@@ -1,4 +1,4 @@
-package com.jnshu.resourceservice.utils;
+package com.jnshu.resourceservice.utils.authorization;
 
 import org.springframework.security.authentication.*;
 import org.springframework.security.core.*;

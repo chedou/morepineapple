@@ -6,7 +6,7 @@ import com.jnshu.resourceservice.dto.*;
 import com.jnshu.resourceservice.entity.*;
 import com.jnshu.resourceservice.entity.group.*;
 import com.jnshu.resourceservice.service.*;
-import com.jnshu.resourceservice.utils.*;
+import com.jnshu.resourceservice.utils.authorization.*;
 import com.jnshu.resourceservice.utils.pageutil.*;
 import io.swagger.annotations.*;
 import org.slf4j.*;
@@ -95,8 +95,8 @@ public class UserModuleController {
 	public RetResult<?> deleteUser(@PathVariable Long targetUserId) throws Exception{
 
 		if (logger.isDebugEnabled()){
-			logger.debug("----UserModuleController----deleteUser-----");
-			logger.debug("需要删除的用户ID:{}", targetUserId);
+			logger.info("----UserModuleController----deleteUser-----");
+			logger.info("需要删除的用户ID:{}", targetUserId) ;
 		}
 		Long operatorId =Long.parseLong(AuthorizationUtils.getUserId());
 		userModuleService.delete(targetUserId, operatorId);
@@ -119,8 +119,8 @@ public class UserModuleController {
 	@PreAuthorize("hasAuthority('RoleManageAll')")
 	public RetResult<?> selectUser(@PathVariable Long targetUserId) throws Exception{
 
-		logger.debug("----UserModuleController----deleteUser-----");
-		logger.debug("需要查询的用户ID:{}", targetUserId);
+		logger.info("----UserModuleController----deleteUser-----");
+		logger.info("需要查询的用户ID:{}", targetUserId);
 
 		return RetResponse.result(RetCode.SUCCESS_USER_LIST_GET)
 				.setData(userModuleService.select(targetUserId));
@@ -144,15 +144,28 @@ public class UserModuleController {
 	public RetResult<?> selectUserList(@MultiRequestBody @Validated({PageUtilGroup.class}) PageUtil pageUtil,
 									   @MultiRequestBody User user)throws Exception{
 
-		if (logger.isDebugEnabled()){
-			logger.debug("----UserModuleController----selectUserList-----");
-			logger.debug("分页参数为:{}", pageUtil.toString());
-		}
+
+		logger.info("----UserModuleController----selectUserList-----");
+		logger.info("分页参数为:{}", pageUtil.toString());
+
 		System.out.println(user);
 		System.out.println(pageUtil);
 		return RetResponse.result(RetCode.SUCCESS_USER_LIST_GET)
 				.setData(userModuleService.selectUserList(pageUtil, user));
 	}
+
+
+	@ApiOperation(value = "UpdatePSW",  notes = "更改密码")
+	@PostMapping(value = "/user/password", produces =  "application/json;charset=UTF-8")
+	public RetResult<?> updatePassword(String oldPassword, String newPassword){
+
+		logger.info("----UserModuleController----UpdatePSW-----");
+		Long operatorId =Long.parseLong(AuthorizationUtils.getUserId());
+
+		return RetResponse.result(RetCode.SUCCESS_USER_PASSWORD_UPDATE);
+	}
+
+
 }
 
 

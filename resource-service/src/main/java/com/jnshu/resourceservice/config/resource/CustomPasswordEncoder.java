@@ -1,4 +1,4 @@
-package com.jnshu.resourceservice.config;
+package com.jnshu.resourceservice.config.resource;
 
 import org.springframework.beans.factory.annotation.*;
 import org.springframework.security.crypto.password.*;

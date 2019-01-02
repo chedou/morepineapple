@@ -200,7 +200,6 @@ public class UserModuleServiceImpl implements UserModuleService {
 	@Override
 	public UserModuleDTO selectUserList(PageUtil pageUtil, User user ) {
 
-		// debug模式下打印前端传入的参数，方便调试
 		LOGGER.info("------------------------------------------------------");
 		LOGGER.info("分页参数为：{}，如有用到模糊查询则其参数为：{}，{}",
 					pageUtil.toString(),user.getName(),user.getRoleList().toString());
@@ -249,6 +248,28 @@ public class UserModuleServiceImpl implements UserModuleService {
 			LOGGER.debug("返回的参数：{}",userModuleDTO.toString() );
 		}
 		return userModuleDTO;
+	}
+
+	@Override
+	public void updatePassword(Long operatorId, String oldPassword, String newPassword) {
+
+		LOGGER.info("------------------------------------------------------");
+		LOGGER.info("操作者ID为：{}", operatorId );
+		User userDB =userMapper.selectUserDetailById(operatorId);
+		if (null == userDB){
+			throw new ServiceException("用户参数有问题，请查看服务器日志");
+		}
+		LOGGER.info("操作者ID：{}，更改密码之前的参数为：{}", operatorId, userDB.hashCode());
+		if (!BPwdEncoderUtil.matches(oldPassword, userDB.getPassword())){
+			throw new ServiceException("error old password");
+		}
+		// 对密码进行更新
+		userDB.setPassword(BPwdEncoderUtil.BCryptPassword(newPassword));
+		LOGGER.info("操作者ID：{}，更换密码之前的参数为：{}", operatorId, userDB.hashCode());
+		if (1 !=userMapper.updateByPrimaryKeySelective(userDB)){
+			throw new ServiceException("密码更新失败，请查看服务器日志");
+		}
+
 	}
 
 

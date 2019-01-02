@@ -74,6 +74,12 @@ spring:
     date-format: "yyyy-MM-dd HH:mm:ss"
 #    default-property-inclusion: non_null
 #    time-zone: Asia/Shanghai
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    timeout: 0
+    password:
+
 
 #PageHelper分页插件
 pagehelper:
@@ -83,10 +89,17 @@ pagehelper:
   params: count=countSql
   page-size-zero: true
 
-
-
-
-
+aliyun:
+  sms:
+    accessKeyId: LTAIpQdxo8Vu1bwJ
+    accessKeySecret: WrO5knbUrHgp14PJ9650hTF45ad19U
+    product: Dysmsapi
+    domain: dysmsapi.aliyuncs.com
+    regionId: cn-hangzhou
+    signName: 廿一车
+    dateFormat: yyyyMMdd
+    endpointName: cn-hangzhou
+    codeTemplate: SMS_142387991
 
 
 

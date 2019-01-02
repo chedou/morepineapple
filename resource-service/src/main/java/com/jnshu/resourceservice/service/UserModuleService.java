@@ -65,4 +65,7 @@ public interface UserModuleService {
 	 * @throws
 	 */
 	UserModuleDTO selectUserList(PageUtil pageUtil, User user);
+
+
+	void updatePassword(Long operatorId, String oldPassword, String newPassword );
 }

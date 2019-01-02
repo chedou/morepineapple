@@ -1,4 +1,4 @@
-package com.jnshu.resourceservice.config;
+package com.jnshu.resourceservice.config.put;
 
 import org.springframework.context.annotation.*;
 import org.springframework.web.filter.*;

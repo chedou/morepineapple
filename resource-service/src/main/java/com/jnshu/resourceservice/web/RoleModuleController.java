@@ -4,7 +4,7 @@ import com.jnshu.resourceservice.core.ret.*;
 import com.jnshu.resourceservice.entity.*;
 import com.jnshu.resourceservice.entity.group.*;
 import com.jnshu.resourceservice.service.*;
-import com.jnshu.resourceservice.utils.*;
+import com.jnshu.resourceservice.utils.authorization.*;
 import com.jnshu.resourceservice.utils.pageutil.*;
 import io.swagger.annotations.*;
 import org.slf4j.*;

@@ -1,4 +1,4 @@
-package com.jnshu.resourceservice.config;
+package com.jnshu.resourceservice.config.resource;
 
 import org.springframework.context.annotation.*;
 import org.springframework.security.config.annotation.method.configuration.*;

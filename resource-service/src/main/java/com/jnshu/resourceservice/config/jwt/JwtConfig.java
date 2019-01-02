@@ -1,4 +1,4 @@
-package com.jnshu.resourceservice.config;
+package com.jnshu.resourceservice.config.jwt;
 
 import org.springframework.beans.factory.annotation.*;
 import org.springframework.boot.autoconfigure.security.*;

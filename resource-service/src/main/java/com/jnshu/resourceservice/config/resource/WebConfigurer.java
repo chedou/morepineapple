@@ -1,4 +1,4 @@
-package com.jnshu.resourceservice.config;
+package com.jnshu.resourceservice.config.resource;
 
 import com.alibaba.fastjson.serializer.*;
 import com.alibaba.fastjson.support.config.*;
