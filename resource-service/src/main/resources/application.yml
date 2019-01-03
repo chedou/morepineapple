@@ -24,6 +24,12 @@ mybatis:
 server:
   port: 9090
 spring:
+  servlet:
+    multipart:
+#      max-file-size: 20MB
+#      max-request-size: 100MB
+      enabled: true
+      resolve-lazily: false
   application:
     name: sources-service
   datasource:
@@ -99,8 +105,16 @@ aliyun:
     signName: 廿一车
     dateFormat: yyyyMMdd
     endpointName: cn-hangzhou
-    codeTemplate: SMS_142387991
+    templateCode: SMS_142387991
+  oss:
+    endpoint: http://oss-cn-shenzhen.aliyuncs.com
+    accessKeyId: LTAIpQdxo8Vu1bwJ
+    accessKeySecret: WrO5knbUrHgp14PJ9650hTF45ad19U
+    bucketName: chedou1
+    folder: chedou
 
-
-
-
+multipart:
+  enabled: true
+#  #location: roy-upload-tmp
+#  max-file-size: 100MB
+#  max-request-size: 100MB

@@ -1,5 +1,7 @@
 package com.jnshu.resourceservice.service.impl;
 
+import com.aliyuncs.dysmsapi.model.v20170525.*;
+import com.aliyuncs.exceptions.*;
 import com.github.pagehelper.*;
 import com.jnshu.resourceservice.dao.*;
 import com.jnshu.resourceservice.dto.*;
@@ -8,6 +10,8 @@ import com.jnshu.resourceservice.exception.*;
 import com.jnshu.resourceservice.service.*;
 import com.jnshu.resourceservice.utils.pageutil.*;
 import com.jnshu.resourceservice.utils.password.*;
+import com.jnshu.resourceservice.utils.photo.*;
+import com.jnshu.resourceservice.utils.sms.*;
 import org.slf4j.*;
 import org.springframework.beans.factory.annotation.*;
 import org.springframework.stereotype.*;
@@ -29,6 +33,9 @@ public class UserModuleServiceImpl implements UserModuleService {
 
 	@Autowired(required = false )
 	private UserMapper userMapper;
+
+	@Autowired
+	private RedisService redisService;
 
 	/**
 	 * @Description 用户管理-新增用户
@@ -250,8 +257,22 @@ public class UserModuleServiceImpl implements UserModuleService {
 		return userModuleDTO;
 	}
 
+	/**
+	 * @Description 后台管理-更换密码
+	 * @param [operatorId, oldPassword, newPassword, code]
+	 * @return void
+	 * @author Mr.HUANG
+	 * @date 2019/1/3
+	 * @throws
+	 */
 	@Override
-	public void updatePassword(Long operatorId, String oldPassword, String newPassword) {
+	public void updatePassword(Long operatorId, String oldPassword, String newPassword, String code) {
+		// 先对短信验证码进行判断
+		// 从redis读取验证码并对其进行判断
+		String codeByRedis = redisService.get(operatorId + "," + "smsVerification");
+		if ( !code.equals(codeByRedis)){
+			throw new ServiceException("短信验证码错误");
+		}
 
 		LOGGER.info("------------------------------------------------------");
 		LOGGER.info("操作者ID为：{}", operatorId );
@@ -269,6 +290,76 @@ public class UserModuleServiceImpl implements UserModuleService {
 		if (1 !=userMapper.updateByPrimaryKeySelective(userDB)){
 			throw new ServiceException("密码更新失败，请查看服务器日志");
 		}
+
+	}
+
+	/**
+	 * @param photoNum
+	 * @param operatorId
+	 * @return void
+	 * @throws
+	 * @Description 更换密码-获取短信验证码
+	 * @author Mr.HUANG
+	 * @date 2019/1/3
+	 */
+	@Override
+	public SendSmsResponse smsVerification(String photoNum, Long operatorId) {
+		// 首先对验证码进行验证
+		if (!PhotoNumVerificationUtil.isMobileExact(photoNum)){
+			throw new ServiceException("输入了非法手机号码");
+		}
+
+		// 判断传入手机号码是否与数据库手机号码一样
+		User userDB =userMapper.selectUserDetailById(operatorId);
+		if (null ==userDB || photoNum != userDB.getPhoneNum()){
+			throw new ServiceException("输入的手机号码与绑定手机号码不一致或为null");
+		}
+
+		// 获取验证码次数
+		String redisKeyByTimes = operatorId + "," + "smsVerificationTimes";
+		String smsVerificationTimes =redisService.get(redisKeyByTimes);
+		// 发送最大限制次数
+		int limitTimes =5;
+		if ( null == smsVerificationTimes & limitTimes < Integer.parseInt(smsVerificationTimes)){
+			throw new ServiceException("短信次数已超过当天限制数，请明天再来");
+		}
+
+		// 发送短信验证码，对每天发送请求次数进行限制，最多一天五次
+		// 生成随机code
+		SmsUtil.setNewcode();
+		String code =SmsUtil.getNewcode();
+		SendSmsResponse sendSmsResponse =null;
+		// 发送验证码
+		try{
+			sendSmsResponse =SmsUtil.sendSms(photoNum, SmsUtil.getNewcode());
+		} catch (ClientException e) {
+			e.printStackTrace();
+		}
+		LOGGER.info("短信接口返回的 Code:{},短信接口返回的 getMessage：{},短信接口返回的 RequestId:{},短信接口返回的 BizId:{}",
+				sendSmsResponse.getCode(), sendSmsResponse.getMessage(),
+				sendSmsResponse.getRequestId(), sendSmsResponse.getBizId());
+
+
+		// 将短信验证码保存在redis中,key值为 id+，+ "smsVerification"
+		String redisKeyByCode = operatorId + "," + "smsVerification";
+		redisService.set(redisKeyByCode, code);
+		redisService.expire(redisKeyByCode,5*60*1000);
+		Integer times =null;
+
+		// 记录发送验证码次数，一天最多发送五次
+		if (null == redisService.get(redisKeyByTimes)){
+			times =1;
+			redisService.set(redisKeyByTimes, times.toString());
+			redisService.expire(redisKeyByTimes, 5*60*1000);
+		}else {
+			times = Integer.parseInt(redisService.get(redisKeyByTimes));
+			++times;
+			redisService.set(redisKeyByTimes, times.toString());
+			redisService.expire(redisKeyByTimes, 5*60*1000);
+		}
+
+		// 返回短信验证码发送结果
+		return sendSmsResponse;
 
 	}
 

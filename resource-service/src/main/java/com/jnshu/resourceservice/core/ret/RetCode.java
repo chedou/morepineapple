@@ -72,6 +72,9 @@ public enum RetCode {
 	SUCCESS_USER_ONE_GET(1,"User单个用户信息获取成功"),
 	SUCCESS_USER_PASSWORD_UPDATE(1,"User单个用户密码更新成功"),
 	SUCCESS_VERIFICATION_GET(1,"User单个用户密码更新成功"),
+	// SUCCESS_VERIFICATION_GET(1,"User单个用户密码更新成功"),
+
+
 
 	/**
 	 * 用户角色模块
@@ -81,6 +84,11 @@ public enum RetCode {
 	SUCCESS_ROLE_ONE_UPDATE(1,"role角色更新成功"),
 	SUCCESS_ROLE_ONE_DELETE(1,"role角色删除成功"),
 	SUCCESS_ROLE_ONE_GET(1,"role单个角色获取成功"),
+
+
+
+	SUCCESS_FILE_UPLOAD(1,"文件上传成功"),
+
 
 
 	/**

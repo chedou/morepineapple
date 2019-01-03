@@ -1,5 +1,6 @@
 package com.jnshu.resourceservice.service;
 
+import com.aliyuncs.dysmsapi.model.v20170525.*;
 import com.jnshu.resourceservice.dto.*;
 import com.jnshu.resourceservice.entity.*;
 import com.jnshu.resourceservice.utils.pageutil.*;
@@ -66,6 +67,27 @@ public interface UserModuleService {
 	 */
 	UserModuleDTO selectUserList(PageUtil pageUtil, User user);
 
+	/**
+	 * @Description 后台管理-更换密码
+	 * @param [operatorId, oldPassword, newPassword, code]
+	 * @return void 
+	 * @author Mr.HUANG
+	 * @date 2019/1/3 
+	 * @throws
+	 */ 
+	void updatePassword(Long operatorId, String oldPassword, String newPassword, String code );
 
-	void updatePassword(Long operatorId, String oldPassword, String newPassword );
+	/**
+	 * @Description 更换密码-获取短信验证码
+	 * @param [photoNum, operatorId] 
+	 * @return void 
+	 * @author Mr.HUANG
+	 * @date 2019/1/3 
+	 * @throws 
+	 */
+	SendSmsResponse smsVerification(String photoNum, Long operatorId);
+
+
+
+
 }

@@ -42,7 +42,7 @@ public class UserModuleController {
 	 */
 	@ApiOperation(value = "addUser",  notes = "新增用户")
 	@PostMapping(value = "/user", produces = "application/json;charset=UTF-8")
-	@PreAuthorize("hasAuthority('RoleManageAll') AND hasAuthority('RoleManageAdd') ")
+	@PreAuthorize("hasAuthority('UserManageAll') AND hasAuthority('UserManageAdd') ")
 	public RetResult<?> addUser(@Validated({AddUserGroup.class}) User user) throws Exception{
 
 		logger.info("----UserModuleController----addUser------");
@@ -67,7 +67,7 @@ public class UserModuleController {
 	 */ 
 	@ApiOperation(value = "updateUser",  notes = "更改用户")
 	@PutMapping(value = "/user", produces = "application/json;charset=UTF-8")
-	@PreAuthorize("hasAuthority('RoleManageAll') AND hasAuthority('RoleManageUpdate') ")
+	@PreAuthorize("hasAuthority('UserManageAll') AND hasAuthority('UserManageUpdate') ")
 	public RetResult<?> updateUser(@Validated({UpdateUserGroup.class, AddUserGroup.class})User user)throws Exception{
 
 		logger.info("----UserModuleController----updateUser-----");
@@ -91,7 +91,7 @@ public class UserModuleController {
 	 */
 	@ApiOperation(value = "deleteUser",  notes = "删除用户")
 	@DeleteMapping(value = "/user/{targetUserId}", produces = "application/json;charset=UTF-8")
-	@PreAuthorize("hasAuthority('RoleManageAll') AND hasAuthority('RoleManageDelete') ")
+	@PreAuthorize("hasAuthority('UserManageAll') AND hasAuthority('UserManageDelete') ")
 	public RetResult<?> deleteUser(@PathVariable Long targetUserId) throws Exception{
 
 		if (logger.isDebugEnabled()){
@@ -116,7 +116,7 @@ public class UserModuleController {
 	 */
 	@ApiOperation(value = "selectUser",  notes = "查询用户")
 	@GetMapping(value = "/user/{targetUserId}", produces = "application/json;charset=UTF-8")
-	@PreAuthorize("hasAuthority('RoleManageAll')")
+	@PreAuthorize("hasAuthority('UserManageAll')")
 	public RetResult<?> selectUser(@PathVariable Long targetUserId) throws Exception{
 
 		logger.info("----UserModuleController----deleteUser-----");
@@ -140,7 +140,7 @@ public class UserModuleController {
 	 */
 	@ApiOperation(value = "selectUserList",  notes = "查询用户列表")
 	@PostMapping(value = "/user/list", produces = "application/json;charset=UTF-8")
-	@PreAuthorize("hasAuthority('RoleManageAll')")
+	@PreAuthorize("hasAuthority('UserManageAll')")
 	public RetResult<?> selectUserList(@MultiRequestBody @Validated({PageUtilGroup.class}) PageUtil pageUtil,
 									   @MultiRequestBody User user)throws Exception{
 
@@ -154,17 +154,45 @@ public class UserModuleController {
 				.setData(userModuleService.selectUserList(pageUtil, user));
 	}
 
-
+	/**
+	 * @Description 后台管理-密码修改
+	 * @param [oldPassword, newPassword, code]
+	 * @return com.jnshu.resourceservice.core.ret.RetResult<?> 
+	 * @author Mr.HUANG
+	 * @date 2019/1/3 
+	 * @throws Exception
+	 */ 
 	@ApiOperation(value = "UpdatePSW",  notes = "更改密码")
 	@PostMapping(value = "/user/password", produces =  "application/json;charset=UTF-8")
-	public RetResult<?> updatePassword(String oldPassword, String newPassword){
-
-		logger.info("----UserModuleController----UpdatePSW-----");
+	@PreAuthorize("hasAuthority('UserManageAll')")
+	public RetResult<?> updatePassword(String oldPassword, String newPassword, String code)
+			throws Exception{
 		Long operatorId =Long.parseLong(AuthorizationUtils.getUserId());
-
+		logger.info("----UserModuleController----UpdatePSW-----");
+		logger.info("操作者为:{}",operatorId );
+		userModuleService.updatePassword(operatorId, oldPassword, newPassword, code);
 		return RetResponse.result(RetCode.SUCCESS_USER_PASSWORD_UPDATE);
 	}
 
+	/**
+	 * @Description 后台管理-密码修改-获取短信验证码
+	 * @param [photoNum] 
+	 * @return com.jnshu.resourceservice.core.ret.RetResult<?> 
+	 * @author Mr.HUANG
+	 * @date 2019/1/3 
+	 * @throws Exception
+	 */ 
+	@ApiOperation(value = "smsVerification",  notes = "获取短信验证码")
+	@PostMapping(value = "/verification", produces =  "application/json;charset=UTF-8")
+	@PreAuthorize("hasAuthority('UserManageAll')")
+
+	public RetResult<?> smsVerification(String photoNum)throws Exception {
+		Long operatorId =Long.parseLong(AuthorizationUtils.getUserId());
+		logger.info("----UserModuleController----smsVerification-----");
+		logger.info("操作者为:{}，手机号码为：{}",operatorId, photoNum );
+		return RetResponse.result(RetCode.SUCCESS_VERIFICATION_GET)
+				.setData(userModuleService.smsVerification(photoNum, operatorId));
+	}
 
 }
 

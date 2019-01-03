@@ -7,6 +7,7 @@ import org.slf4j.*;
 import org.springframework.context.annotation.*;
 import org.springframework.http.*;
 import org.springframework.http.converter.*;
+import org.springframework.web.multipart.commons.*;
 import org.springframework.web.servlet.config.annotation.*;
 
 import java.nio.charset.*;
@@ -69,6 +70,13 @@ public class WebConfigurer extends WebMvcConfigurationSupport {
 		return supportedMediaTypes;
 	}
 
+	@Bean(name = "multipartResolver")
+	public CommonsMultipartResolver getCommonsMultipartResolver() {
+		CommonsMultipartResolver multipartResolver = new CommonsMultipartResolver();
+		multipartResolver.setMaxUploadSize(20971520);
+		multipartResolver.setMaxInMemorySize(1048576);
+		return multipartResolver;
+	}
 
 
 
