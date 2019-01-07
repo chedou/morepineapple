@@ -3,14 +3,16 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://120.79.82.72:8761/eureka/
+    fetch-registry: true
   instance:
-    prefer-ip-address: true
-#    instance-id: ${spring.cloud.client.ip_address}:${server.port}
-    #以IP地址注册到服务中心，相互注册使用IP地址
-    #ip-address: 192.168.1.1 #强制指定IP地址，默认会获取本机的IP地址
+    preferIpAddress: true
+    hostname: ${spring.cloud.client.ip-address}
+    instance-id: ${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:${random.value}}}
 feign:
   hystrix:
     enabled: true
+  url: 120.79.87.72:7777
+
 logging:
   config: "classpath:logging-config.xml"
   level:
@@ -115,6 +117,17 @@ aliyun:
 
 multipart:
   enabled: true
+
 #  #location: roy-upload-tmp
 #  max-file-size: 100MB
 #  max-request-size: 100MB
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 10000
+      circuitBreaker:
+        enabled: true
+        requestVolumeThreshold: 3

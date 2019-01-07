@@ -3,11 +3,17 @@ server:
   port: 8761
 
 eureka:
+  server:
+#  设为false，关闭自我保护
+    enable-self-preservation: false
+#     清理间隔（单位毫秒，默认是60*1000）
+    eviction-interval-timer-in-ms: 4000
   instance:
-    hostname: localhost
-    prefer-ip-address: true #以IP地址注册到服务中心
-        #instance-id: http://192.168.1.4:8110 #服务中心的信息显示（如果IP地址不显示的话，进行配置）
+    hostname: standalone
+    instance-id: ${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:${random.value}}}
+#    prefer-ip-address: true #以IP地址注册到服务中心
 
+      #instance-id: http://192.168.1.4:8110 #服务中心的信息显示（如果IP地址不显示的话，进行配置）
   client:
   #  客户端相互注册
     registerWithEureka: false
@@ -15,3 +21,6 @@ eureka:
     fetchRegistry: false
     serviceUrl:
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+spring:
+  application:
+    name: eureka-service

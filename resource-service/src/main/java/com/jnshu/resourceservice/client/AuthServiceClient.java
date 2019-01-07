@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
  * @author Mr.HUANG
  * @date 2018/10/13
  */
-@FeignClient(value = "uaa-service",fallback =AuthServiceHystrix.class )
+@FeignClient(name = "UAA-SERVICE" ,fallback = AuthServiceHystrix.class ,url = "120.79.82.72:7777", decode404 = true)
 public interface AuthServiceClient {
 
 	/**

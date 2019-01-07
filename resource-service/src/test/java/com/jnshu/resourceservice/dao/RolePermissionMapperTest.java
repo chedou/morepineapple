@@ -33,7 +33,7 @@ public class RolePermissionMapperTest {
 		// List<Integer> integerList = new ArrayList<>();
 		// integerList.add(12);
 		// integerList.add(341);
-		// rolePermissionMap.put("Permissions",integerList);
+		// rolePermissionMap.requestput("Permissions",integerList);
 		rolePermissionMap.put("status",1);
 		rolePermissionMap.put("gmtCreate",111);
 		rolePermissionMap.put("gmtUpdate",222);

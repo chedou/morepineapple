@@ -10,6 +10,7 @@
         <module name="eureka-server" />
         <module name="resource-service" />
         <module name="uaa-service" />
+        <module name="zuul-server" />
       </profile>
     </annotationProcessing>
   </component>
