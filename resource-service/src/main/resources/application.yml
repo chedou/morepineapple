@@ -5,13 +5,14 @@ eureka:
       defaultZone: http://120.79.82.72:8761/eureka/
     fetch-registry: true
   instance:
-    preferIpAddress: true
+    prefer-ip-address: true
     hostname: ${spring.cloud.client.ip-address}
+    ip-address: 113.81.148.84
     instance-id: ${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:${random.value}}}
 feign:
   hystrix:
     enabled: true
-  url: 120.79.87.72:7777
+#  url: 120.79.87.72:7777
 
 logging:
   config: "classpath:logging-config.xml"
@@ -131,3 +132,4 @@ hystrix:
       circuitBreaker:
         enabled: true
         requestVolumeThreshold: 3
+

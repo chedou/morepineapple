@@ -7,6 +7,8 @@ eureka:
 #    preferIpAddress: true
 #    hostname: ${spring.cloud.client.ip-address}
     hostname: ${spring.cloud.client.ip-address}
+    prefer-ip-address: true
+    ip-address: 120.79.82.72
     instance-id: ${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:${random.value}}}
 #    租期更新时间间隔（默认30秒）
     leaseRenewalIntervalInSeconds: 10
