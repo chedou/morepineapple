@@ -11,7 +11,7 @@
 
     <!--子类pom文件列表-->
     <modules>
-        <module>eureka-server</module>
+        <module>eureka-service</module>
         <module>uaa-service</module>
         <module>resource-service</module>
         <module>zuul-server</module>
