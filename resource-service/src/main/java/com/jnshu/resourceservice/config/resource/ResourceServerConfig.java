@@ -40,7 +40,7 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
                 // 请求认证策略
                 .and().authorizeRequests()
                 // 允许无需安全验证的URL
-                .antMatchers("/user/login","/user/register","/swagger-ui.html").permitAll()
+                .antMatchers("/user/login","/user/register","/swagger-ui.html","/a/login","/a/register").permitAll()
                 // swagger设置
                 .antMatchers("/swagger-resources/**").permitAll()
                 .antMatchers("/images/**").permitAll()

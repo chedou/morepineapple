@@ -26,6 +26,9 @@ public class UserServiceDetail implements UserDetailsService {
 	@Autowired
 	AuthServiceClient client;
 
+	@Autowired
+	private RedisService redisService;
+
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		return userMapper.findByUsername(username);
@@ -42,8 +45,8 @@ public class UserServiceDetail implements UserDetailsService {
 
 	public UserLoginDTO login(String username, String password){
 		User user=userMapper.findByUsername(username);
-		if (null == user) {
-			throw new UserLoginException("error username 1212");
+		if (null == user || null  == userMapper.findByUsername(username)) {
+			throw new UserLoginException("error username ");
 		}
 		if(!BPwdEncoderUtil.matches(password,user.getPassword())){
 			throw new UserLoginException("error password");
@@ -57,7 +60,9 @@ public class UserServiceDetail implements UserDetailsService {
 		}
 		// 用户id写入jwt
 		jwt.setUserID(user.getId());
-
+		// 将用户登录信息写入redis中，accessToken作为key，时间戳为value
+		redisService.set(jwt.getAccess_token(), String.valueOf(System.currentTimeMillis()));
+		redisService.expire(jwt.getAccess_token(), 3*24*60*60);
 
 		UserLoginDTO userLoginDTO=new UserLoginDTO();
 		userLoginDTO.setJwt(jwt);

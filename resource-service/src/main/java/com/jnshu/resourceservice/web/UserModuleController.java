@@ -31,6 +31,9 @@ public class UserModuleController {
 	@Autowired
 	private UserModuleService userModuleService;
 
+	@Autowired
+	UserServiceDetail userServiceDetail;
+
 	// TODO：用户管理-新增用户
 	/**
 	 * @Description
@@ -185,13 +188,36 @@ public class UserModuleController {
 	@ApiOperation(value = "smsVerification",  notes = "获取短信验证码")
 	@PostMapping(value = "/verification", produces =  "application/json;charset=UTF-8")
 	@PreAuthorize("hasAuthority('UserManageAll')")
-
 	public RetResult<?> smsVerification(String photoNum)throws Exception {
 		Long operatorId =Long.parseLong(AuthorizationUtils.getUserId());
 		logger.info("----UserModuleController----smsVerification-----");
 		logger.info("操作者为:{}，手机号码为：{}",operatorId, photoNum );
 		return RetResponse.result(RetCode.SUCCESS_VERIFICATION_GET)
 				.setData(userModuleService.smsVerification(photoNum, operatorId));
+	}
+
+	/**
+	 * @Description
+	 * @param [username, password]
+	 * @return com.jnshu.resourceservice.dto.UserLoginDTO
+	 * @author Mr.HUANG
+	 * @date 2019/1/10
+	 * @throws
+	 */
+	@PostMapping(value = "/login",produces =  "application/json;charset=UTF-8")
+	public UserLoginDTO login(@RequestParam("username") String username ,
+							  @RequestParam("password") String password){
+		//参数判断，省略
+		System.out.println("username：" + username);
+		System.out.println("password：" + password);
+		return userServiceDetail.login(username,password);
+	}
+
+	@PostMapping(value = "/out", produces =  "application/json;charset=UTF-8")
+	public UserLoginDTO out(@RequestParam("username") String username ,
+							  @RequestParam("password") String password){
+
+		return userServiceDetail.login(username,password);
 	}
 
 }

@@ -108,6 +108,7 @@ public enum RetCode {
 	USER_ACCOUNT_FORBIDDEN(20003, "账号已被禁用"),
 	USER_NOT_EXIST(20004, "用户不存在"),
 	USER_HAS_EXISTED(20005, "用户已存在"),
+	USER_ACCESS_TOKEN_IS_EMPTY(2006, "用户accessToken 为空"),
 
 	/**
 	 * 登出模块

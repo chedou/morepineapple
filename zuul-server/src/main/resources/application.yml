@@ -1,23 +1,30 @@
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://120.79.82.72:8761/eureka/
-    fetch-registry: true
+  eureka:
+    client:
+      serviceUrl:
+        defaultZone: http://120.79.82.72:8761/eureka/
+      fetch-registry: true
+      register-with-eureka: true
   instance:
     preferIpAddress: true
     hostname: ${spring.cloud.client.ip-address}
+#    ip-address: 113.81.148.84
+    ip-address: localhost
     instance-id: ${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:${random.value}}}
 server:
   port: 7888
-
 spring:
   application:
-    name: service-zuul
+    name: zuul-service
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    timeout: 0
+    password:
 zuul:
   routes:
     api-a:
-      path: /a/
+      path: /a/**
       serviceId: sources-service
     api-b:
-      path: /auth/
+      path: /auth/**
       serviceId: uaa-service
