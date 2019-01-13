@@ -67,7 +67,8 @@ public class MyFilter extends ZuulFilter {
 
 		// 登录及访问模块
 		if (url.contains(backstageUrlHead) && !url.equals(loginPartUrl)){
-			String accessToken = request.getHeader("Authorization");
+			String[] accessTokenArray = request.getHeader("Authorization").split(" ");
+			String accessToken =accessTokenArray[1];
 			log.info("登录、访问模块authorization 获取：{}",accessToken);
 
 			// accessToken为null
@@ -78,12 +79,20 @@ public class MyFilter extends ZuulFilter {
 			}
 			// accessToken不为null
 			else if (StringUtils.isNotBlank(accessToken)){
-				Long loginTime = Long.valueOf(redisService.get(accessToken));
+				Long loginTime =null;
+				if(null == redisService.get(accessToken)){
+					log.info("登录时间为：{}", loginTime);
+					ctx.setResponseBody("{\"code\": 2008, \"message\": \"redis  don`t have accessToken \"}");
+					return null;
+				}else{
+					loginTime = Long.valueOf(redisService.get(accessToken));
+				}
 				Long nowTime = System.currentTimeMillis();
-				Long timeOut = 3*24*60*60L;
+				Long timeOut = 10 * 60 * 60 * 1000L;
 
 				// 超过有效期
 				if (0 ==loginTime || nowTime - loginTime > timeOut ){
+					log.info("登录时间为：{}，当前时间为：{}" ,loginTime ,nowTime);
 					log.warn("token已过期");
 					ctx.setResponseBody("{\"code\": 2007, \"message\": \"token is expired\"}");
 					return null;
@@ -102,16 +111,6 @@ public class MyFilter extends ZuulFilter {
 		if(url.contains(loginPartUrl)){
 			String accessToken = request.getHeader("Authorization");
 			ctx.addZuulRequestHeader("Authorization", accessToken);
-
-
-
-
-			System.out.println("accessToken:" + accessToken );
-			System.out.println(ctx.getRequest());
-			System.out.println("------------2--------");
-			System.out.println(ctx.getResponse());
-			System.out.println("--------------3----------");
-			System.out.println(ctx.toString());
 			return null;
 		}
 		return null;

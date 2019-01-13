@@ -37,29 +37,6 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
      */
     @Override
     public void configure(HttpSecurity http) throws Exception {
-        // http
-        //         // 是否开启防止 csrf攻击策略，默认关闭
-        //         // .csrf().disable().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-        //         // 请求认证策略
-        //         .authorizeRequests()
-        //         // 允许无需安全验证的URL
-        //         .antMatchers("/user/login","/user/register","/swagger-ui.html","/a/login","/a/register").permitAll()
-        //         // swagger设置
-        //         .antMatchers("/swagger-resources/**").permitAll()
-        //         .antMatchers("/images/**").permitAll()
-        //         .antMatchers("/webjars/**").permitAll()
-        //         .antMatchers("/v2/api-docs").permitAll()
-        //         .antMatchers("/configuration/ui").permitAll()
-        //         .antMatchers("/configuration/security").permitAll()
-			// 	.antMatchers("/oauth/token").permitAll()
-        //         // 结束swagger设置
-        //         .antMatchers("/**").authenticated()
-			// 	.and().csrf().disable();
-			// 	// .and().formLogin().loginProcessingUrl("/a/login").passwordParameter("password")
-			// 	// .usernameParameter("username").permitAll();
-        //         // .anyRequest().authenticated();
-        // // http.headers().cacheControl();
-        // http.requestCache().requestCache(new NullRequestCache());
 
 		http
 			// 由于使用的是JWT，我们这里不需要csrf
@@ -79,6 +56,13 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
 						"/**/*.css",
 						"/**/*.js"
 				).permitAll()
+				// swagger设置
+				        .antMatchers("/swagger-resources/**").permitAll()
+				        .antMatchers("/images/**").permitAll()
+				        .antMatchers("/webjars/**").permitAll()
+				        .antMatchers("/v2/api-docs").permitAll()
+				        .antMatchers("/configuration/ui").permitAll()
+				        .antMatchers("/configuration/security").permitAll()
 				// 对于获取token的rest api要允许匿名访问
 				.antMatchers("/auth/**").permitAll()
 				.antMatchers("/swagger-ui.html","/a/login","/a/register","/login").permitAll()

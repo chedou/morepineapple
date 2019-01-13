@@ -7,6 +7,7 @@ import com.jnshu.resourceservice.entity.*;
 import com.jnshu.resourceservice.exception.*;
 import com.jnshu.resourceservice.entity.User;
 import com.jnshu.resourceservice.utils.password.*;
+import org.slf4j.*;
 import org.springframework.beans.factory.annotation.*;
 import org.springframework.security.core.userdetails.*;
 import org.springframework.stereotype.*;
@@ -19,6 +20,8 @@ import org.springframework.stereotype.*;
  **/
 @Service
 public class UserServiceDetail implements UserDetailsService {
+
+	private final Logger LOGGER = LoggerFactory.getLogger(this.getClass());
 
 	@Autowired
 	private UserMapper userMapper;
@@ -61,8 +64,10 @@ public class UserServiceDetail implements UserDetailsService {
 		// 用户id写入jwt
 		jwt.setUserID(user.getId());
 		// 将用户登录信息写入redis中，accessToken作为key，时间戳为value
-		redisService.set(jwt.getAccess_token(), String.valueOf(System.currentTimeMillis()));
-		redisService.expire(jwt.getAccess_token(), 3*24*60*60);
+		if (redisService.set(jwt.getAccess_token(), String.valueOf(System.currentTimeMillis()))){
+			redisService.expire(jwt.getAccess_token(), 3*24*60*60);
+			LOGGER.info("用户权限存入redis中，access_Token的值为：{}", jwt.getAccess_token());
+		}
 
 		UserLoginDTO userLoginDTO=new UserLoginDTO();
 		userLoginDTO.setJwt(jwt);
