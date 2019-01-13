@@ -62,7 +62,7 @@ public class MyFilter extends ZuulFilter {
 		log.info("当前请求url:{}",url);
 
 		String loginOutPartUrl = "/a/out";
-		String backstageUrlHead = "a";
+		String backstageUrlHead = "/a";
 		String loginPartUrl = "/a/login";
 
 		// 登录及访问模块
@@ -101,8 +101,17 @@ public class MyFilter extends ZuulFilter {
 
 		if(url.contains(loginPartUrl)){
 			String accessToken = request.getHeader("Authorization");
-			ctx.addZuulRequestHeader("Authorization", "Bearer " + accessToken);
+			ctx.addZuulRequestHeader("Authorization", accessToken);
+
+
+
+
 			System.out.println("accessToken:" + accessToken );
+			System.out.println(ctx.getRequest());
+			System.out.println("------------2--------");
+			System.out.println(ctx.getResponse());
+			System.out.println("--------------3----------");
+			System.out.println(ctx.toString());
 			return null;
 		}
 		return null;

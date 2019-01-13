@@ -22,7 +22,7 @@ import org.springframework.web.bind.annotation.*;
  **/
 
 @RestController
-@RequestMapping("/a")
+@RequestMapping()
 @Api(tags = {"用户管理模块"}, description = "测试用户管理模块")
 public class UserModuleController {
 

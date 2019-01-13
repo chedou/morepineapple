@@ -8,7 +8,6 @@ import org.springframework.security.config.annotation.authentication.builders.*;
 import org.springframework.security.config.annotation.web.builders.*;
 import org.springframework.security.config.annotation.web.configuration.*;
 import org.springframework.security.crypto.bcrypt.*;
-import org.springframework.security.web.authentication.www.*;
 
 import javax.servlet.http.*;
 
@@ -53,6 +52,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 					// 对路径拦截器进行配置
 					.authorizeRequests()
 					.antMatchers("/**").authenticated()
+					.antMatchers("/oauth/token").permitAll()
 				.and()
 					// 开启 HTTP BASIC 认证，即是否开启 BasicAuthenticationFilter 过滤器
 					.httpBasic();

@@ -1,9 +1,9 @@
-  eureka:
-    client:
-      serviceUrl:
-        defaultZone: http://120.79.82.72:8761/eureka/
-      fetch-registry: true
-      register-with-eureka: true
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://120.79.82.72:8761/eureka/
+    fetch-registry: true
+    register-with-eureka: true
   instance:
     preferIpAddress: true
     hostname: ${spring.cloud.client.ip-address}
