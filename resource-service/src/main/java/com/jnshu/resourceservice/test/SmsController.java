@@ -1,4 +1,4 @@
-package com.jnshu.resourceservice.web.test;
+package com.jnshu.resourceservice.test;
 
 import com.alibaba.fastjson.*;
 import com.aliyuncs.dysmsapi.model.v20170525.*;

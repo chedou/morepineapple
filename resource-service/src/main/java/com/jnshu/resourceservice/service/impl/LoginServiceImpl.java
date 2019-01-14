@@ -1,4 +1,4 @@
-package com.jnshu.resourceservice.service;
+package com.jnshu.resourceservice.service.impl;
 
 import com.jnshu.resourceservice.client.*;
 import com.jnshu.resourceservice.dao.*;
@@ -6,7 +6,9 @@ import com.jnshu.resourceservice.dto.*;
 import com.jnshu.resourceservice.entity.*;
 import com.jnshu.resourceservice.exception.*;
 import com.jnshu.resourceservice.entity.User;
+import com.jnshu.resourceservice.service.*;
 import com.jnshu.resourceservice.utils.password.*;
+import com.jnshu.resourceservice.utils.redis.*;
 import org.slf4j.*;
 import org.springframework.beans.factory.annotation.*;
 import org.springframework.security.core.userdetails.*;
@@ -19,7 +21,7 @@ import org.springframework.stereotype.*;
  * @create: 2018-12-06 20:12
  **/
 @Service
-public class UserServiceDetail implements UserDetailsService {
+public class LoginServiceImpl implements UserDetailsService ,LoginService {
 
 	private final Logger LOGGER = LoggerFactory.getLogger(this.getClass());
 
@@ -46,6 +48,15 @@ public class UserServiceDetail implements UserDetailsService {
 		return userReturn;
 	}
 
+	/**
+	 * @Description 用户登录接口
+	 * @param [username, password]
+	 * @return com.jnshu.resourceservice.dto.UserLoginDTO
+	 * @author Mr.HUANG
+	 * @date 2019/1/14
+	 * @throws
+	 */
+	@Override
 	public UserLoginDTO login(String username, String password){
 		User user=userMapper.findByUsername(username);
 		if (null == user || null  == userMapper.findByUsername(username)) {
@@ -72,8 +83,35 @@ public class UserServiceDetail implements UserDetailsService {
 		UserLoginDTO userLoginDTO=new UserLoginDTO();
 		userLoginDTO.setJwt(jwt);
 		userLoginDTO.setUser(user);
+
+		LOGGER.info("用户登录成功，登陆ID为：{}", user.getId());
 		return userLoginDTO;
 
 	}
+
+
+	/**
+	 * @param authorization
+	 * @return void
+	 * @throws
+	 * @Description 用户登出
+	 * @author Mr.HUANG
+	 * @date 2019/1/14
+	 */
+	@Override
+	public void out(String authorization) {
+		LOGGER.info("传输进入的参数 authorization 为：", authorization);
+		// 删除redis中存储用户登录的信息
+		String accessToken = authorization.split(" ")[1];
+		if (null == accessToken){
+			LOGGER.info("问题点accessToken :{}", accessToken);
+			throw new ServiceException("accessToken is null");
+		}
+		if (1 != redisService.del(accessToken)){
+			throw new ServiceException("delete accessToken is wrong");
+		}
+
+	}
+
 
 }

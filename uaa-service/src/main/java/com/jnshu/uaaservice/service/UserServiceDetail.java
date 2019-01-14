@@ -2,6 +2,7 @@ package com.jnshu.uaaservice.service;
 
 import com.jnshu.uaaservice.dao.*;
 import com.jnshu.uaaservice.pojo.User;
+import org.slf4j.*;
 import org.springframework.beans.factory.annotation.*;
 import org.springframework.security.core.userdetails.*;
 import org.springframework.stereotype.*;
@@ -14,6 +15,8 @@ import org.springframework.stereotype.*;
  */
 @Service
 public class UserServiceDetail implements UserDetailsService {
+
+	private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
 	@Autowired
 	private UserMapper userMapper;
@@ -30,7 +33,7 @@ public class UserServiceDetail implements UserDetailsService {
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		User returnUser =userMapper.findByUsername(username);
 		System.out.println("uaa-server-封装的用户信息为：" + returnUser);
-		System.out.println("--------------------------------------");
+		logger.info("----------------当前时间:{}----------------------", System.currentTimeMillis());
 		System.out.println(returnUser.getUsername());
 		return returnUser;
 	}

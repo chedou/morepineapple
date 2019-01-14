@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.*;
  * @create: 2018-12-22 20:57
  **/
 @RestController
-@RequestMapping("/a")
+@RequestMapping()
 @Api(tags = {"角色管理模块"}, description = "测试角色管理模块")
 public class RoleModuleController {
 

@@ -1,7 +1,6 @@
-package com.jnshu.resourceservice.service.impl;
+package com.jnshu.resourceservice.utils.redis;
 
 import com.alibaba.fastjson.*;
-import com.jnshu.resourceservice.service.*;
 import org.springframework.dao.*;
 import org.springframework.data.redis.connection.*;
 import org.springframework.data.redis.core.*;
@@ -58,6 +57,7 @@ public class RedisServiceImpl implements RedisService {
 			public Long doInRedis(RedisConnection connection) throws DataAccessException {
 				RedisSerializer<String> serializer = redisTemplate.getStringSerializer();
 				long value =  connection.del(serializer.serialize(key));
+				System.out.println("被删除的返回值" + value);
 				return value;
 			}
 		});

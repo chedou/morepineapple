@@ -1,7 +1,7 @@
-package com.jnshu.resourceservice.web.test;
+package com.jnshu.resourceservice.test;
 
 import com.jnshu.resourceservice.core.ret.*;
-import com.jnshu.resourceservice.service.*;
+import com.jnshu.resourceservice.utils.redis.*;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.*;

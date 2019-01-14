@@ -66,7 +66,7 @@ public class MyFilter extends ZuulFilter {
 		String loginPartUrl = "/a/login";
 
 		// 登录及访问模块
-		if (url.contains(backstageUrlHead) && !url.equals(loginPartUrl)){
+		if ( !url.equals(loginOutPartUrl) & url.contains(backstageUrlHead) & !url.equals(loginPartUrl)){
 			String[] accessTokenArray = request.getHeader("Authorization").split(" ");
 			String accessToken =accessTokenArray[1];
 			log.info("登录、访问模块authorization 获取：{}",accessToken);
@@ -82,7 +82,7 @@ public class MyFilter extends ZuulFilter {
 				Long loginTime =null;
 				if(null == redisService.get(accessToken)){
 					log.info("登录时间为：{}", loginTime);
-					ctx.setResponseBody("{\"code\": 2008, \"message\": \"redis  don`t have accessToken \"}");
+					ctx.setResponseBody("{\"code\": 2008, \"message\": \"你已超出登录时间，请重新登录。\"}");
 					return null;
 				}else{
 					loginTime = Long.valueOf(redisService.get(accessToken));
@@ -104,7 +104,8 @@ public class MyFilter extends ZuulFilter {
 		// 登出模块,直接补上 authorization,在服务类中再对以登录信息做处理
 		if(url.contains(loginOutPartUrl)){
 			String accessToken = request.getHeader("Authorization");
-			ctx.addZuulRequestHeader("Authorization", "Bearer " + accessToken);
+			log.info("登出拦截：{}", accessToken );
+			ctx.addZuulRequestHeader("Authorization",accessToken);
 			return null;
 		}
 

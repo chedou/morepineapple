@@ -6,6 +6,7 @@ import com.jnshu.resourceservice.dto.*;
 import com.jnshu.resourceservice.entity.*;
 import com.jnshu.resourceservice.entity.group.*;
 import com.jnshu.resourceservice.service.*;
+import com.jnshu.resourceservice.service.impl.*;
 import com.jnshu.resourceservice.utils.authorization.*;
 import com.jnshu.resourceservice.utils.pageutil.*;
 import io.swagger.annotations.*;
@@ -32,7 +33,7 @@ public class UserModuleController {
 	private UserModuleService userModuleService;
 
 	@Autowired
-	UserServiceDetail userServiceDetail;
+	LoginServiceImpl loginServiceImpl;
 
 	// TODO：用户管理-新增用户
 	/**
@@ -194,30 +195,6 @@ public class UserModuleController {
 		logger.info("操作者为:{}，手机号码为：{}",operatorId, photoNum );
 		return RetResponse.result(RetCode.SUCCESS_VERIFICATION_GET)
 				.setData(userModuleService.smsVerification(photoNum, operatorId));
-	}
-
-	/**
-	 * @Description
-	 * @param [username, password]
-	 * @return com.jnshu.resourceservice.dto.UserLoginDTO
-	 * @author Mr.HUANG
-	 * @date 2019/1/10
-	 * @throws
-	 */
-	@PostMapping(value = "/login",produces =  "application/json;charset=UTF-8")
-	public UserLoginDTO login(@RequestParam("username") String username ,
-							  @RequestParam("password") String password){
-		//参数判断，省略
-		System.out.println("username：" + username);
-		System.out.println("password：" + password);
-		return userServiceDetail.login(username,password);
-	}
-
-	@PostMapping(value = "/out", produces =  "application/json;charset=UTF-8")
-	public UserLoginDTO out(@RequestParam("username") String username ,
-							  @RequestParam("password") String password){
-
-		return userServiceDetail.login(username,password);
 	}
 
 }

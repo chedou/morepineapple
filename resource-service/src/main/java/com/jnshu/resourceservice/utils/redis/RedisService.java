@@ -1,4 +1,4 @@
-package com.jnshu.resourceservice.service;
+package com.jnshu.resourceservice.utils.redis;
 
 import java.util.*;
 

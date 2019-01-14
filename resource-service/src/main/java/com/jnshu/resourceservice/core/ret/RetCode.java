@@ -73,6 +73,8 @@ public enum RetCode {
 	SUCCESS_USER_PASSWORD_UPDATE(1,"User单个用户密码更新成功"),
 	SUCCESS_VERIFICATION_GET(1,"User单个用户密码更新成功"),
 	// SUCCESS_VERIFICATION_GET(1,"User单个用户密码更新成功"),
+	SUCCESS_USER_LOGIN(1,"用户登录成功"),
+	SUCCESS_USER_LOGIN_OUT(1,"用户登出成功"),
 
 
 

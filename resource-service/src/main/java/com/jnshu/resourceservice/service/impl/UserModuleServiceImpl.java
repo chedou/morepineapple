@@ -11,6 +11,7 @@ import com.jnshu.resourceservice.service.*;
 import com.jnshu.resourceservice.utils.pageutil.*;
 import com.jnshu.resourceservice.utils.password.*;
 import com.jnshu.resourceservice.utils.photo.*;
+import com.jnshu.resourceservice.utils.redis.*;
 import com.jnshu.resourceservice.utils.sms.*;
 import org.slf4j.*;
 import org.springframework.beans.factory.annotation.*;
@@ -362,6 +363,8 @@ public class UserModuleServiceImpl implements UserModuleService {
 		return sendSmsResponse;
 
 	}
+
+
 
 
 }
