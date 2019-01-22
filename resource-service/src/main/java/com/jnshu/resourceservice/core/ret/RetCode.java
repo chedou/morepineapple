@@ -1,7 +1,5 @@
 package com.jnshu.resourceservice.core.ret;
 
-import java.util.*;
-
 /**
  * @description: 响应码枚举，参考HTTP状态码的语义
  * @author: Mr.huang
@@ -130,6 +128,7 @@ public enum RetCode {
 	 * 公司内容管理
 	 */
 	COMPANY_NO_EXIST(30100,"该公司不存在"),
+	COMPANY_PARAM_ERROR(30101,"入参有问题，请核对后再试"),
 
 	/**
 	 * 职位内容管理
@@ -254,23 +253,23 @@ public enum RetCode {
 		return this.name();
 	}
 
-	/**
-	 * @description  检验 code 是否重复
-	 * @author Mr.HUANG
-	 * @date 2018/12/11
-	 */
-	public static void main(String[] args) {
-		RetCode[] ApiResultCodes = RetCode.values();
-		List<Integer> codeList = new ArrayList<Integer>();
-		for (RetCode ApiResultCode : ApiResultCodes) {
-			if (codeList.contains(ApiResultCode.code)) {
-				System.out.println(ApiResultCode.code);
-			} else {
-				codeList.add(ApiResultCode.code());
-			}
-		}
-	}
-
+	// /**
+	//  * @description  检验 code 是否重复
+	//  * @author Mr.HUANG
+	//  * @date 2018/12/11
+	//  */
+	// public static void main(String[] args) {
+	// 	RetCode[] ApiResultCodes = RetCode.values();
+	// 	List<Integer> codeList = new ArrayList<Integer>();
+	// 	for (RetCode ApiResultCode : ApiResultCodes) {
+	// 		if (codeList.contains(ApiResultCode.code)) {
+	// 			System.out.println(ApiResultCode.code);
+	// 		} else {
+	// 			codeList.add(ApiResultCode.code());
+	// 		}
+	// 	}
+	// }
+	//
 
 
 
