@@ -74,6 +74,11 @@ public enum RetCode {
 	SUCCESS_USER_LOGIN(1,"用户登录成功"),
 	SUCCESS_USER_LOGIN_OUT(1,"用户登出成功"),
 
+	SUCCESS_MODULE_LIST(1,"模块列表获取成功"),
+	SUCCESS_MODULE_ONE_ADD(1,"新增单个模块成功"),
+	SUCCESS_MODULE_ONE_UPDATE(1,"单个模块更新成功"),
+	SUCCESS_MODULE_ONE_DELETE(1,"单个模块列表删除成功"),
+	SUCCESS_MODULE_ONE_GET(1,"单个模块获取成功"),
 
 
 	/**
