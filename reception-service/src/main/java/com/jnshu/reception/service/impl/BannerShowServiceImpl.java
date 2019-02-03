@@ -1,13 +1,12 @@
-package com.jnshu.resourceservice.service.impl;
+package com.jnshu.reception.service.impl;
 
+import com.jnshu.reception.dao.BannerShowMapper;
+import com.jnshu.reception.pojo.BannerShow;
+import com.jnshu.reception.service.BannerShowService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-import com.jnshu.resourceservice.dao.*;
-import com.jnshu.resourceservice.entity.*;
-import com.jnshu.resourceservice.service.*;
-import org.springframework.beans.factory.annotation.*;
-import org.springframework.stereotype.*;
-
-import java.util.*;
+import java.util.List;
 
 //@MapperScan("com.jnshu.reception.dao.BannerShowMapper")
 @Service

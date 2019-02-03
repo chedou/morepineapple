@@ -60,10 +60,10 @@
     <!--logback的配置项中有一个additivity属性，表示子logger是否继承父logger的appender输出源。
     默认情况下是true，表示子logger会在父logger的输出源里输出。这就是导致日志重复输出的原因，
     所以只需要将这个属性改为false即可。-->
-    <logger name="com.jnshu.backendSystem.web.fakeData" additivity="false" level="info">
+    <logger name="com.jnshu.backendSystem" additivity="false" level="info">
         <appender-ref ref="STDOUT"/>
     </logger>
-    <logger name="com.jnshu.backendSystem.web.fakeData" additivity="false" level="info">
+    <logger name="com.jnshu.backendSystem" additivity="false" level="info">
         <appender-ref ref="ASYNC"/>
     </logger>
 

@@ -21,7 +21,7 @@
             <!--</javaTypeResolver>-->
 
             <!--&lt;!&ndash; targetProject:生成PO类的位置 &ndash;&gt;-->
-            <!--<javaModelGenerator targetPackage="src.main.java.com.jnshu.backendsystem.pojo"-->
+            <!--<javaModelGenerator targetPackage="src.main.java.com.jnshu.receptiono"-->
                                 <!--targetProject=".\src">-->
                 <!--&lt;!&ndash; enableSubPackages:是否让schema作为包的后缀 &ndash;&gt;-->
                 <!--<property name="enableSubPackages" value="false" />-->
@@ -36,7 +36,7 @@
             <!--</sqlMapGenerator>-->
             <!--&lt;!&ndash; targetPackage：mapper接口生成的位置 &ndash;&gt;-->
             <!--<javaClientGenerator type="XMLMAPPER"-->
-                                 <!--targetPackage="src.main.java.com.jnshu.backendsystem.dao"-->
+                                 <!--targetPackage="src.main.java.com.jnshu.reception"-->
                                  <!--targetProject=".\src">-->
                 <!--&lt;!&ndash; enableSubPackages:是否让schema作为包的后缀 &ndash;&gt;-->
                 <!--<property name="enableSubPackages" value="false" />-->

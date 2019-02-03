@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.jnshu.backendsystem.dao.CompanyProduceMapper">
-    <resultMap id="BaseResultMap" type="com.jnshu.backendsystem.pojo.CompanyProduce">
+<mapper namespace="com.jnshu.reception.dao.CompanyProduceMapper">
+    <resultMap id="BaseResultMap" type="com.jnshu.reception.pojo.CompanyProduce">
         <id column="id" jdbcType="BIGINT" property="id"/>
         <result column="company_id" jdbcType="BIGINT" property="companyId"/>
         <result column="produce_name" jdbcType="VARCHAR" property="produceName"/>
@@ -15,7 +15,7 @@
     </resultMap>
 
     <!--新增公司产品-->
-    <insert id="insertCompanyProduce" parameterType="com.jnshu.backendsystem.pojo.CompanyProduce">
+    <insert id="insertCompanyProduce" parameterType="com.jnshu.reception.pojo.CompanyProduce">
     INSERT INTO company_produce(company_id,produce_name,produce_slogan,produce_logo,product_introduction,gmt_create,gmt_update,create_by,update_by) VALUES
     ( #{companyId,jdbcType=BIGINT}, #{produceName,jdbcType=VARCHAR},
     #{produceSlogan,jdbcType=VARCHAR}, #{produceLogo,jdbcType=VARCHAR}, #{productIntroduction,jdbcType=VARCHAR},
@@ -24,7 +24,7 @@
   </insert>
 
     <!--更新公司产品-->
-    <update id="updatecompanyProduceByIde" parameterType="com.jnshu.backendsystem.pojo.CompanyProduce">
+    <update id="updatecompanyProduceByIde" parameterType="com.jnshu.reception.pojo.CompanyProduce">
         update company_produce
         <set>
             <if test="produceName != null">
@@ -124,7 +124,7 @@
     <!--id, company_id, produce_name, produce_slogan, produce_logo, product_introduction,-->
     <!--gmt_create, gmt_update, create_by, update_by-->
   <!--</sql>-->
-    <!--<select id="selectByExample" parameterType="com.jnshu.backendsystem.pojo.CompanyProduceExample"-->
+    <!--<select id="selectByExample" parameterType="com.jnshu.receptiono.CompanyProduceExample"-->
             <!--resultMap="BaseResultMap">-->
         <!--select-->
         <!--<if test="distinct">-->
@@ -149,13 +149,13 @@
     <!--delete from company_produce-->
     <!--where id = #{id,jdbcType=BIGINT}-->
   <!--</delete>-->
-    <!--<delete id="deleteByExample" parameterType="com.jnshu.backendsystem.pojo.CompanyProduceExample">-->
+    <!--<delete id="deleteByExample" parameterType="com.jnshu.receptiono.CompanyProduceExample">-->
         <!--delete from company_produce-->
         <!--<if test="_parameter != null">-->
             <!--<include refid="Example_Where_Clause"/>-->
         <!--</if>-->
     <!--</delete>-->
-    <!--<insert id="insert" parameterType="com.jnshu.backendsystem.pojo.CompanyProduce">-->
+    <!--<insert id="insert" parameterType="com.jnshu.receptiono.CompanyProduce">-->
     <!--insert into company_produce (id, company_id, produce_name,-->
     <!--produce_slogan, produce_logo, product_introduction,-->
     <!--gmt_create, gmt_update, create_by,-->
@@ -165,7 +165,7 @@
     <!--#{gmtCreate,jdbcType=BIGINT}, #{gmtUpdate,jdbcType=BIGINT}, #{createBy,jdbcType=VARCHAR},-->
     <!--#{updateBy,jdbcType=VARCHAR})-->
   <!--</insert>-->
-    <!--<insert id="insertSelective" parameterType="com.jnshu.backendsystem.pojo.CompanyProduce">-->
+    <!--<insert id="insertSelective" parameterType="com.jnshu.receptiono.CompanyProduce">-->
         <!--insert into company_produce-->
         <!--<trim prefix="(" suffix=")" suffixOverrides=",">-->
             <!--<if test="id != null">-->
@@ -232,7 +232,7 @@
             <!--</if>-->
         <!--</trim>-->
     <!--</insert>-->
-    <!--<select id="countByExample" parameterType="com.jnshu.backendsystem.pojo.CompanyProduceExample"-->
+    <!--<select id="countByExample" parameterType="com.jnshu.receptiono.CompanyProduceExample"-->
             <!--resultType="java.lang.Long">-->
         <!--select count(*) from company_produce-->
         <!--<if test="_parameter != null">-->
@@ -293,7 +293,7 @@
             <!--<include refid="Update_By_Example_Where_Clause"/>-->
         <!--</if>-->
     <!--</update>-->
-    <!--<update id="updateByPrimaryKeySelective" parameterType="com.jnshu.backendsystem.pojo.CompanyProduce">-->
+    <!--<update id="updateByPrimaryKeySelective" parameterType="com.jnshu.receptiono.CompanyProduce">-->
         <!--update company_produce-->
         <!--<set>-->
             <!--<if test="companyId != null">-->
@@ -326,7 +326,7 @@
         <!--</set>-->
         <!--where id = #{id,jdbcType=BIGINT}-->
     <!--</update>-->
-    <!--<update id="updateByPrimaryKey" parameterType="com.jnshu.backendsystem.pojo.CompanyProduce">-->
+    <!--<update id="updateByPrimaryKey" parameterType="com.jnshu.receptiono.CompanyProduce">-->
     <!--update company_produce-->
     <!--set company_id = #{companyId,jdbcType=BIGINT},-->
     <!--produce_name = #{produceName,jdbcType=VARCHAR},-->

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.jnshu.backendsystem.dao.PositionInfoMapper">
-    <resultMap id="BaseResultMap" type="com.jnshu.backendsystem.pojo.PositionInfo">
+<mapper namespace="com.jnshu.reception.dao.PositionInfoMapper">
+    <resultMap id="BaseResultMap" type="com.jnshu.reception.pojo.PositionInfo">
         <id column="position_id" jdbcType="BIGINT" property="positionId"/>
         <result column="is_recommend" jdbcType="INTEGER" property="isRecommend"/>
         <result column="position_name" jdbcType="VARCHAR" property="positionName"/>
@@ -29,7 +29,7 @@
         select * from position_info where position_id=#{position_id}
     </select>
 
-    <resultMap id="queryPositionInfoListMap" type="com.jnshu.backendsystem.pojo.PositionInfo">
+    <resultMap id="queryPositionInfoListMap" type="com.jnshu.reception.pojo.PositionInfo">
         <id column="position_id" jdbcType="BIGINT" property="positionId"/>
         <result column="is_recommend" jdbcType="INTEGER" property="isRecommend"/>
         <result column="position_name" jdbcType="VARCHAR" property="positionName"/>
@@ -51,7 +51,7 @@
         <result column="create_by" jdbcType="VARCHAR" property="createBy"/>
         <result column="update_by" jdbcType="VARCHAR" property="updateBy"/>
 
-        <collection property="companyInfos" javaType="java.util.List" ofType="com.jnshu.backendsystem.pojo.CompanyInfo">
+        <collection property="companyInfos" javaType="java.util.List" ofType="com.jnshu.reception.pojo.CompanyInfo">
             <id column="company_id" jdbcType="BIGINT" property="companyId"/>
             <result column="company_name" jdbcType="VARCHAR" property="companyName"/>
             <result column="company_slogan" jdbcType="VARCHAR" property="companySlogan"/>
@@ -201,7 +201,7 @@
     </select>
 
     <!--新增职位信息-->
-    <insert id="insertPositionByCompanyId" parameterType="com.jnshu.backendsystem.pojo.PositionInfo">
+    <insert id="insertPositionByCompanyId" parameterType="com.jnshu.reception.pojo.PositionInfo">
         insert into position_info (is_recommend, position_name,
         company_id, company_name, work_experience,
         education, salary, position_type,
@@ -223,7 +223,7 @@
     </select>
 
     <!--更新职位信息-->
-    <update id="updateByPositionId" parameterType="com.jnshu.backendsystem.pojo.PositionInfo">
+    <update id="updateByPositionId" parameterType="com.jnshu.reception.pojo.PositionInfo">
         update position_info
         <set>
             <if test="isRecommend != null">
@@ -281,7 +281,7 @@
     </delete>
 
     <!--更改职位状态-->
-    <update id="updatePositionInfoByPositionIid"  parameterType="com.jnshu.backendsystem.pojo.PositionInfo" >
+    <update id="updatePositionInfoByPositionIid"  parameterType="com.jnshu.reception.pojo.PositionInfo" >
         UPDATE position_info SET is_online=#{isOnline} WHERE  position_id=#{positionId}
     </update>
 

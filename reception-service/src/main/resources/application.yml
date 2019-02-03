@@ -7,8 +7,9 @@ eureka:
   instance:
     prefer-ip-address: true
     hostname: ${spring.cloud.client.ip-address}
-    ip-address: 47.106.124.116
+#    ip-address: 47.106.124.116
 #    ip-address: localhost
+    ip-address: 113.83.103.76
     instance-id: ${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:${random.value}}}
 feign:
   hystrix:
@@ -95,7 +96,7 @@ mybatis:
   configuration:
     map-underscore-to-camel-case: true
   mapper-locations: classpath*:mappers/*Mapper.xml
-  type-aliases-package: com.jnshu.backendsystem.pojo
+  type-aliases-package: com.jnshu.reception.pojo
 logging:
   level:
     com:

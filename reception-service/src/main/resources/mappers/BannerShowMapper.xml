@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.jnshu.backendsystem.dao.BannerShowMapper">
-    <resultMap id="BaseResultMap" type="com.jnshu.backendsystem.pojo.BannerShow">
+<mapper namespace="com.jnshu.reception.dao.BannerShowMapper">
+    <resultMap id="BaseResultMap" type="com.jnshu.reception.pojo.BannerShow">
         <id column="id" jdbcType="BIGINT" property="id"/>
         <result column="type" jdbcType="INTEGER" property="type"/>
         <result column="tiles_name" jdbcType="VARCHAR" property="tilesName"/>
@@ -50,7 +50,7 @@
     </select>
 
     <!--新增banner图信息-->
-    <insert id="insertBannerInfo" parameterType="com.jnshu.backendsystem.pojo.BannerShow">
+    <insert id="insertBannerInfo" parameterType="com.jnshu.reception.pojo.BannerShow">
     insert into banner_show (type, tiles_name,
     photo, is_online, jump_url,
     industry_type, gmt_create,
@@ -64,12 +64,12 @@
     </insert>
 
     <!--修改banner上线状态-->
-    <update id="updateBannerIsOnline" parameterType="com.jnshu.backendsystem.pojo.BannerShow">
+    <update id="updateBannerIsOnline" parameterType="com.jnshu.reception.pojo.BannerShow">
         UPDATE banner_show SET is_online=#{isOnline},online_time=#{onlineTime} WHERE id=#{id}
     </update>
 
     <!--修改单个Banner图-->
-    <update id="updateBannerInfoById" parameterType="com.jnshu.backendsystem.pojo.BannerShow">
+    <update id="updateBannerInfoById" parameterType="com.jnshu.reception.pojo.BannerShow">
     update banner_show
     <set>
     <if test="type != null">
@@ -121,7 +121,7 @@
     <!--id, type, tiles_name, photo, is_online, jump_url, industry_type, online_time, gmt_create, -->
     <!--gmt_update, create_by, update_by-->
     <!--</sql>-->
-    <!--<select id="selectByExample" parameterType="com.jnshu.backendsystem.pojo.BannerShowExample" resultMap="BaseResultMap">-->
+    <!--<select id="selectByExample" parameterType="com.jnshu.receptiono.BannerShowExample" resultMap="BaseResultMap">-->
     <!--select-->
     <!--<if test="distinct">-->
     <!--distinct-->
@@ -145,13 +145,13 @@
     <!--delete from banner_show-->
     <!--where id = #{id,jdbcType=BIGINT}-->
     <!--</delete>-->
-    <!--<delete id="deleteByExample" parameterType="com.jnshu.backendsystem.pojo.BannerShowExample">-->
+    <!--<delete id="deleteByExample" parameterType="com.jnshu.receptiono.BannerShowExample">-->
     <!--delete from banner_show-->
     <!--<if test="_parameter != null">-->
     <!--<include refid="Example_Where_Clause" />-->
     <!--</if>-->
     <!--</delete>-->
-    <!--<insert id="insert" parameterType="com.jnshu.backendsystem.pojo.BannerShow">-->
+    <!--<insert id="insert" parameterType="com.jnshu.receptiono.BannerShow">-->
     <!--insert into banner_show (id, type, tiles_name,-->
     <!--photo, is_online, jump_url,-->
     <!--industry_type, online_time, gmt_create,-->
@@ -163,7 +163,7 @@
     <!--#{gmtUpdate,jdbcType=BIGINT}, #{createBy,jdbcType=VARCHAR}, #{updateBy,jdbcType=VARCHAR}-->
     <!--)-->
     <!--</insert>-->
-    <!--<insert id="insertSelective" parameterType="com.jnshu.backendsystem.pojo.BannerShow">-->
+    <!--<insert id="insertSelective" parameterType="com.jnshu.receptiono.BannerShow">-->
     <!--insert into banner_show-->
     <!--<trim prefix="(" suffix=")" suffixOverrides=",">-->
     <!--<if test="id != null">-->
@@ -242,7 +242,7 @@
     <!--</if>-->
     <!--</trim>-->
     <!--</insert>-->
-    <!--<select id="countByExample" parameterType="com.jnshu.backendsystem.pojo.BannerShowExample" resultType="java.lang.Long">-->
+    <!--<select id="countByExample" parameterType="com.jnshu.receptiono.BannerShowExample" resultType="java.lang.Long">-->
     <!--select count(*) from banner_show-->
     <!--<if test="_parameter != null">-->
     <!--<include refid="Example_Where_Clause" />-->
@@ -310,7 +310,7 @@
     <!--<include refid="Update_By_Example_Where_Clause" />-->
     <!--</if>-->
     <!--</update>-->
-    <!--<update id="updateByPrimaryKeySelective" parameterType="com.jnshu.backendsystem.pojo.BannerShow">-->
+    <!--<update id="updateByPrimaryKeySelective" parameterType="com.jnshu.receptiono.BannerShow">-->
     <!--update banner_show-->
     <!--<set>-->
     <!--<if test="type != null">-->
@@ -349,7 +349,7 @@
     <!--</set>-->
     <!--where id = #{id,jdbcType=BIGINT}-->
     <!--</update>-->
-    <!--<update id="updateByPrimaryKey" parameterType="com.jnshu.backendsystem.pojo.BannerShow">-->
+    <!--<update id="updateByPrimaryKey" parameterType="com.jnshu.receptiono.BannerShow">-->
     <!--update banner_show-->
     <!--set type = #{type,jdbcType=INTEGER},-->
     <!--tiles_name = #{tilesName,jdbcType=VARCHAR},-->
@@ -364,7 +364,7 @@
     <!--update_by = #{updateBy,jdbcType=VARCHAR}-->
     <!--where id = #{id,jdbcType=BIGINT}-->
     <!--</update>-->
-    <!--<resultMap id="BaseResultMap" type="com.jnshu.backendsystem.pojo.BannerShow">-->
+    <!--<resultMap id="BaseResultMap" type="com.jnshu.receptiono.BannerShow">-->
     <!--<id column="id" jdbcType="BIGINT" property="id" />-->
     <!--<result column="type" jdbcType="INTEGER" property="type" />-->
     <!--<result column="tiles_name" jdbcType="VARCHAR" property="tilesName" />-->
@@ -440,7 +440,7 @@
     <!--id, type, tiles_name, photo, is_online, jump_url, industry_type, online_time, gmt_create,-->
     <!--gmt_update, create_by, update_by-->
     <!--</sql>-->
-    <!--<select id="selectByExample" parameterType="com.jnshu.backendsystem.pojo.BannerShowExample" resultMap="BaseResultMap">-->
+    <!--<select id="selectByExample" parameterType="com.jnshu.receptiono.BannerShowExample" resultMap="BaseResultMap">-->
     <!--select-->
     <!--<if test="distinct">-->
     <!--distinct-->
@@ -464,13 +464,13 @@
     <!--delete from banner_show-->
     <!--where id = #{id,jdbcType=BIGINT}-->
     <!--</delete>-->
-    <!--<delete id="deleteByExample" parameterType="com.jnshu.backendsystem.pojo.BannerShowExample">-->
+    <!--<delete id="deleteByExample" parameterType="com.jnshu.receptiono.BannerShowExample">-->
     <!--delete from banner_show-->
     <!--<if test="_parameter != null">-->
     <!--<include refid="Example_Where_Clause" />-->
     <!--</if>-->
     <!--</delete>-->
-    <!--<insert id="insert" parameterType="com.jnshu.backendsystem.pojo.BannerShow">-->
+    <!--<insert id="insert" parameterType="com.jnshu.receptiono.BannerShow">-->
     <!--insert into banner_show (id, type, tiles_name,-->
     <!--photo, is_online, jump_url,-->
     <!--industry_type, online_time, gmt_create,-->
@@ -482,7 +482,7 @@
     <!--#{gmtUpdate,jdbcType=BIGINT}, #{createBy,jdbcType=VARCHAR}, #{updateBy,jdbcType=VARCHAR}-->
     <!--)-->
     <!--</insert>-->
-    <!--<insert id="insertSelective" parameterType="com.jnshu.backendsystem.pojo.BannerShow">-->
+    <!--<insert id="insertSelective" parameterType="com.jnshu.receptiono.BannerShow">-->
     <!--insert into banner_show-->
     <!--<trim prefix="(" suffix=")" suffixOverrides=",">-->
     <!--<if test="id != null">-->
@@ -561,7 +561,7 @@
     <!--</if>-->
     <!--</trim>-->
     <!--</insert>-->
-    <!--<select id="countByExample" parameterType="com.jnshu.backendsystem.pojo.BannerShowExample" resultType="java.lang.Long">-->
+    <!--<select id="countByExample" parameterType="com.jnshu.receptiono.BannerShowExample" resultType="java.lang.Long">-->
     <!--select count(*) from banner_show-->
     <!--<if test="_parameter != null">-->
     <!--<include refid="Example_Where_Clause" />-->
@@ -629,7 +629,7 @@
     <!--<include refid="Update_By_Example_Where_Clause" />-->
     <!--</if>-->
     <!--</update>-->
-    <!--<update id="updateByPrimaryKeySelective" parameterType="com.jnshu.backendsystem.pojo.BannerShow">-->
+    <!--<update id="updateByPrimaryKeySelective" parameterType="com.jnshu.receptiono.BannerShow">-->
     <!--update banner_show-->
     <!--<set>-->
     <!--<if test="type != null">-->
@@ -668,7 +668,7 @@
     <!--</set>-->
     <!--where id = #{id,jdbcType=BIGINT}-->
     <!--</update>-->
-    <!--<update id="updateByPrimaryKey" parameterType="com.jnshu.backendsystem.pojo.BannerShow">-->
+    <!--<update id="updateByPrimaryKey" parameterType="com.jnshu.receptiono.BannerShow">-->
     <!--update banner_show-->
     <!--set type = #{type,jdbcType=INTEGER},-->
     <!--tiles_name = #{tilesName,jdbcType=VARCHAR},-->

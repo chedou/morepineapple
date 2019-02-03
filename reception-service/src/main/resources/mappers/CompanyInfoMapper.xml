@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.jnshu.backendsystem.dao.CompanyInfoMapper">
-    <resultMap id="BaseResultMap" type="com.jnshu.backendsystem.pojo.CompanyInfo">
+<mapper namespace="com.jnshu.reception.dao.CompanyInfoMapper">
+    <resultMap id="BaseResultMap" type="com.jnshu.reception.pojo.CompanyInfo">
         <id column="company_id" jdbcType="BIGINT" property="companyId"/>
         <result column="company_name" jdbcType="VARCHAR" property="companyName"/>
         <result column="company_slogan" jdbcType="VARCHAR" property="companySlogan"/>
@@ -22,7 +22,7 @@
         <result column="numberOfPositions" jdbcType="INTEGER" property="numberOfPositions"/>
     </resultMap>
 
-    <resultMap id="queryCompanyInfoListMap" type="com.jnshu.backendsystem.pojo.CompanyInfo">
+    <resultMap id="queryCompanyInfoListMap" type="com.jnshu.reception.pojo.CompanyInfo">
         <id column="company_id" jdbcType="BIGINT" property="companyId"/>
         <result column="company_name" jdbcType="VARCHAR" property="companyName"/>
         <result column="company_slogan" jdbcType="VARCHAR" property="companySlogan"/>
@@ -41,7 +41,7 @@
         <result column="create_by" jdbcType="VARCHAR" property="createBy"/>
         <result column="update_by" jdbcType="VARCHAR" property="updateBy"/>
         <collection property="positionInfos" javaType="java.util.List"
-                    ofType="com.jnshu.backendsystem.pojo.PositionInfo">
+                    ofType="com.jnshu.reception.pojo.PositionInfo">
             <id column="position_id" jdbcType="BIGINT" property="positionId"/>
             <result column="is_recommend" jdbcType="INTEGER" property="isRecommend"/>
             <result column="position_name" jdbcType="VARCHAR" property="positionName"/>
@@ -65,7 +65,7 @@
         </collection>
     </resultMap>
 
-    <resultMap id="queryCompanyInfoAndProdureListMap" type="com.jnshu.backendsystem.pojo.CompanyInfo">
+    <resultMap id="queryCompanyInfoAndProdureListMap" type="com.jnshu.reception.pojo.CompanyInfo">
         <id column="company_id" jdbcType="BIGINT" property="companyId"/>
         <result column="company_name" jdbcType="VARCHAR" property="companyName"/>
         <result column="company_slogan" jdbcType="VARCHAR" property="companySlogan"/>
@@ -84,7 +84,7 @@
         <result column="create_by" jdbcType="VARCHAR" property="createBy"/>
         <result column="update_by" jdbcType="VARCHAR" property="updateBy"/>
         <collection property="companyProduces" javaType="java.util.List"
-                    ofType="com.jnshu.backendsystem.pojo.CompanyProduce">
+                    ofType="com.jnshu.reception.pojo.CompanyProduce">
             <id column="id" jdbcType="BIGINT" property="id"/>
             <result column="company_id" jdbcType="BIGINT" property="companyId"/>
             <result column="produce_name" jdbcType="VARCHAR" property="produceName"/>
@@ -99,7 +99,7 @@
     </resultMap>
 
     <resultMap id="queryCompanyInfoAndRecruitingCompanyInformationListMap"
-               type="com.jnshu.backendsystem.pojo.CompanyInfo">
+               type="com.jnshu.reception.pojo.CompanyInfo">
         <id column="company_id" jdbcType="BIGINT" property="companyId"/>
         <result column="company_name" jdbcType="VARCHAR" property="companyName"/>
         <result column="company_slogan" jdbcType="VARCHAR" property="companySlogan"/>
@@ -118,7 +118,7 @@
         <result column="create_by" jdbcType="VARCHAR" property="createBy"/>
         <result column="update_by" jdbcType="VARCHAR" property="updateBy"/>
         <collection property="recruitingCompanyInformations" javaType="java.util.List"
-                    ofType="com.jnshu.backendsystem.pojo.RecruitingCompanyInformation">
+                    ofType="com.jnshu.reception.pojo.RecruitingCompanyInformation">
             <id column="id" jdbcType="BIGINT" property="id"/>
             <result column="company_id" jdbcType="BIGINT" property="companyId"/>
             <result column="phone" jdbcType="VARCHAR" property="phone"/>
@@ -248,7 +248,7 @@
     </select>
 
     <!--插入公司信息-->
-    <insert id="insertCompanyInfo" parameterType="com.jnshu.backendsystem.pojo.CompanyInfo" useGeneratedKeys="true"
+    <insert id="insertCompanyInfo" parameterType="com.jnshu.reception.pojo.CompanyInfo" useGeneratedKeys="true"
             keyProperty="companyId">
         INSERT INTO company_info (company_name,company_slogan,number_of_companies,financing_scale,city,area,company_industry,company_logo,company_profile,company_tag,is_approve,is_frozen,gmt_create,gmt_update,create_by,update_by)
         VALUES(#{companyName,jdbcType=VARCHAR},#{companySlogan,jdbcType=VARCHAR},#{numberOfCompanies,jdbcType=BIGINT},#{financingScale,jdbcType=INTEGER},#{city,jdbcType=VARCHAR},#{area,jdbcType=VARCHAR},#{companyIndustry,jdbcType=INTEGER},
@@ -257,7 +257,7 @@
     </insert>
 
     <!--更新公司信息-->
-    <update id="updateCompanyById" parameterType="com.jnshu.backendsystem.pojo.CompanyInfo">
+    <update id="updateCompanyById" parameterType="com.jnshu.reception.pojo.CompanyInfo">
         UPDATE company_info
             <set>
                 <if test="companyName != null">
@@ -307,12 +307,12 @@
     </update>
 
     <!--修改公司认证状态-->
-    <update id="updateCompanyApproveStatue"  parameterType="com.jnshu.backendsystem.pojo.CompanyInfo">
+    <update id="updateCompanyApproveStatue"  parameterType="com.jnshu.reception.pojo.CompanyInfo">
         UPDATE company_info SET is_approve=#{isApprove} WHERE company_id=#{companyId}
     </update>
 
     <!--修改公司冻结状态-->
-    <update id="updateCompanyFrozenStatue"  parameterType="com.jnshu.backendsystem.pojo.CompanyInfo">
+    <update id="updateCompanyFrozenStatue"  parameterType="com.jnshu.reception.pojo.CompanyInfo">
              UPDATE company_info SET is_frozen=#{isFrozen} WHERE company_id=#{companyId}
     </update>
 

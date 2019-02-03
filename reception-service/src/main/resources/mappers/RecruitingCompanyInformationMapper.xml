@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.jnshu.backendsystem.dao.RecruitingCompanyInformationMapper">
-    <resultMap id="BaseResultMap" type="com.jnshu.backendsystem.pojo.RecruitingCompanyInformation">
+<mapper namespace="com.jnshu.reception.dao.RecruitingCompanyInformationMapper">
+    <resultMap id="BaseResultMap" type="com.jnshu.reception.pojo.RecruitingCompanyInformation">
         <constructor>
             <idArg column="id" javaType="java.lang.Long" jdbcType="BIGINT"/>
             <arg column="company_id" javaType="java.lang.Long" jdbcType="BIGINT"/>
@@ -31,7 +31,7 @@
 
     <!--新增招聘公司信息-->
     <insert id="insertRecruitingCompanyInformation"
-            parameterType="com.jnshu.backendsystem.pojo.RecruitingCompanyInformation">
+            parameterType="com.jnshu.reception.pojo.RecruitingCompanyInformation">
     insert into recruiting_company_information (company_id, phone,
       email, adress, map,
       gmt_create, gmt_update, create_by,
@@ -44,7 +44,7 @@
 
     <!--更新招聘公司信息-->
     <update id="updateRecruitingCompanyInformationByCompanyId"
-            parameterType="com.jnshu.backendsystem.pojo.RecruitingCompanyInformation">
+            parameterType="com.jnshu.reception.pojo.RecruitingCompanyInformation">
         update recruiting_company_information
         <set>
             <if test="phone != null">

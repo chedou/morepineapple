@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.jnshu.backendsystem.dao.UserMapper">
-    <resultMap id="BaseResultMap" type="com.jnshu.backendsystem.pojo.User">
+<mapper namespace="com.jnshu.reception.dao.UserMapper">
+    <resultMap id="BaseResultMap" type="com.jnshu.reception.pojo.User">
         <id column="id" jdbcType="BIGINT" property="id"/>
         <result column="name" jdbcType="VARCHAR" property="name"/>
         <result column="password" jdbcType="VARCHAR" property="password"/>
@@ -18,7 +18,7 @@
     update_by
   </sql>
 
-    <resultMap id="qureyUserList" type="com.jnshu.backendsystem.pojo.User">
+    <resultMap id="qureyUserList" type="com.jnshu.reception.pojo.User">
         <id column="id" jdbcType="BIGINT" property="id"/>
         <result column="name" jdbcType="VARCHAR" property="name"/>
         <result column="password" jdbcType="VARCHAR" property="password"/>
@@ -30,7 +30,7 @@
         <result column="create_by" jdbcType="VARCHAR" property="createBy"/>
         <result column="update_by" jdbcType="VARCHAR" property="updateBy"/>
         <collection property="rolesList" javaType="java.util.List"
-                    ofType="com.jnshu.backendsystem.pojo.Role">
+                    ofType="com.jnshu.reception.pojo.Role">
             <id column="id" jdbcType="INTEGER" property="id"/>
             <result column="role_name" jdbcType="VARCHAR" property="roleName"/>
         </collection>
@@ -38,7 +38,7 @@
 
 
     <!--账户列表-->
-    <!--<select id="queryUserList" parameterType="com.jnshu.backendsystem.pojo.User" resultMap="BaseResultMap">-->
+    <!--<select id="queryUserList" parameterType="com.jnshu.receptiono.User" resultMap="BaseResultMap">-->
     <!--SELECT id, name,phone_num, head_image, gmt_create, gmt_update, create_by,-->
     <!--update_by-->
     <!--</select>-->
@@ -66,13 +66,13 @@
     SELECT COUNT(1) FROM user WHERE phone_num=#{phoneNum};
     </select>
     <!--注册-->
-    <insert id="insertUserInfo" parameterType="com.jnshu.backendsystem.pojo.User">
+    <insert id="insertUserInfo" parameterType="com.jnshu.reception.pojo.User">
     INSERT INTO user(name,password,phone_num,salt,head_image,gmt_create,create_by) VALUES (#{name},#{password},#{phoneNum},#{salt},#{headImage},#{gmtCreate},#{createBy})
     </insert>
 
     <!--登录模块-->
     <!--根据用户名查出密码等信息-->
-    <select id="qureyPasswordByName" parameterType="java.lang.String" resultType="com.jnshu.backendsystem.pojo.User">
+    <select id="qureyPasswordByName" parameterType="java.lang.String" resultType="com.jnshu.reception.pojo.User">
         SELECT * FROM user WHERE nam=#{name}
     </select>
 <select id="jugdeUser" parameterType="java.lang.String" resultType="java.lang.Boolean">
@@ -89,7 +89,7 @@
     <!--delete from user-->
     <!--where id = #{id,jdbcType=BIGINT}-->
     <!--</delete>-->
-    <!--<insert id="insert" parameterType="com.jnshu.backendsystem.pojo.User">-->
+    <!--<insert id="insert" parameterType="com.jnshu.receptiono.User">-->
     <!--insert into user (id, name, password,-->
     <!--salt, phone_num, head_image,-->
     <!--gmt_create, gmt_update, create_by,-->
@@ -99,7 +99,7 @@
     <!--#{gmtCreate,jdbcType=BIGINT}, #{gmtUpdate,jdbcType=BIGINT}, #{createBy,jdbcType=VARCHAR},-->
     <!--#{updateBy,jdbcType=VARCHAR})-->
     <!--</insert>-->
-    <!--<insert id="insertSelective" parameterType="com.jnshu.backendsystem.pojo.User">-->
+    <!--<insert id="insertSelective" parameterType="com.jnshu.receptiono.User">-->
     <!--insert into user-->
     <!--<trim prefix="(" suffix=")" suffixOverrides=",">-->
     <!--<if test="id != null">-->
@@ -166,7 +166,7 @@
     <!--</if>-->
     <!--</trim>-->
     <!--</insert>-->
-    <!--<update id="updateByPrimaryKeySelective" parameterType="com.jnshu.backendsystem.pojo.User">-->
+    <!--<update id="updateByPrimaryKeySelective" parameterType="com.jnshu.receptiono.User">-->
     <!--update user-->
     <!--<set>-->
     <!--<if test="name != null">-->
@@ -199,7 +199,7 @@
     <!--</set>-->
     <!--where id = #{id,jdbcType=BIGINT}-->
     <!--</update>-->
-    <!--<update id="updateByPrimaryKey" parameterType="com.jnshu.backendsystem.pojo.User">-->
+    <!--<update id="updateByPrimaryKey" parameterType="com.jnshu.receptiono.User">-->
     <!--update user-->
     <!--set name = #{name,jdbcType=VARCHAR},-->
     <!--password = #{password,jdbcType=VARCHAR},-->
