@@ -11,14 +11,15 @@ import java.util.*;
 
 @RestController
 public class ModuleTableController {
-    @Autowired
+
+	@Autowired
     private ModuleTableService moduleTableService;
 
     //日志打印
     private final org.slf4j.Logger logger = LoggerFactory.getLogger(this.getClass());
 
     // TODO: 2018/11/8 获取模块管理列表
-    @GetMapping(value = "/a/manage/module")
+    @GetMapping(value = "/manage/module")
     @PreAuthorize("hasAuthority('ModuleManageAll')")
     public RetResult<?> getqureyModuleList(Integer page, Integer size){
         HashMap data=new HashMap();
@@ -38,7 +39,7 @@ public class ModuleTableController {
     }
 
     // TODO: 2018/11/8 新增模块信息
-    @PostMapping("/a/manage/module")
+    @PostMapping("/manage/module")
     @PreAuthorize("hasAuthority('ModuleManageAll') AND hasAuthority('ModuleManagAdd') ")
     public RetResult<?> insertModuleInfo(String name,String menuld,String url,Integer parentModuleId,String moduleCategory,String createBy,Long gmtCreate){
         logger.info("-----------输入请求参数---------");
@@ -54,7 +55,7 @@ public class ModuleTableController {
     }
 
     // TODO: 2018/11/8 更新模块信息
-    @PutMapping("/a/manage/module/{id}")
+    @PutMapping("/manage/module/{id}")
     @PreAuthorize("hasAuthority('ModuleManageAll') AND hasAuthority('ModuleManageUpdate') ")
     public RetResult<?> updateModuleById(@PathVariable Integer id, String name, String menuld, String url, Integer parentModuleId, String moduleCategory, String updateBy, Long gmtUpdate){
         logger.info("-----------输入请求参数---------");
@@ -71,7 +72,7 @@ public class ModuleTableController {
     }
 
     // TODO: 2018/11/8 删除模块信息
-    @DeleteMapping("/a/manage/module/{id}")
+    @DeleteMapping("/manage/module/{id}")
     @PreAuthorize("hasAuthority('ModuleManageAll') AND hasAuthority('ModuleManageDelete') ")
     public RetResult<?> deleteModuleById(@PathVariable Integer id){
         logger.info("-----------输入请求参数---------");
@@ -87,7 +88,7 @@ public class ModuleTableController {
     }
 
     // TODO: 2018/11/8 查询单个模块信息
-    @GetMapping("/a/manage/module/{id}")
+    @GetMapping("/manage/module/{id}")
     @PreAuthorize("hasAuthority('ModuleManageAll')")
     public RetResult<?> qureyModuleInfoById(@PathVariable Integer id){
         HashMap data=new HashMap();

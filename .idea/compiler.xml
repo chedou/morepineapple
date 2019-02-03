@@ -8,6 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="eureka-service" />
+        <module name="reception-service" />
         <module name="resource-service" />
         <module name="uaa-service" />
         <module name="zuul-server" />

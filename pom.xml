@@ -15,6 +15,7 @@
         <module>uaa-service</module>
         <module>resource-service</module>
         <module>zuul-server</module>
+        <module>reception-service</module>
     </modules>
 
     <name>more pineapple</name>
