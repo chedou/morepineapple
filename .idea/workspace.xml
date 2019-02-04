@@ -2,67 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="459c7217-bae0-492e-8e67-fd6eac85e2ae" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/reception-service/src/main/java/com/jnshu/reception/Configuration/MybatisConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reception-service/src/test/java/com/jnshu/reception/dao/companyInfoTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reception-service/src/main/java/com/jnshu/backendsystem/BackendSystemApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/reception-service/src/main/java/com/jnshu/reception/ReceptionApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reception-service/src/main/java/com/jnshu/backendsystem/controller/BannerShowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/reception-service/src/main/java/com/jnshu/reception/controller/BannerShowController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reception-service/src/main/java/com/jnshu/backendsystem/controller/CompanyInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/reception-service/src/main/java/com/jnshu/reception/controller/CompanyInfoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reception-service/src/main/java/com/jnshu/backendsystem/controller/ModuleTableController.java" beforeDir="false" afterPath="$PROJECT_DIR$/reception-service/src/main/java/com/jnshu/reception/controller/ModuleTableController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reception-service/src/main/java/com/jnshu/backendsystem/controller/PhotoUploadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/reception-service/src/main/java/com/jnshu/reception/controller/PhotoUploadController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reception-service/src/main/java/com/jnshu/backendsystem/controller/PositionInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/reception-service/src/main/java/com/jnshu/reception/controller/PositionInfoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reception-service/src/main/java/com/jnshu/backendsystem/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/reception-service/src/main/java/com/jnshu/reception/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reception-service/src/main/java/com/jnshu/backendsystem/dao/BannerShowMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/reception-service/src/main/java/com/jnshu/reception/dao/BannerShowMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reception-service/src/main/java/com/jnshu/backendsystem/dao/CompanyInfoMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/reception-service/src/main/java/com/jnshu/reception/dao/CompanyInfoMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reception-service/src/main/java/com/jnshu/backendsystem/dao/CompanyProduceMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/reception-service/src/main/java/com/jnshu/reception/dao/CompanyProduceMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reception-service/src/main/java/com/jnshu/backendsystem/dao/ModuleTableMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/reception-service/src/main/java/com/jnshu/reception/dao/ModuleTableMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reception-service/src/main/java/com/jnshu/backendsystem/dao/PositionInfoMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/reception-service/src/main/java/com/jnshu/reception/dao/PositionInfoMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reception-service/src/main/java/com/jnshu/backendsystem/dao/RecruitingCompanyInformationMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/reception-service/src/main/java/com/jnshu/reception/dao/RecruitingCompanyInformationMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reception-service/src/main/java/com/jnshu/backendsystem/dao/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/reception-service/src/main/java/com/jnshu/reception/dao/UserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reception-service/src/main/java/com/jnshu/backendsystem/pojo/BannerShow.java" beforeDir="false" afterPath="$PROJECT_DIR$/reception-service/src/main/java/com/jnshu/reception/pojo/BannerShow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reception-service/src/main/java/com/jnshu/backendsystem/pojo/CompanyInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/reception-service/src/main/java/com/jnshu/reception/pojo/CompanyInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reception-service/src/main/java/com/jnshu/backendsystem/pojo/CompanyInfo2.java" beforeDir="false" afterPath="$PROJECT_DIR$/reception-service/src/main/java/com/jnshu/reception/pojo/CompanyInfo2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reception-service/src/main/java/com/jnshu/backendsystem/pojo/CompanyProduce.java" beforeDir="false" afterPath="$PROJECT_DIR$/reception-service/src/main/java/com/jnshu/reception/pojo/CompanyProduce.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reception-service/src/main/java/com/jnshu/backendsystem/pojo/ModuleTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/reception-service/src/main/java/com/jnshu/reception/pojo/ModuleTable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reception-service/src/main/java/com/jnshu/backendsystem/pojo/Permission.java" beforeDir="false" afterPath="$PROJECT_DIR$/reception-service/src/main/java/com/jnshu/reception/pojo/Permission.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reception-service/src/main/java/com/jnshu/backendsystem/pojo/PositionInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/reception-service/src/main/java/com/jnshu/reception/pojo/PositionInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reception-service/src/main/java/com/jnshu/backendsystem/pojo/PositionInfo2.java" beforeDir="false" afterPath="$PROJECT_DIR$/reception-service/src/main/java/com/jnshu/reception/pojo/PositionInfo2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reception-service/src/main/java/com/jnshu/backendsystem/pojo/RecruitingCompanyInformation.java" beforeDir="false" afterPath="$PROJECT_DIR$/reception-service/src/main/java/com/jnshu/reception/pojo/RecruitingCompanyInformation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reception-service/src/main/java/com/jnshu/backendsystem/pojo/Result.java" beforeDir="false" afterPath="$PROJECT_DIR$/reception-service/src/main/java/com/jnshu/reception/pojo/Result.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reception-service/src/main/java/com/jnshu/backendsystem/pojo/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/reception-service/src/main/java/com/jnshu/reception/pojo/Role.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reception-service/src/main/java/com/jnshu/backendsystem/pojo/RolePermission.java" beforeDir="false" afterPath="$PROJECT_DIR$/reception-service/src/main/java/com/jnshu/reception/pojo/RolePermission.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reception-service/src/main/java/com/jnshu/backendsystem/pojo/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/reception-service/src/main/java/com/jnshu/reception/pojo/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reception-service/src/main/java/com/jnshu/backendsystem/service/BannerShowService.java" beforeDir="false" afterPath="$PROJECT_DIR$/reception-service/src/main/java/com/jnshu/reception/service/BannerShowService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reception-service/src/main/java/com/jnshu/backendsystem/service/CompanyInfoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/reception-service/src/main/java/com/jnshu/reception/service/CompanyInfoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reception-service/src/main/java/com/jnshu/backendsystem/service/ModuleTableService.java" beforeDir="false" afterPath="$PROJECT_DIR$/reception-service/src/main/java/com/jnshu/reception/service/ModuleTableService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reception-service/src/main/java/com/jnshu/backendsystem/service/PositionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/reception-service/src/main/java/com/jnshu/reception/service/PositionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reception-service/src/main/java/com/jnshu/backendsystem/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/reception-service/src/main/java/com/jnshu/reception/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reception-service/src/main/java/com/jnshu/backendsystem/service/impl/BannerShowServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/reception-service/src/main/java/com/jnshu/reception/service/impl/BannerShowServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reception-service/src/main/java/com/jnshu/backendsystem/service/impl/CompanyInfoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/reception-service/src/main/java/com/jnshu/reception/service/impl/CompanyInfoServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reception-service/src/main/java/com/jnshu/backendsystem/service/impl/ModuleTableServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/reception-service/src/main/java/com/jnshu/reception/service/impl/ModuleTableServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reception-service/src/main/java/com/jnshu/backendsystem/service/impl/PositionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/reception-service/src/main/java/com/jnshu/reception/service/impl/PositionServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reception-service/src/main/java/com/jnshu/backendsystem/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/reception-service/src/main/java/com/jnshu/reception/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reception-service/src/main/java/com/jnshu/backendsystem/utils/ChinaPhone.java" beforeDir="false" afterPath="$PROJECT_DIR$/reception-service/src/main/java/com/jnshu/reception/utils/ChinaPhone.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reception-service/src/main/java/com/jnshu/backendsystem/utils/Md5Util.java" beforeDir="false" afterPath="$PROJECT_DIR$/reception-service/src/main/java/com/jnshu/reception/utils/Md5Util.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reception-service/src/main/java/com/jnshu/backendsystem/utils/MsmUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/reception-service/src/main/java/com/jnshu/reception/utils/MsmUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reception-service/src/main/java/com/jnshu/backendsystem/utils/StrConverUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/reception-service/src/main/java/com/jnshu/reception/utils/StrConverUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reception-service/src/main/java/com/jnshu/backendsystem/vo/CompanfInfoVo.java" beforeDir="false" afterPath="$PROJECT_DIR$/reception-service/src/main/java/com/jnshu/reception/vo/CompanfInfoVo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reception-service/src/main/java/com/jnshu/mybatis/generatorConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/reception-service/src/main/java/com/jnshu/mybatis/generatorConfig.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reception-service/src/main/java/com/jnshu/reception/controller/CompanyInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/reception-service/src/main/java/com/jnshu/reception/controller/CompanyInfoController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reception-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/reception-service/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reception-service/src/main/resources/logging-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/reception-service/src/main/resources/logging-config.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reception-service/src/main/resources/mappers/BannerShowMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/reception-service/src/main/resources/mappers/BannerShowMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reception-service/src/main/resources/mappers/CompanyInfoMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/reception-service/src/main/resources/mappers/CompanyInfoMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reception-service/src/main/resources/mappers/CompanyProduceMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/reception-service/src/main/resources/mappers/CompanyProduceMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reception-service/src/main/resources/mappers/ModuleTableMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/reception-service/src/main/resources/mappers/ModuleTableMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reception-service/src/main/resources/mappers/PositionInfoMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/reception-service/src/main/resources/mappers/PositionInfoMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reception-service/src/main/resources/mappers/RecruitingCompanyInformationMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/reception-service/src/main/resources/mappers/RecruitingCompanyInformationMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reception-service/src/main/resources/mappers/RoleMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/reception-service/src/main/resources/mappers/RoleMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reception-service/src/main/resources/mappers/RolePermissionMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/reception-service/src/main/resources/mappers/RolePermissionMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reception-service/src/main/resources/mappers/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/reception-service/src/main/resources/mappers/UserMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reception-service/src/test/java/com/jnshu/backendsystem/BackendSystemApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/reception-service/src/test/java/com/jnshu/reception/BackendSystemApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/service/impl/BannerShowServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/resource-service/src/main/java/com/jnshu/resourceservice/service/impl/BannerShowServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resource-service/src/main/resources/mappers/BannerShowMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/resource-service/src/main/resources/mappers/BannerShowMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resource-service/src/main/resources/mappers/CompanyProduceMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/resource-service/src/main/resources/mappers/CompanyProduceMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zuul-server/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/zuul-server/src/main/resources/application.yml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/eureka-server/target/" />
@@ -111,8 +55,8 @@
       <file leaf-file-name="CompanyInfoController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/reception-service/src/main/java/com/jnshu/reception/controller/CompanyInfoController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="65" column="45" selection-start-line="65" selection-start-column="26" selection-end-line="65" selection-end-column="45" />
+            <state relative-caret-position="60">
+              <caret line="187" lean-forward="true" selection-start-line="187" selection-end-line="187" />
             </state>
           </provider>
         </entry>
@@ -120,8 +64,8 @@
       <file leaf-file-name="CompanyInfoService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/reception-service/src/main/java/com/jnshu/reception/service/CompanyInfoService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+            <state relative-caret-position="125">
+              <caret line="35" column="23" selection-start-line="35" selection-start-column="23" selection-end-line="35" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -129,8 +73,12 @@
       <file leaf-file-name="CompanyInfoServiceImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/reception-service/src/main/java/com/jnshu/reception/service/impl/CompanyInfoServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="280">
-              <caret line="30" column="41" selection-start-line="30" selection-start-column="41" selection-end-line="30" selection-end-column="41" />
+            <state relative-caret-position="145">
+              <caret line="67" column="39" selection-start-line="67" selection-start-column="39" selection-end-line="67" selection-end-column="39" />
+              <folding>
+                <element signature="e#2299#2300#0" expanded="true" />
+                <element signature="e#2368#2369#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -138,8 +86,8 @@
       <file leaf-file-name="CompanyInfoMapper.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/reception-service/src/main/java/com/jnshu/reception/dao/CompanyInfoMapper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="134">
-              <caret line="11" column="36" lean-forward="true" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="36" />
+            <state relative-caret-position="254">
+              <caret line="33" column="23" selection-start-line="33" selection-start-column="23" selection-end-line="33" selection-end-column="23" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -150,8 +98,8 @@
       <file leaf-file-name="CompanyInfoMapper.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/reception-service/src/main/resources/mappers/CompanyInfoMapper.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="181">
-              <caret line="143" column="42" lean-forward="true" selection-start-line="143" selection-start-column="42" selection-end-line="143" selection-end-column="42" />
+            <state relative-caret-position="161">
+              <caret line="175" column="20" selection-start-line="175" selection-start-column="20" selection-end-line="175" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -243,14 +191,11 @@
         <option value="$PROJECT_DIR$/reception-service/src/main/java/com/jnshu/backendsystem/service/impl/PositionServiceImpl.java" />
         <option value="$PROJECT_DIR$/reception-service/src/main/java/com/jnshu/backendsystem/service/impl/UserServiceImpl.java" />
         <option value="$PROJECT_DIR$/zuul-server/pom.xml" />
-        <option value="$PROJECT_DIR$/zuul-server/src/main/resources/application.yml" />
         <option value="$PROJECT_DIR$/resource-service/src/main/resources/application.yml" />
         <option value="$PROJECT_DIR$/reception-service/pom.xml" />
-        <option value="$PROJECT_DIR$/reception-service/src/main/resources/application.yml" />
         <option value="$PROJECT_DIR$/reception-service/src/main/resources/logging-config.xml" />
         <option value="$PROJECT_DIR$/reception-service/src/main/java/com/jnshu/backendsystem/controller/CompanyInfoController.java" />
         <option value="$PROJECT_DIR$/reception-service/src/main/java/com/jnshu/backendsystem/service/impl/CompanyInfoServiceImpl.java" />
-        <option value="$PROJECT_DIR$/reception-service/src/main/resources/mappers/CompanyInfoMapper.xml" />
         <option value="$PROJECT_DIR$/reception-service/src/main/java/com/jnshu/backendsystem/dao/CompanyInfoMapper.java" />
         <option value="$PROJECT_DIR$/reception-service/src/test/java/com/jnshu/backendsystem/BackendSystemApplicationTests.java" />
         <option value="$PROJECT_DIR$/reception-service/src/main/java/com/jnshu/backendsystem/BackendSystemApplication.java" />
@@ -259,8 +204,11 @@
         <option value="$PROJECT_DIR$/reception-service/src/main/java/com/jnshu/backendsystem/Configuration/MybatisConfig.java" />
         <option value="$PROJECT_DIR$/reception-service/src/main/java/com/jnshu/reception/BackendSystemApplication.java" />
         <option value="$PROJECT_DIR$/reception-service/src/test/java/com/jnshu/reception/dao/companyInfoTest.java" />
-        <option value="$PROJECT_DIR$/reception-service/src/main/java/com/jnshu/reception/controller/CompanyInfoController.java" />
         <option value="$PROJECT_DIR$/reception-service/src/main/java/com/jnshu/reception/ReceptionApplication.java" />
+        <option value="$PROJECT_DIR$/zuul-server/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/reception-service/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/reception-service/src/main/resources/mappers/CompanyInfoMapper.xml" />
+        <option value="$PROJECT_DIR$/reception-service/src/main/java/com/jnshu/reception/controller/CompanyInfoController.java" />
       </list>
     </option>
   </component>
@@ -303,8 +251,8 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-200" />
-    <option name="y" value="205" />
+    <option name="x" value="-540" />
+    <option name="y" value="351" />
     <option name="width" value="1940" />
     <option name="height" value="1050" />
   </component>
@@ -319,8 +267,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -607,10 +553,38 @@
               <item name="resourceservice" type="462c0819:PsiDirectoryNode" />
               <item name="dao" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="morepineapple" type="b2602c69:ProjectViewProjectNode" />
+              <item name="morepineapple" type="462c0819:PsiDirectoryNode" />
+              <item name="zuul-server" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="morepineapple" type="b2602c69:ProjectViewProjectNode" />
+              <item name="morepineapple" type="462c0819:PsiDirectoryNode" />
+              <item name="zuul-server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="morepineapple" type="b2602c69:ProjectViewProjectNode" />
+              <item name="morepineapple" type="462c0819:PsiDirectoryNode" />
+              <item name="zuul-server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="morepineapple" type="b2602c69:ProjectViewProjectNode" />
+              <item name="morepineapple" type="462c0819:PsiDirectoryNode" />
+              <item name="zuul-server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -689,7 +663,7 @@
     </option>
     <option name="contentProportion" value="0.21560575" />
   </component>
-  <component name="RunManager" selected="JUnit.companyInfoTest.getCompanyDetail">
+  <component name="RunManager" selected="Spring Boot.BackendSystemApplication">
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     </configuration>
@@ -909,7 +883,8 @@
       <workItem from="1549030818238" duration="660000" />
       <workItem from="1549104307320" duration="1271000" />
       <workItem from="1549109338829" duration="626000" />
-      <workItem from="1549157920051" duration="12929000" />
+      <workItem from="1549157920051" duration="14621000" />
+      <workItem from="1549268169102" duration="5318000" />
     </task>
     <task id="LOCAL-00001" summary="授权服务中心">
       <created>1544446554911</created>
@@ -1247,7 +1222,14 @@
       <option name="project" value="LOCAL" />
       <updated>1549160580142</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="更新 前台 模块">
+      <created>1549205276856</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1549205276856</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1283,7 +1265,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="577587000" />
+    <option name="totallyTimeSpent" value="584597000" />
   </component>
   <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
@@ -1296,6 +1278,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="FindBugs-IDEA" order="7" weight="0.32676348" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.18263473" side_tool="true" weight="0.32987553" />
@@ -1312,16 +1295,15 @@
       <window_info anchor="bottom" id="Messages" order="8" sideWeight="0.499501" weight="0.3239645" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info anchor="bottom" id="Java Enterprise" order="9" weight="0.32883817" />
-      <window_info anchor="bottom" id="Run Dashboard" order="18" sideWeight="0.71983916" visible="true" weight="0.25887573" />
+      <window_info anchor="bottom" id="Run Dashboard" order="18" sideWeight="0.71983916" visible="true" weight="0.24112426" />
       <window_info anchor="bottom" id="Version Control" order="13" weight="0.2352071" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49798927" weight="0.40088758" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49798927" weight="0.3091716" />
       <window_info anchor="bottom" id="Spring" order="14" weight="0.17427386" />
       <window_info anchor="bottom" id="Terminal" order="15" weight="0.32780084" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.50706714" visible="true" weight="0.2272118" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.50706714" visible="true" weight="0.2546917" />
       <window_info anchor="bottom" id="Problems" order="11" weight="0.32987553" />
       <window_info anchor="right" id="Bean Validation" order="3" weight="0.32908848" />
       <window_info id="JRebel" order="2" sideWeight="0.5676516" side_tool="true" weight="0.26796407" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32840237" />
       <window_info id="Favorites" order="2" sideWeight="0.49293286" side_tool="true" weight="0.2935657" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -1330,23 +1312,25 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32840237" />
     </layout>
     <layout-to-restore>
       <window_info anchor="bottom" id="FindBugs-IDEA" order="7" weight="0.32676348" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3416407" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49798927" weight="0.3372781" />
+      <window_info id="Designer" order="4" />
       <window_info anchor="bottom" id="Messages" order="8" sideWeight="0.499501" weight="0.3239645" />
       <window_info id="JRebel" order="2" sideWeight="0.5676516" side_tool="true" weight="0.26796407" />
       <window_info anchor="bottom" id="Spring" order="16" weight="0.17427386" />
       <window_info anchor="bottom" id="Database Console" order="19" weight="0.35407406" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49798927" weight="0.3372781" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="Favorites" order="3" sideWeight="0.49293286" side_tool="true" weight="0.2935657" />
       <window_info anchor="bottom" id="Terminal" order="17" weight="0.32780084" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.18263473" side_tool="true" weight="0.32987553" />
-      <window_info id="Designer" order="4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.50706714" weight="0.2935657" />
+      <window_info anchor="bottom" id="Tail" order="18" />
       <window_info anchor="bottom" id="Problems" order="11" weight="0.32987553" />
       <window_info anchor="bottom" id="Java Enterprise" order="9" weight="0.32883817" />
       <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
@@ -1354,15 +1338,14 @@
       <window_info anchor="right" id="Maven Projects" order="3" weight="0.29825738" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32883817" />
       <window_info anchor="bottom" id="JRebel Executor" order="14" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.50706714" weight="0.2935657" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="JRebel Console" order="13" sideWeight="0.5020107" side_tool="true" weight="0.3372781" />
       <window_info anchor="right" id="Database" order="4" weight="0.20241287" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49932975" weight="0.3195266" />
       <window_info anchor="right" id="Palette&#9;" order="5" />
       <window_info id="Structure" order="1" sideWeight="0.41247" side_tool="true" weight="0.2774799" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Tail" order="18" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3416407" />
       <window_info anchor="right" id="Bean Validation" order="6" weight="0.32908848" />
       <window_info active="true" anchor="bottom" id="Run Dashboard" order="20" sideWeight="0.71983916" visible="true" weight="0.23224851" />
     </layout-to-restore>
@@ -1423,7 +1406,8 @@
     <MESSAGE value="新增banner图模块" />
     <MESSAGE value="新增 module 模块" />
     <MESSAGE value="新增 前台 模块" />
-    <option name="LAST_COMMIT_MESSAGE" value="新增 前台 模块" />
+    <MESSAGE value="更新 前台 模块" />
+    <option name="LAST_COMMIT_MESSAGE" value="更新 前台 模块" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1585,13 +1569,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/zuul-server/src/main/resources/application.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="28" column="10" lean-forward="true" selection-start-line="28" selection-start-column="10" selection-end-line="28" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/zuul-server/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="358">
@@ -1640,9 +1617,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-80">
           <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1682,13 +1656,6 @@
         <state relative-caret-position="-712" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/reception-service/src/main/resources/application.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1432">
-          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/reception-service/src/main/java/com/jnshu/reception/controller/ModuleTableController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-320">
@@ -1724,9 +1691,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="183">
           <caret line="46" column="16" selection-start-line="46" selection-start-column="16" selection-end-line="46" selection-end-column="16" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1737,48 +1701,66 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/zuul-server/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="13" column="29" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/reception-service/src/main/java/com/jnshu/reception/ReceptionApplication.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
+        <state relative-caret-position="240">
           <caret line="19" column="21" lean-forward="true" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/reception-service/src/main/resources/mappers/CompanyInfoMapper.xml">
+    <entry file="file://$PROJECT_DIR$/reception-service/src/main/resources/application.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="143" column="42" lean-forward="true" selection-start-line="143" selection-start-column="42" selection-end-line="143" selection-end-column="42" />
+        <state relative-caret-position="-61">
+          <caret line="12" column="29" lean-forward="true" selection-start-line="12" selection-start-column="29" selection-end-line="12" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reception-service/src/main/java/com/jnshu/reception/service/impl/CompanyInfoServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="67" column="39" selection-start-line="67" selection-start-column="39" selection-end-line="67" selection-end-column="39" />
+          <folding>
+            <element signature="e#2299#2300#0" expanded="true" />
+            <element signature="e#2368#2369#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/reception-service/src/main/java/com/jnshu/reception/dao/CompanyInfoMapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="134">
-          <caret line="11" column="36" lean-forward="true" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="36" />
+        <state relative-caret-position="254">
+          <caret line="33" column="23" selection-start-line="33" selection-start-column="23" selection-end-line="33" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/reception-service/src/main/java/com/jnshu/reception/service/impl/CompanyInfoServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/reception-service/src/main/resources/mappers/CompanyInfoMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="30" column="41" selection-start-line="30" selection-start-column="41" selection-end-line="30" selection-end-column="41" />
+        <state relative-caret-position="161">
+          <caret line="175" column="20" selection-start-line="175" selection-start-column="20" selection-end-line="175" selection-end-column="20" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/reception-service/src/main/java/com/jnshu/reception/service/CompanyInfoService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        <state relative-caret-position="125">
+          <caret line="35" column="23" selection-start-line="35" selection-start-column="23" selection-end-line="35" selection-end-column="23" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/reception-service/src/main/java/com/jnshu/reception/controller/CompanyInfoController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="65" column="45" selection-start-line="65" selection-start-column="26" selection-end-line="65" selection-end-column="45" />
+        <state relative-caret-position="60">
+          <caret line="187" lean-forward="true" selection-start-line="187" selection-end-line="187" />
         </state>
       </provider>
     </entry>

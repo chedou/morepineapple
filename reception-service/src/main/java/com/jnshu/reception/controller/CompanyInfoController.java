@@ -193,7 +193,9 @@ public class CompanyInfoController {
         List list = new ArrayList();
         Result result = new Result();
         try {
+            System.out.println(companyInfoService.toString());
             list = companyInfoService.latestCertificationCompany();
+            System.out.println(list.size());
             data.put("latestCertificationCompanyList", list);
             result.setCode(0);
             result.setMessage("SUCCESS");

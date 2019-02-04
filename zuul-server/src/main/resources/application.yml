@@ -10,7 +10,7 @@ eureka:
     hostname: ${spring.cloud.client.ip-address}
 #    ip-address: 113.81.148.84
 #    ip-address: localhost
-    ip-address: 120.79.82.72
+#    ip-address: 120.79.82.72
     instance-id: ${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:${random.value}}}
 server:
   port: 7888

@@ -180,7 +180,7 @@
     <select id="latestCertificationCompany" resultMap="queryCompanyInfoListMap">
     select  c.company_id,c.company_name,c.company_logo,c.city,c.area,c.financing_scale,c.company_industry,c.is_approve,
     p.position_id,p.position_name from company_info c ,position_info p where   p.company_id=c.company_id and
-    c.company_id in(select t.company_id from	(select DISTINCT(company_id) from company_info where  is_approve=1
+    c.company_id in(select t.company_id from (select DISTINCT(company_id) from company_info where  is_approve=1
     ORDER BY gmt_update desc LIMIT 4) as t ) GROUP BY c.company_id,p.position_id
     </select>
 

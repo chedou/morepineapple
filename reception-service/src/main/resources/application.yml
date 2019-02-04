@@ -14,7 +14,6 @@ eureka:
 feign:
   hystrix:
     enabled: true
-#  url: 120.79.87.72:7777
 
 spring:
   application:
@@ -29,11 +28,11 @@ spring:
 #    driver-class-name: com.mysql.cj.jdbc.Driver
     platform: mysql
 #    本地
-    url: jdbc:mysql://localhost:3306/duoboluo?serverTimezone=GMT&useUnicode=true&characterEncoding=utf8&characterSetResults=utf8&useSSL=false&autoReconnect=true&failOverReadOnly=false
+#    url: jdbc:mysql://localhost:3306/duoboluo?serverTimezone=GMT&useUnicode=true&characterEncoding=utf8&characterSetResults=utf8&useSSL=false&autoReconnect=true&failOverReadOnly=false
 #    服务器
-#    url: jdbc:mysql://120.79.82.72:3306/duoboluo?serverTimezone=GMT&useUnicode=true&characterEncoding=utf8&characterSetResults=utf8&useSSL=false&autoReconnect=true&failOverReadOnly=false
+    url: jdbc:mysql://120.79.82.72:3306/duoboluo?serverTimezone=GMT&useUnicode=true&characterEncoding=utf8&characterSetResults=utf8&useSSL=false&autoReconnect=true&failOverReadOnly=false
     username: root
-    password: 123456
+    password: Hwb_1995
     initialSize: 5
     minIdle: 5
     maxActive: 20
